@@ -12,7 +12,7 @@
 
 They help me forget about work and take my mind off things. I especially enjoy them at a theater because the large screen and powerful sound make every scene feel more realistic. If I had to recommend one, I would choose an easy-to-follow action movie with a likable main character.
 
-The last time I went to the movies was a few weeks ago with a close friend. We had dinner first, bought popcorn, and watched a new action movie. It was much better than I expected, and we stayed focused the whole time.
+The last time I went to the movies was a few weeks ago with a close friend. We had dinner first, bought popcorn, and watched a new action movie about a detective trying to stop a major robbery. It was much better than I expected, and we stayed focused the whole time.
 
 Afterward, we went to a café and talked about our favorite scenes. I got home late, but I had a blast. That experience reminded me why action is still my favorite genre.`,
     musicCore:`I listen to many kinds of music, but I mostly enjoy Korean pop and soft rock. My favorite singer is IU because her voice is clear and emotional, and her songs are easy to listen to.
@@ -46,7 +46,7 @@ It has a wide walking path, trees, benches, and a large grassy area. People walk
 
 The last time I went there was two weeks ago with a close friend. We walked around the lake, talked about work, and sat on the grass. There was a beautiful sunset, so we took several pictures before having dinner nearby.
 
-Nothing dramatic happened, but the fresh air helped me clear my head. That simple visit was memorable because it was exactly the relaxing break I needed.`,
+I first started visiting the park a few years ago because I needed an easy way to exercise after work. Nothing dramatic happened on my last visit, but the fresh air helped me clear my head. It was exactly the relaxing break I needed.`,
     foodDeliveryTrend:`Restaurants and delivery services have changed a lot because more customers care about health and convenience.
 
 Many places now offer salads, grilled dishes, whole-grain options, and smaller portions instead of only fried or salty food. Delivery apps also show calories and ingredients, and customers can remove sauces or add vegetables.
@@ -99,6 +99,15 @@ However, I once got on the wrong train during another visit and became separated
 We met again about thirty minutes later. The experience was stressful, but it taught me to check train directions carefully and save important information before traveling.
 
 I still recommend Japan because it offers good food, interesting cities, and a convenient travel experience.`,
+    cancellationExperience:`Yes. Last winter, I had to cancel a weekend trip to Busan at the last minute.
+
+I had planned the trip with a close friend and had already booked train tickets and a hotel. However, the night before we left, I developed a high fever and could barely get out of bed.
+
+I called my friend immediately and explained the situation. Then I contacted the hotel and train company. The hotel allowed us to change the reservation once, and we received travel credit for the train tickets.
+
+We moved the trip to two weeks later, when I had recovered. I felt terrible about changing our plan, but contacting everyone early helped us avoid losing most of the money.
+
+Since then, I choose flexible reservations whenever possible and keep all confirmation messages on my phone.`,
     tripPreparation:`I prepare carefully before any trip, especially when outdoor activities such as hiking are involved.
 
 First, I check the weather, transportation, and the places I plan to visit. If I am hiking, I also check the trail length and difficulty. Then I confirm my reservations and save the details on my phone.
@@ -108,13 +117,13 @@ I pack comfortable clothes, walking or hiking shoes, water, a light snack, sunsc
 Finally, I check everything one more time and try to leave early. Good preparation takes a little time, but it helps me avoid unnecessary stress and enjoy the trip safely.`,
     industryAI:`Artificial intelligence is one of the fastest-growing and most talked-about industries in Korea.
 
-It has grown quickly because companies use AI in phones, cars, online shopping, and customer service. Large technology companies invest heavily in it, and smaller companies are also creating useful AI services.
+Young people often want to work for major technology companies or AI startups because they offer good career opportunities, practical training, and the chance to build new products. The industry has grown quickly because companies use AI in phones, cars, shopping, and customer service.
 
 People who want to work in this field usually study computer science, data, or programming in advance. After joining a company, they continue learning through online courses and project-based training because the technology changes so quickly. Training has become much more practical over the past five years.
 
 People are interested in AI because it can save time and create new jobs, but they also worry about privacy and job replacement.
 
-I think the industry will keep growing, so workers and companies will need to keep learning and use the technology responsibly.`,
+I have also taken online courses, practiced presentations, and used new digital tools in work projects to improve my own skills. I think the industry will keep growing, so workers and companies will need to keep learning and use the technology responsibly.`,
     fashionStyle:`People in Korea usually prefer clothes that are neat, practical, and comfortable.
 
 At work, many people wear business-casual clothes such as a shirt, simple pants, and clean shoes. At home, they usually change into loose T-shirts or training pants.
@@ -179,20 +188,21 @@ I can give you my phone number and identification information. Please contact me
 
 I’m sorry for the trouble, but it is important to me. Thank you for your help.`;
 
-  setMock([['mock-1',2],['mock-3',2],['mock-4',5]],scripts.homeDescription);
-  setMock([['mock-1',5],['mock-1',6]],scripts.movieCore);
+  setMock([['mock-1',2],['mock-3',2],['mock-4',5],['mock-6',5]],scripts.homeDescription);
+  setMock([['mock-1',5],['mock-1',6],['mock-9',2],['mock-9',3]],scripts.movieCore);
   setMock([['mock-1',9],['mock-1',10]],scripts.gatheringEvent);
-  setMock([['mock-2',2],['mock-2',3],['mock-2',4],['mock-5',8],['mock-5',9]],scripts.musicCore);
-  setMock([['mock-2',5],['mock-2',6],['mock-2',7]],scripts.parkVisit);
-  setMock([['mock-2',8],['mock-2',9],['mock-2',10]],scripts.holidayCore);
+  setMock([['mock-2',2],['mock-2',3],['mock-2',4],['mock-5',8],['mock-5',9],['mock-7',5],['mock-7',6]],scripts.musicCore);
+  setMock([['mock-2',5],['mock-2',6],['mock-2',7],['mock-10',8],['mock-10',9],['mock-10',10]],scripts.parkVisit);
+  setMock([['mock-2',8],['mock-2',9],['mock-2',10],['mock-9',14]],scripts.holidayCore);
   setMock([['mock-1',14],['mock-3',14],['mock-3',15]],scripts.foodDeliveryTrend);
   setMock([['mock-3',9],['mock-3',10]],scripts.healthChange);
-  setMock([['mock-3',7],['mock-5',2]],scripts.natureBeach);
+  setMock([['mock-3',7],['mock-5',2],['mock-6',2],['mock-6',3],['mock-6',4],['mock-8',8]],scripts.natureBeach);
   setMock([['mock-4',2],['mock-4',3],['mock-4',4]],scripts.weatherCore);
-  setMock([['mock-4',8],['mock-4',9],['mock-4',10]],scripts.overseasCore);
+  setMock([['mock-4',8],['mock-4',9],['mock-4',10],['mock-9',13]],scripts.overseasCore);
+  setMock([['mock-4',13],['mock-8',13],['mock-10',13]],scripts.cancellationExperience);
   setMock([['mock-5',3]],scripts.tripPreparation);
   setMock([['mock-5',5],['mock-5',6],['mock-5',7]],scripts.fashionStyle);
-  setMock([['mock-5',14],['mock-5',15]],scripts.industryAI);
+  setMock([['mock-5',14],['mock-5',15],['mock-7',2],['mock-7',3],['mock-7',4]],scripts.industryAI);
   setMock([['mock-2',11],['mock-4',11]],scripts.roleplayResearch);
 
   setCues([['mock-1',2],['mock-3',2],['mock-4',5]],['studio in Suwon','one main room','bed · table · TV','everything within reach','cozy and convenient'],'공유 스크립트 · 집 전체와 최애 공간 동시 대비');
@@ -206,6 +216,7 @@ I’m sorry for the trouble, but it is important to me. Thank you for your help.
   setCues([['mock-3',7],['mock-5',2]],['Busan · Haeundae','sandy shore · cafés','friend · weekend','walk · seafood · sunset','get away from it all'],'공유 스크립트 · 국내 여행지와 자연 장소 동시 대비');
   setCues([['mock-4',2],['mock-4',3],['mock-4',4]],['four seasons','today in Suwon','less predictable','extreme weather','check forecast'],'공유 스크립트 · 계절·오늘·기후 변화 동시 대비');
   setCues([['mock-4',8],['mock-4',9],['mock-4',10]],['Japan','close and convenient','childhood family trip','wrong train','ask staff for help'],'공유 스크립트 · 인기 장소·어린 시절·돌발 경험 동시 대비');
+  setCues([['mock-4',13],['mock-8',13],['mock-10',13]],['Busan weekend trip','high fever','called friend early','changed reservations','choose flexible options'],'공유 스크립트 · 일정 취소와 여행 계획 문제 동시 대비');
   setCues([['mock-5',3]],['weather · route','reservations','clothes · shoes','charger · first-aid kit','final check'],'여행과 하이킹 준비 공용 스크립트');
   setCues([['mock-5',5],['mock-5',6],['mock-5',7]],['work vs home','simple casual style','past vs now','navy jacket purchase','practical and comfortable'],'공유 스크립트 · 일반·개인·변화·구매 경험 동시 대비');
   setCues([['mock-5',14],['mock-5',15]],['AI industry','rapid growth','skills and training','current interest','privacy and jobs'],'공유 스크립트 · 산업 성장·교육·관심 동시 대비');
@@ -239,6 +250,7 @@ I’m sorry for the trouble, but it is important to me. Thank you for your help.
   practice[14]=problemCall('the haircut I received today','the sides are much shorter than I requested, and the front is uneven.','showed the stylist the original picture again','have another stylist fix it today','give me a free appointment tomorrow or a partial refund','The result is clearly different from the picture I showed.');
   practice[19]=questionCall('I’d like to visit the park with you this weekend',['Are you free on Saturday afternoon?','Which park would you prefer?','what activity you would like to do there.','Should we bring food, water, or anything else?'],'Once we decide, I will send you the exact meeting place and time.');
   practice[20]=lostItemCall('my black phone while we were hiking','near the rest area below the top','It has a clear case, and my name card is inside.','call my number while I walk back along the trail','ask the park office and use the phone tracking service');
+  practice[27]={exam:'mock-7',number:13};
   practice[28]=problemCall('the food delivery I just received','I ordered a chicken salad and soup, but I received two hamburgers instead.','checked the order number on the receipt','send the correct food as soon as possible','give me a full refund if redelivery takes more than thirty minutes','I have the order confirmation and can send you a picture of the wrong food.');
   practice[35]=questionCall('I’d like to make a dinner reservation',['Do you have a table for four this Saturday at seven?','Is a quiet table or a private room available?','whether you have vegetarian dishes.','Is parking available nearby?'],'If the table is available, please reserve it under the name Daeho and send me a confirmation.');
   practice[36]=problemCall('my hotel room, number 507','the air conditioner is making a loud noise, and the Wi-Fi keeps disconnecting.','restarted the air conditioner and reconnected to the Wi-Fi','send someone to fix the problems right away','move me to another quiet room','I need a working room because I have work to finish tonight.');
@@ -259,4 +271,16 @@ I’m sorry for the trouble, but it is important to me. Thank you for your help.
     fashion_shopping:['P12'], roleplay_reservation:['P13','P36'], roleplay_service_problem:['P15','P29','P37','P38'], information_change:['P18'], roleplay_park_plan:['P20'], dentist_experience:['P22'],
     hiking_origin:['P23'], furniture_description:['P27'], recycling_process:['P28'], transportation_problem:['P30'], hiking_preparation:['P34'], service_problem_experience:['P39']
   };
+  const addFamily=(name,ids)=>{window.OPIC_SCRIPT_FAMILIES[name]??=[];window.OPIC_SCRIPT_FAMILIES[name].push(...ids)};
+  addFamily('introduction',['M6-1','M7-1','M8-1','M9-1','M10-1']);
+  addFamily('nature_beach',['M6-2','M6-3','M6-4']); addFamily('home_description',['M6-5']); addFamily('home_problem',['M6-6','M6-7']);
+  addFamily('delivery_restaurant',['M6-8','M6-9','M6-10','M6-13']); addFamily('roleplay_health_store_questions',['M6-11']); addFamily('roleplay_product_problem',['M6-12']); addFamily('international_relations',['M6-14','M6-15']);
+  addFamily('industry_ai',['M7-2','M7-3','M7-4']); addFamily('music_preference',['M7-5']); addFamily('music_change',['M7-6']); addFamily('concert_experience',['M7-7']);
+  addFamily('hotel_core',['M7-8','M7-9','M7-10']); addFamily('roleplay_recycling_questions',['M7-11']); addFamily('roleplay_recycling_explain',['M7-12']); addFamily('recycling_process',['M7-13']); addFamily('travel_issues',['M7-14','M7-15']);
+  addFamily('bank_core',['M8-2','M8-3','M8-4']); addFamily('free_time_core',['M8-5','M8-6','M8-7']); addFamily('domestic_destination',['M8-8']); addFamily('childhood_place',['M8-9']); addFamily('travel_problem',['M8-10']);
+  addFamily('roleplay_party_questions',['M8-11']); addFamily('roleplay_reschedule',['M8-12']); addFamily('cancellation_experience',['M8-13']); addFamily('housing_core',['M8-14','M8-15']);
+  addFamily('movie_preference',['M9-2']); addFamily('movie_experience',['M9-3']); addFamily('entertainment_news',['M9-4']); addFamily('restaurant_core',['M9-5','M9-6','M9-7']); addFamily('technology_core',['M9-8','M9-9','M9-10']);
+  addFamily('roleplay_car_rental',['M9-11']); addFamily('roleplay_license_problem',['M9-12']); addFamily('overseas_problem',['M9-13']); addFamily('holiday_description',['M9-14']); addFamily('holiday_concerns',['M9-15']);
+  addFamily('appointment_core',['M10-2','M10-3','M10-4']); addFamily('friends_family_core',['M10-5','M10-6','M10-7']); addFamily('park_description',['M10-8']); addFamily('park_visit',['M10-9','M10-10']);
+  addFamily('roleplay_travel_questions',['M10-11']); addFamily('roleplay_reschedule',['M10-12']); addFamily('cancellation_experience',['M10-13']); addFamily('appliance_core',['M10-14','M10-15']);
 })();
