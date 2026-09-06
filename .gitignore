@@ -1,0 +1,8 @@
+# Local study source material (one file exceeds GitHub's 100 MB limit)
+*.pdf
+KakaoTalk_*.jpg
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
