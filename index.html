@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OPIc IH~AL Study Guide</title>
+<style>
+:root {
+  --bg:#f6f7fb; --panel:#ffffff; --ink:#172033; --muted:#697386;
+  --line:#e7eaf0; --accent:#4f46e5; --accent2:#0ea5e9; --good:#059669;
+  --warn:#d97706; --red:#dc2626; --soft:#eef2ff; --radius:18px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Pretendard,"Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.62}
+a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:50;display:flex;gap:14px;align-items:center;padding:12px 22px;background:rgba(246,247,251,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-weight:900;letter-spacing:-.03em;white-space:nowrap} .brand em{color:var(--accent);font-style:normal}
+.search{flex:1;max-width:760px;position:relative} .search input{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 14px;font-size:14px;outline:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1500px;margin:auto}
+aside{position:sticky;top:65px;height:calc(100vh - 65px);padding:24px 18px;border-right:1px solid var(--line);overflow:auto}
+aside .kicker{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:4px 10px 10px}
+nav a{display:block;padding:9px 11px;margin:3px 0;border-radius:10px;font-size:14px;color:#4b5563}
+nav a:hover{background:#fff;color:var(--accent)} .source-note{margin-top:20px;padding:12px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:12px;color:var(--muted)}
+main{min-width:0;padding:38px 44px 80px;max-width:1150px;width:100%;margin:auto}
+.hero{padding:34px;border-radius:28px;background:linear-gradient(135deg,#111827,#312e81 60%,#075985);color:white;box-shadow:0 18px 50px rgba(17,24,39,.15);margin-bottom:28px}
+.hero .eyebrow{font-size:12px;font-weight:800;opacity:.75;letter-spacing:.12em} .hero h1{font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-.045em;margin:10px 0 12px} .hero p{max-width:760px;color:#e5e7eb;margin:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px} .chip{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.12);font-size:12px}
+section{scroll-margin-top:90px;margin:38px 0} .section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:16px} h2{font-size:27px;letter-spacing:-.03em;margin:0} .desc{color:var(--muted);font-size:14px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px} .card{grid-column:span 6;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 8px 26px rgba(15,23,42,.035)} .card.full{grid-column:1/-1} .card.third{grid-column:span 4}
+.card h3{margin:0 0 10px;font-size:17px} .card p{margin:5px 0;color:#4b5563}
+.metric{font-size:30px;font-weight:900;color:var(--accent)} .mini{font-size:12px;color:var(--muted)}
+.levels{display:grid;gap:8px} .level{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:13px;border-radius:13px;background:#fafafa;border:1px solid var(--line)} .level b{color:var(--accent)}
+.callout{padding:16px 18px;border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0}
+.strategy{counter-reset:item;display:grid;gap:10px} .strategy div{position:relative;padding:14px 14px 14px 48px;border:1px solid var(--line);background:#fff;border-radius:13px} .strategy div:before{counter-increment:item;content:counter(item);position:absolute;left:14px;top:13px;width:24px;height:24px;border-radius:8px;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:900;font-size:12px}
+.answer-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px} .step{padding:13px 10px;text-align:center;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:12px} .step b{display:block;font-size:14px;color:var(--accent)}
+table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;font-size:14px} th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}
+.flash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .flashcard{min-height:135px;border:1px solid var(--line);border-radius:15px;background:#fff;padding:16px;text-align:left;cursor:pointer;font:inherit;position:relative;overflow:hidden} .flashcard .front,.flashcard .back{display:flex;flex-direction:column;gap:8px;transition:.22s} .flashcard .back{display:none} .flashcard.flipped .front{display:none} .flashcard.flipped .back{display:flex} .flashcard b{font-size:16px;color:var(--accent)} .flashcard small{color:var(--muted);font-size:12px}
+.topic{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden} .topic summary{padding:15px 17px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between} .topic summary span{font-size:11px;color:var(--muted);font-weight:600} .examples{padding:0 12px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.example-card{padding:13px;border-radius:11px;background:#f9fafb;border:1px solid #eef0f4} .kr{font-size:13px;color:#555f70;margin-bottom:5px} .en{font-weight:650;font-size:14px}
+.upgrade{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:12px;border-bottom:1px solid var(--line)} .upgrade:last-child{border-bottom:0} .basic{color:#6b7280} .advanced{font-weight:700;color:#1e3a8a} .arrow{color:var(--accent);font-weight:900}
+.taglist{display:flex;flex-wrap:wrap;gap:7px} .tag{padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px}
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:9px} .check{padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:#fff;font-size:13px} .must{border-color:#c7d2fe;background:#eef2ff} .must:before{content:"필수";font-size:10px;font-weight:800;color:white;background:var(--accent);padding:3px 6px;border-radius:6px;margin-right:7px}
+.quizbox{background:#111827;color:#fff;border-radius:20px;padding:22px} .quizbox button{border:0;background:#fff;color:#111827;border-radius:10px;padding:9px 12px;font-weight:800;cursor:pointer} #quizA{display:none;margin-top:13px;color:#c7d2fe;font-size:18px;font-weight:800}
+.hidden-by-search{display:none!important}
+.footer{margin-top:60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
+@media(max-width:980px){.layout{grid-template-columns:1fr} aside{display:none} main{padding:26px 18px 60px} .card,.card.third{grid-column:1/-1} .flash-grid{grid-template-columns:1fr 1fr} .examples{grid-template-columns:1fr}}
+@media(max-width:620px){.flash-grid{grid-template-columns:1fr} .answer-flow{grid-template-columns:1fr 1fr} .upgrade{grid-template-columns:1fr} .arrow{display:none} .topbar{padding:10px 12px} .brand{font-size:13px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">OPIc <em>IH~AL</em> Guide</div>
+  <div class="search"><input id="search" placeholder="표현, 문법, 예문 검색... (예: present perfect, hiking, 수동태)"></div>
+</header>
+<div class="layout">
+<aside>
+  <div class="kicker">Contents</div>
+  <nav>
+    <a href="#overview">시험 핵심</a><a href="#survey">Survey & 유형</a><a href="#strategy">IH~AL 전략</a>
+    <a href="#answer">60~90초 답변 구조</a><a href="#vocab">Vocabulary Upgrade</a><a href="#idioms">Idioms</a>
+    <a href="#relatives">관계사</a><a href="#perfect">현재완료</a><a href="#passive">수동태</a>
+    <a href="#examples">문장 업그레이드</a><a href="#misc">실전 단어 & 발음</a>
+  </nav>
+  <div class="source-note">업로드한 6개 AMY'S OPIc PDF의 내용을 주제별로 재구성한 학습 페이지입니다.</div>
+</aside>
+<main>
+<section class="hero searchable">
+  <div class="eyebrow">AMY'S OPIC MATERIAL — REORGANIZED</div>
+  <h1>OPIc IH~AL<br>한 페이지 학습 노트</h1>
+  <p>시험 구조 → 고득점 전략 → 답변 구조 → 어휘·숙어 → 관계사·현재완료·수동태 순서로 바로 복습할 수 있게 정리했습니다.</p>
+  <div class="chips"><span class="chip">IH~AL Strategy</span><span class="chip">60–90 sec Answer</span><span class="chip">27 Vocab Sets</span><span class="chip">29 Idioms</span><span class="chip">Grammar Structures</span></div>
+</section>
+
+<section id="overview">
+<div class="section-head"><div><h2>1. 시험 핵심</h2><div class="desc">자료의 시험 정보, 평가 기준, 등급 요건을 한 번에 보기.</div></div></div>
+<div class="grid">
+ <div class="card third searchable"><div class="metric">40분</div><h3>시험 시간</h3><p>Orientation 20분 후 본 시험 진행. 1st Session → 난이도 재조정 → 2nd Session 구조.</p></div>
+ <div class="card third searchable"><div class="metric">2회</div><h3>질문 청취</h3><p>화면 안내 기준 질문을 2번까지 들을 수 있고, 답변 후 다음 문항으로 이동.</p></div>
+ <div class="card third searchable"><div class="metric">50 + 50</div><h3>점수 취득 포인트</h3><p>자료는 유창성 50, 문장력 50으로 강조. 자연스러운 발화 + 다양한 어휘/복잡한 구조.</p></div>
+ <div class="card full searchable"><h3>평가 4축</h3><div class="grid">
+   <div class="card third"><b>Text Type</b><p>문장의 난이도, 다양한 시제 사용 등.</p></div>
+   <div class="card third"><b>Context / Content</b><p>주제 연관 표현, 내용 적합성, 문맥 연결.</p></div>
+   <div class="card third"><b>Tasks / Function</b><p>질문에 맞는 답변 수행 여부.</p></div>
+   <div class="card third"><b>Accuracy / Comprehensibility</b><p>문법 정확도와 발화 전달력.</p></div>
+ </div></div>
+ <div class="card full searchable"><h3>등급 요건 요약</h3><div class="levels">
+   <div class="level"><b>AL</b><span>생각·경험을 유창하게 표현. 시제 관리, 다양한 형용사, 접속사·연결어, 높은 문장 결속력과 문단 구조. 익숙하지 않은 복잡한 상황에서도 문제 설명·해결.</span></div>
+   <div class="level"><b>IH</b><span>문법적으로 큰 오류가 없는 문단 단위 언어. 기본 토론·업무 의사소통 가능. 예측하지 못한 복잡한 상황에서도 사건 설명과 문제 해결, 많은 발화량과 다양한 어휘.</span></div>
+   <div class="level"><b>IM</b><span>문법 오류는 있으나 문장 단위 언어 사용. 일상 소개와 익숙한 상황 표현, 다양한 문장 형식·어휘를 실험적으로 사용.</span></div>
+   <div class="level"><b>IL</b><span>일상 소재에 한해 짧은 문장 구성, 선호 소재에서 자신감 있게 대화.</span></div>
+   <div class="level"><b>NH/NM/NL</b><span>단어·어구 및 간단한 문장 → 암기 문장 → 제한적 단어 나열 수준으로 설명됨.</span></div>
+ </div></div>
+</div>
+</section>
+
+<section id="survey">
+<div class="section-head"><div><h2>2. Survey & 문제 유형</h2><div class="desc">자료에서 추천 강도가 높은 주제와 돌발/문제 유형.</div></div></div>
+<div class="grid">
+ <div class="card searchable"><h3>선택 주제 COMBOS</h3><div class="taglist">
+  <span class="tag">영화 관람 **</span><span class="tag">공연 관람</span><span class="tag">콘서트 가기</span><span class="tag">음악 감상 **</span><span class="tag">공원 가기 ***</span><span class="tag">걷기</span><span class="tag">조깅</span><span class="tag">하이킹/트래킹 ***</span><span class="tag">해변 가기 *</span><span class="tag">국내 여행 ***</span><span class="tag">국외 여행 ***</span><span class="tag">운동을 전혀 하지 않음</span>
+ </div></div>
+ <div class="card searchable"><h3>시험 유형</h3><p><b>자기소개</b> — 1번째 질문</p><p><b>3단 콤보</b> — 한 주제에서 3개 질문 연속, 2 sets</p><p><b>Role Play</b> — 여러 상황에서 답 대신 질문 만들기, 1 set</p><p><b>돌발질문</b> — 예상치 못한 주제, 2~3 sets</p></div>
+ <div class="card full searchable"><h3>핵심 질문 TYPES</h3><div class="taglist">
+  <span class="tag">경험 말하기</span><span class="tag">장소 묘사</span><span class="tag">현재와 과거 비교</span><span class="tag">세부 사항 묘사</span><span class="tag">활동 묘사</span><span class="tag">이유/의견제시</span><span class="tag">비교 대조</span><span class="tag">사회 이슈</span><span class="tag">인물 묘사</span><span class="tag">사물 묘사</span><span class="tag">계기 말하기</span><span class="tag">방법 묘사</span><span class="tag">규칙 말하기</span><span class="tag">문제 해결 과정</span>
+ </div></div>
+ <div class="card full searchable"><h3>RANDOM QUESTIONS</h3><div class="taglist">
+  <span class="tag">대중교통</span><span class="tag">인터넷</span><span class="tag">쇼핑/독서/TV·DVD</span><span class="tag">외식·음식점</span><span class="tag">병원</span><span class="tag">건강</span><span class="tag">휴일</span><span class="tag">미용실</span><span class="tag">날씨</span><span class="tag">가구(롤플레이)</span><span class="tag">은행</span><span class="tag">신분증(롤플레이)</span><span class="tag">재활용</span><span class="tag">경찰/농부</span><span class="tag">기술</span><span class="tag">지형</span><span class="tag">산업</span><span class="tag">자유시간</span><span class="tag">호텔</span><span class="tag">친구와 가족</span><span class="tag">전화기</span>
+ </div></div>
+ <div class="card full searchable"><h3>소재 재활용 아이디어</h3><p>극장 / 콘서트장 / 음악감상 장소는 <b>무대·최신 음향설비·편안한 좌석</b> 같은 묘사 재활용. 공원·걷기·조깅·하이킹 복장은 <b>회색 츄리닝 / Athleisure</b>. 해변·국내·해외여행 묘사는 <b>백사장·파라솔·접이식 의자</b>를 재활용하는 흐름이 자료에 제시됨.</p><div class="callout">자료에서 피하라고 표시한 소재: <b>주식투자 / 차로 드라이브하기 / 구기종목</b>.</div></div>
+</div>
+</section>
+
+<section id="strategy">
+<div class="section-head"><div><h2>3. IH~AL 획득 전략</h2><div class="desc">고득점 파트에 반복적으로 등장하는 요소만 압축.</div></div></div>
+<div class="grid">
+ <div class="card searchable"><h3>IH~AL 전략 8</h3><div class="strategy">
+  <div>기초 어휘 변경 + 숙어 사용</div><div>반복 어휘 회피 — 동의어 활용</div><div>자연스러운 연결어 삽입</div><div>관계사 사용</div><div>완료시제 사용</div><div>최상급·비교급 사용</div><div>수동태 사용</div><div>시간 조절 — 장황하지 않게 핵심 중심</div>
+ </div></div>
+ <div class="card searchable"><h3>AL 전략 체크리스트</h3><div class="checklist">
+  <div class="check">현재·과거·미래·진행·완료 시제의 정확한 사용</div><div class="check">현재완료 사용</div><div class="check">형용사·부사의 원급/비교급/최상급</div><div class="check">다양한 형용사·부사</div><div class="check">접속사·연결어</div><div class="check">합성어</div><div class="check">관용어구</div><div class="check">구동사</div><div class="check">수동태</div><div class="check">관계사</div><div class="check">다양한 주어 형태</div><div class="check">복수형 명사의 정확한 사용</div>
+ </div></div>
+ <div class="card full searchable"><h3>Higher Level 필수 감각</h3><div class="checklist">
+  <div class="check must">관계사를 썼다</div><div class="check must">완료시제를 썼다</div><div class="check">수동태를 썼다</div><div class="check">비교급·최상급을 썼다</div><div class="check">다양한 주어를 썼다</div><div class="check must">3초 이상의 묵음이 없었다</div><div class="check must">동의어·숙어로 반복을 피했다</div><div class="check">숙어적 표현을 썼다</div>
+ </div></div>
+ <div class="card full searchable"><h3>자료에 나온 자연스러운 filler</h3><p><b>Um… let me see…</b> / <b>Well… as far as I remember…</b></p><p class="mini">핵심은 긴 침묵을 피하면서 세부 정보와 복잡한 구조를 자연스럽게 붙이는 것.</p></div>
+</div>
+</section>
+
+<section id="answer">
+<div class="section-head"><div><h2>4. 60~90초 답변 구조</h2><div class="desc">자료의 ‘경험 말하기’ 구조를 바로 외우기 쉽게 시각화.</div></div></div>
+<div class="card full searchable">
+ <div class="answer-flow">
+  <div class="step"><b>① 서론</b>1문장</div><div class="step"><b>② 기본정보</b>1문장</div><div class="step"><b>③ 핵심사건</b>1~2문장</div><div class="step"><b>④ 결과</b>1~2문장</div><div class="step"><b>⑤ 마무리</b>1문장</div><div class="step"><b>⏱ 목표</b>60~90초</div>
+ </div>
+ <div class="callout" style="margin-top:14px"><b>원칙:</b> “절대 장황한 응답 금지” — 겹치지 않는 구조와 어휘로 핵심만 간단히.</div>
+</div>
+</section>
+
+<section id="vocab">
+<div class="section-head"><div><h2>5. Vocabulary Upgrade</h2><div class="desc">기초 단어를 상위 표현으로 바꾸는 27개 세트.</div></div></div>
+<div class="table-wrap searchable"><table><thead><tr><th>Basic</th><th>Upgrade options</th></tr></thead><tbody><tr><td><strong>every day</strong></td><td>on a daily basis</td></tr>
+<tr><td><strong>every month</strong></td><td>on a monthly basis</td></tr>
+<tr><td><strong>every year</strong></td><td>on a yearly basis</td></tr>
+<tr><td><strong>regularly</strong></td><td>on a regular basis</td></tr>
+<tr><td><strong>before</strong></td><td>from my memory / as far as I remember</td></tr>
+<tr><td><strong>But</strong></td><td>However / although / nevertheless / on the other hand / whereas / while / despite</td></tr>
+<tr><td><strong>have a lot of stress</strong></td><td>be under massive pressure</td></tr>
+<tr><td><strong>like</strong></td><td>fall into / be into / be keen on / is highly preferred by / be interested in</td></tr>
+<tr><td><strong>And</strong></td><td>plus / in addition / moreover / besides / furthermore / what’s more</td></tr>
+<tr><td><strong>have</strong></td><td>be equipped with / receive / possess / own / hold / experience / undergo / encounter / face / suffer from / obtain / acquire / maintain</td></tr>
+<tr><td><strong>cheap</strong></td><td>inexpensive / affordable / reasonably priced / economical / budget-friendly / low-cost / cost-effective</td></tr>
+<tr><td><strong>because of</strong></td><td>due to / owing to / as a result of / on account of / thanks to / as a consequence of</td></tr>
+<tr><td><strong>not enough</strong></td><td>insufficient / a scarcity of / inadequate / limited / short of / run out of</td></tr>
+<tr><td><strong>can</strong></td><td>be able to / be capable of + -ing / be in a position to / have the ability to / be allowed to</td></tr>
+<tr><td><strong>make</strong></td><td>prepare / achieve / allow / lead / ensure / contribute / cause / force / encourage / motivate / enable</td></tr>
+<tr><td><strong>bad</strong></td><td>detrimental / harmful / deteriorate(v) / undesirable / unpleasant / disappointing / unsatisfactory / inconvenient / unreliable / low-quality</td></tr>
+<tr><td><strong>good</strong></td><td>ideal / desirable / optimal / suitable / pertinent / outstanding / remarkable / exceptional / superb / beneficial</td></tr>
+<tr><td><strong>reduce / relieve</strong></td><td>lower / minimize / lessen / ease / alleviate / mitigate / diminish</td></tr>
+<tr><td><strong>many</strong></td><td>numerous / countless / a large number of / a considerable number of / a wide range of / various / a majority of</td></tr>
+<tr><td><strong>much</strong></td><td>a great deal of / a large amount of / an enormous amount of</td></tr>
+<tr><td><strong>important</strong></td><td>critical / indispensable / significant / vital / core / pivotal / crucial / essential</td></tr>
+<tr><td><strong>want</strong></td><td>would like to / plan / intend / aim / desire / look forward to / be eager to / be willing to / feel like + -ing / be dying to + V</td></tr>
+<tr><td><strong>need</strong></td><td>require / necessitate / be in need of / call for / necessary</td></tr>
+<tr><td><strong>give</strong></td><td>provide / offer / supply / deliver / present / grant / award / pass / lend / send / share</td></tr>
+<tr><td><strong>do</strong></td><td>perform / carry out / conduct / complete / accomplish / handle / manage / work on</td></tr>
+<tr><td><strong>beautiful</strong></td><td>gorgeous / stunning / breathtaking / spectacular / magnificent / attractive / charming / picturesque / scenic</td></tr>
+<tr><td><strong>sick</strong></td><td>ill / unwell / under the weather / nauseous / dizzy / feverish</td></tr></tbody></table></div>
+</section>
+
+<section id="idioms">
+<div class="section-head"><div><h2>6. Idioms 29</h2><div class="desc">카드를 클릭하면 뜻이 나옵니다. 여행·운동·감정·평가 표현 중심.</div></div></div>
+<div class="flash-grid"><button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="blow off steam flashcard">
+      <span class="front"><b>blow off steam</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>스트레스를 풀다</b><small>to release stress or frustration</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="clear my head flashcard">
+      <span class="front"><b>clear my head</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>머리를 식히다</b><small>to relax and stop thinking about problems</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="get in shape flashcard">
+      <span class="front"><b>get in shape</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>몸을 만들다</b><small>to become healthier and more physically fit</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="work up a sweat flashcard">
+      <span class="front"><b>work up a sweat</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>땀을 흘리며 운동하다</b><small>to exercise enough to start sweating</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="break a sweat flashcard">
+      <span class="front"><b>break a sweat</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>땀을 내다</b><small>to start sweating, usually from exercise</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="take my mind off things flashcard">
+      <span class="front"><b>take my mind off things</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>걱정을 잊다</b><small>to stop thinking about worries or problems</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="get away from it all flashcard">
+      <span class="front"><b>get away from it all</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>일상에서 벗어나다</b><small>to escape from your usual routine or stress</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="make the most of flashcard">
+      <span class="front"><b>make the most of</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>~을 최대한 활용하다</b><small>to use an opportunity as well as possible</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="soak up the atmosphere flashcard">
+      <span class="front"><b>soak up the atmosphere</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>분위기를 만끽하다</b><small>to fully enjoy the atmosphere of a place</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="off the beaten path flashcard">
+      <span class="front"><b>off the beaten path</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>잘 알려지지 않은 곳</b><small>away from places that are popular with tourists</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="a breath of fresh air flashcard">
+      <span class="front"><b>a breath of fresh air</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>신선한 자극 / 활력소</b><small>something new and refreshing</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="a change of scenery flashcard">
+      <span class="front"><b>a change of scenery</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>분위기 전환</b><small>a change of surroundings or environment</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="have a blast / have a ball flashcard">
+      <span class="front"><b>have a blast / have a ball</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>아주 즐거운 시간을 보내다</b><small>to have a very enjoyable time</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="have the time of my life flashcard">
+      <span class="front"><b>have the time of my life</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>정말 즐거운 시간을 보내다</b><small>to have an extremely enjoyable experience</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="be blown away by flashcard">
+      <span class="front"><b>be blown away by</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>~에 깊은 감명을 받다</b><small>to be extremely impressed by something</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="be in awe of flashcard">
+      <span class="front"><b>be in awe of</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>~에 감탄하다</b><small>to feel great admiration or amazement</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="live up to my expectations flashcard">
+      <span class="front"><b>live up to my expectations</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>기대에 부응하다</b><small>to be as good as I expected</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="fall short of my expectations flashcard">
+      <span class="front"><b>fall short of my expectations</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>기대에 못 미치다</b><small>to be less good than I expected</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="steal the show flashcard">
+      <span class="front"><b>steal the show</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>단연 돋보이다</b><small>to attract the most attention or praise</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="get carried away flashcard">
+      <span class="front"><b>get carried away</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>너무 신나서 몰입하다</b><small>to become so excited that you lose control of your emotions</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="be in the mood for flashcard">
+      <span class="front"><b>be in the mood for</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>~을 하고 싶은 기분이다</b><small>to feel like doing or having something</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="not be my cup of tea flashcard">
+      <span class="front"><b>not be my cup of tea</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>내 취향이 아니다</b><small>to not be something that I personally like</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="hit the spot flashcard">
+      <span class="front"><b>hit the spot</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>딱 마음에 들다 / 만족시키다</b><small>to be exactly what you wanted or needed</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="go the extra mile flashcard">
+      <span class="front"><b>go the extra mile</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>한층 더 노력하다</b><small>to make an extra effort to do something well</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="once in a lifetime flashcard">
+      <span class="front"><b>once in a lifetime</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>평생 한 번 있을까 말까 한</b><small>something that happens only once in a person&#x27;s life</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="have mixed feelings about flashcard">
+      <span class="front"><b>have mixed feelings about</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>~에 대해 복잡한 감정이 들다</b><small>to have both positive and negative feelings about something</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="a must-see flashcard">
+      <span class="front"><b>a must-see</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>꼭 봐야 할 것</b><small>something that is highly recommended to see</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="worth every penny flashcard">
+      <span class="front"><b>worth every penny</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>돈이 전혀 아깝지 않은</b><small>completely worth the money you paid</small></span>
+    </button>
+<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="leave a lasting impression flashcard">
+      <span class="front"><b>leave a lasting impression</b><small>클릭해서 뜻 보기</small></span>
+      <span class="back"><b>오래도록 깊은 인상을 남기다</b><small>to make an impression that remains for a long time</small></span>
+    </button></div>
+</section>
+
+<section id="relatives">
+<div class="section-head"><div><h2>7. 관계사</h2><div class="desc">who / which / that → whose → where → when → mixed 순서.</div></div></div>
+<details class="topic searchable" open>
+          <summary>관계대명사 who / which / that<span>6 examples</span></summary>
+          <div class="examples"><div class="example-card searchable">
+      <div class="kr">그녀가 추천한 책은 정말 재미있었다</div>
+      <div class="en">The book that she recommended was really interesting.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그는 항상 다른 사람을 도와주는 사람이다</div>
+      <div class="en">He is a person who always helps others.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">내가 가장 좋아하는 카페는 새로 리모델링되었다</div>
+      <div class="en">The café that I like the most has been newly remodeled.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그녀가 만든 음식은 모두에게 인기가 있었다</div>
+      <div class="en">The food that she made was popular with everyone.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그는 절대 약속을 어기지 않는 사람이다</div>
+      <div class="en">He is a person who never breaks his promises.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">내가 입고 있는 재킷은 동생이 선물해 준 것이다</div>
+      <div class="en">The jacket that I&#x27;m wearing was a gift from my younger brother.</div>
+    </div></div>
+        </details>
+<details class="topic searchable" >
+          <summary>소유격 관계대명사 whose<span>4 examples</span></summary>
+          <div class="examples"><div class="example-card searchable">
+      <div class="kr">우리는 차가 고장 난 남자를 도와주었다</div>
+      <div class="en">We helped a man whose car had broken down.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그녀는 목소리가 정말 아름다운 가수이다</div>
+      <div class="en">She is a singer whose voice is beautiful.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">나는 아이들이 모두 해외에 사는 노부부를 만났다</div>
+      <div class="en">I met an elderly couple whose children all live abroad.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그는 아이디어가 항상 독창적인 직원이다</div>
+      <div class="en">He is an employee whose ideas are always creative.</div>
+    </div></div>
+        </details>
+<details class="topic searchable" >
+          <summary>관계부사 where<span>4 examples</span></summary>
+          <div class="examples"><div class="example-card searchable">
+      <div class="kr">이곳은 내가 아내를 처음 만난 식당이다</div>
+      <div class="en">This is the restaurant where I first met my wife.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">우리는 조용히 공부할 수 있는 장소를 찾고 있다</div>
+      <div class="en">We are looking for a place where we can study quietly.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그녀는 모두가 서로를 아는 작은 마을에서 자랐다</div>
+      <div class="en">She grew up in a small town where everyone knows each other.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">이것이 내가 매주 운동하는 헬스장이다</div>
+      <div class="en">This is the gym where I work out every week.</div>
+    </div></div>
+        </details>
+<details class="topic searchable" >
+          <summary>관계부사 when<span>3 examples</span></summary>
+          <div class="examples"><div class="example-card searchable">
+      <div class="kr">나는 우리가 처음 만났던 날을 아직도 기억한다</div>
+      <div class="en">I still remember the day when we first met.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">크리스마스는 가족들이 함께 시간을 보내는 시기이다</div>
+      <div class="en">Christmas is a time when families spend time together.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">나는 인생이 완전히 바뀌었던 순간을 절대 잊지 못할 것이다</div>
+      <div class="en">I will never forget the moment when my life completely changed.</div>
+    </div></div>
+        </details>
+<details class="topic searchable" >
+          <summary>혼합 관계사<span>7 examples</span></summary>
+          <div class="examples"><div class="example-card searchable">
+      <div class="kr">내가 존경하는 사람은 항상 배우는 것을 멈추지 않는다</div>
+      <div class="en">The person who I admire never stops learning.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">우리가 예약한 호텔은 바다 바로 앞에 있었다</div>
+      <div class="en">The hotel that we booked was right in front of the ocean.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그녀는 내가 지금까지 만난 사람 중 가장 친절한 사람이다</div>
+      <div class="en">She is the kindest person that I have ever met.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그녀는 항상 내가 필요할 때 나를 도와주는 친구이다</div>
+      <div class="en">She is a friend who always helps me whenever I need her.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">우리는 전망이 정말 아름다운 식당에서 저녁을 먹었다</div>
+      <div class="en">We had dinner at a restaurant where the view was amazing.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">우리는 서비스가 매우 훌륭한 호텔에 머물렀다</div>
+      <div class="en">We stayed at a hotel where the service was excellent.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">내가 가장 행복했던 순간은 가족과 함께 여행했을 때였다</div>
+      <div class="en">The happiest moment in my life was when I traveled with my family.</div>
+    </div></div>
+        </details>
+</section>
+
+<section id="perfect">
+<div class="section-head"><div><h2>8. 현재완료</h2><div class="desc">경험, 최근 변화, 지속을 표현할 때 자료에서 반복적으로 사용.</div></div></div>
+<div class="examples"><div class="example-card searchable">
+      <div class="kr">우리 가족은 날씨가 좋을 때마다 근처 공원에서 산책을 해 왔다</div>
+      <div class="en">My family has gone for walks in a nearby park whenever the weather has been nice.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">내 친구들 중 몇 명은 스트레스를 풀기 위해 최근에 조깅을 시작했다</div>
+      <div class="en">Some of my friends have recently started jogging to relieve stress.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">나는 지금까지 여러 산을 하이킹해 봤지만, 그중에서도 제주도에서의 하이킹이 가장 기억에 남는다</div>
+      <div class="en">I have hiked several mountains so far, but hiking in Jeju has been the most memorable.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">우리 부부는 결혼한 후 지금까지 함께 여러 공연을 관람해 왔다</div>
+      <div class="en">My spouse and I have attended various performances together since we got married.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">내 친구들은 최근에 유명한 가수의 콘서트에 다녀왔고, 그 공연에 대해 계속 이야기하고 있다</div>
+      <div class="en">My friends have recently been to a concert by a famous singer, and they have kept talking about the performance.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">나는 예전보다 음악을 훨씬 많이 듣게 되었고, 특히 출퇴근할 때 음악을 즐겨 듣는다</div>
+      <div class="en">I have started listening to music much more than I used to, and I have especially enjoyed listening to music during my commute.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">최근 몇 년 동안 영화관에 가는 대신 집에서 영화를 보는 사람들이 많아졌다</div>
+      <div class="en">In recent years, many people have started watching movies at home instead of going to the theater.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">우리 가족은 국내에서 여러 곳을 여행해 봤지만, 아직 가 보지 못한 곳도 많다</div>
+      <div class="en">My family has traveled to many places in Korea, but there are still many places we haven&#x27;t been to.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">나는 해외여행을 하면서 다양한 문화를 경험해 왔고, 그 경험을 통해 새로운 것에 대한 시야가 넓어졌다</div>
+      <div class="en">I have experienced various cultures while traveling abroad, and those experiences have broadened my perspective on new things.</div>
+    </div></div>
+</section>
+
+<section id="passive">
+<div class="section-head"><div><h2>9. 수동태</h2><div class="desc">장소·콘서트·영화·여행 묘사에 바로 끼워 넣을 수 있는 자료 예문.</div></div></div>
+<div class="examples"><div class="example-card searchable">
+      <div class="kr">이 공원은 집에서 가깝기 때문에 많은 사람들에게 산책 장소로 이용된다</div>
+      <div class="en">This park is used by a great number of people as a place to walk because it is close to their homes.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">공원은 깨끗하게 관리되기 때문에 많은 사람들이 이곳에서 조깅을 한다</div>
+      <div class="en">The park is kept clean, so countless people jog here.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">이 산책로는 나무가 많아서 많은 사람들에게 사랑받고 있다</div>
+      <div class="en">This walking trail is loved by quite a few people because there are many trees.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">날씨가 좋으면 이 해변은 많은 관광객들에게 방문된다</div>
+      <div class="en">When the weather is nice, this beach is visited by tons of tourists.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그 도시는 아름다운 풍경으로 유명하기 때문에 많은 관광객들에게 방문된다</div>
+      <div class="en">The city is visited by numerous tourists because it is known for its stunning scenery.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">그 영화는 재미있었기 때문에 많은 사람들에게 추천되었다</div>
+      <div class="en">The movie was recommended by a number of people because it was interesting.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">콘서트가 인기가 많아서 티켓은 빠르게 판매되었다</div>
+      <div class="en">The tickets were sold quickly because the concert was very popular.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">콘서트가 시작되기 전에 많은 사진이 팬들에 의해 찍혔다</div>
+      <div class="en">Loads of pictures were taken by fans before the concert started.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">나는 집에 있을 때 주로 라디오를 듣는데, 내가 좋아하는 노래들이 자주 재생된다</div>
+      <div class="en">When I am at home, I usually listen to radio, and my favorite songs are played often.</div>
+    </div>
+<div class="example-card searchable">
+      <div class="kr">여행을 가면 사진을 많이 찍는데, 그 사진들은 나중에 가족들에게 보여진다</div>
+      <div class="en">When I travel, I take a lot of pictures, and they are shown to my family later.</div>
+    </div></div>
+<div class="card full searchable" style="margin-top:10px"><h3>노래 묘사에 붙이기 좋은 형용사</h3><div class="taglist"><span class="tag">meaningful</span><span class="tag">touching</span><span class="tag">powerful</span><span class="tag">catchy</span><span class="tag">relatable</span><span class="tag">poetic</span><span class="tag">inspiring</span><span class="tag">thought-provoking</span></div></div>
+</section>
+
+<section id="examples">
+<div class="section-head"><div><h2>10. 문장 업그레이드</h2><div class="desc">voca 자료의 ‘기초 문장 → 상위 문장’ 변환 예시.</div></div></div>
+<div class="card full searchable">
+<div class="upgrade"><div class="basic">I walk in the park every day.</div><div class="arrow">→</div><div class="advanced">Walking in the park on a daily basis helps me alleviate stress.</div></div><div class="upgrade"><div class="basic">I like jogging.</div><div class="arrow">→</div><div class="advanced">I am interested in jogging, and I jog on a regular basis.</div></div><div class="upgrade"><div class="basic">I have a lot of stress, so I walk.</div><div class="arrow">→</div><div class="advanced">I am under massive pressure at work, so I walk to alleviate stress.</div></div><div class="upgrade"><div class="basic">The beach is beautiful.</div><div class="arrow">→</div><div class="advanced">The beach offers breathtaking scenery.</div></div><div class="upgrade"><div class="basic">I watch movies every month.</div><div class="arrow">→</div><div class="advanced">I enjoy watching a wide range of movies on a monthly basis.</div></div><div class="upgrade"><div class="basic">I want to go to a concert.</div><div class="arrow">→</div><div class="advanced">I am looking forward to attending a concert by my favorite singer.</div></div><div class="upgrade"><div class="basic">I travel domestically every year.</div><div class="arrow">→</div><div class="advanced">I prefer visiting a wide range of domestic destinations on a yearly basis.</div></div><div class="upgrade"><div class="basic">I want to travel abroad.</div><div class="arrow">→</div><div class="advanced">I would like to travel abroad to experience picturesque scenery.</div></div>
+</div>
+</section>
+
+<section id="misc">
+<div class="section-head"><div><h2>11. 실전 단어 & 발음</h2><div class="desc">한국식 표현을 영어로 바꿀 때 주의할 단어와 발음 체크 목록.</div></div></div>
+<div class="grid">
+ <div class="card searchable"><h3>단어 치환</h3>
+  <p><b>아르바이트</b> → part-time</p><p><b>츄리닝</b> → sweatsuit</p><p><b>모닝콜</b> → wakeup call</p><p><b>원피스</b> → dress</p><p><b>와이셔츠</b> → dress shirt</p><p><b>원룸</b> → studio</p><p><b>다이어트</b> → go on a diet / weight loss</p><p><b>서비스</b> → free / complimentary</p><p><b>A/S</b> → repair service / after sales service / follow-up service / warrantee service</p>
+ </div>
+ <div class="card searchable"><h3>발음 체크</h3><div class="taglist"><span class="tag">Genre</span><span class="tag">Infamous</span><span class="tag">Eiffel tower</span><span class="tag">Salmon</span><span class="tag">Choir</span><span class="tag">Basic</span><span class="tag">Basil</span><span class="tag">Coyote</span><span class="tag">Mozzarella</span><span class="tag">Conscience</span><span class="tag">Buffet</span><span class="tag">Film</span><span class="tag">Margarine</span><span class="tag">Caffeine</span></div></div>
+</div>
+</section>
+
+<section>
+<div class="quizbox searchable">
+ <h3 style="margin-top:0">빠른 복습</h3>
+ <p id="quizQ">“스트레스를 풀다”에 해당하는 자료의 idiom은?</p>
+ <button onclick="document.getElementById('quizA').style.display='block'">정답 보기</button>
+ <div id="quizA">blow off steam</div>
+</div>
+</section>
+
+<div class="footer">Source set: 1급특강.OT.pdf · building voca.pdf · OT.idiom.pdf · passive.pdf · relatives,present perfect.pdf · voca.pdf<br>이 페이지는 업로드된 강의자료 내용을 학습 편의상 재구성한 요약본입니다.</div>
+</main>
+</div>
+<script>
+const q=document.getElementById('search');
+q.addEventListener('input',()=>{
+  const term=q.value.trim().toLowerCase();
+  document.querySelectorAll('.searchable').forEach(el=>{
+    el.classList.toggle('hidden-by-search', term && !el.innerText.toLowerCase().includes(term));
+  });
+});
+</script>
+</body></html>
