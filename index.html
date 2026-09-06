@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OPIc IH~AL Study Guide</title>
+<title>DH OPIc</title>
 <style>
 :root {
   --bg:#f6f7fb; --panel:#ffffff; --ink:#172033; --muted:#697386;
@@ -60,7 +60,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 <body>
 <header class="topbar">
   <button class="menu-toggle" id="menuToggle" aria-label="전체 메뉴 열기" aria-expanded="false">☰</button>
-  <div class="brand">OPIc <em>IH~AL</em> Guide</div>
+  <a class="brand" id="brandHome" href="#/home" aria-label="DH OPIc 홈으로 새로고침">DH <em>OPIc</em></a>
   <div class="topbar-page" id="topbarPage">홈</div>
   <div class="search"><input id="search" placeholder="표현과 예문 검색... (예: hiking, blow off steam)"></div>
 </header>
@@ -1013,7 +1013,7 @@ function applyRoute(){
  document.getElementById('today').classList.toggle('route-hidden',!visible.has('today'));
  document.querySelectorAll('[data-route-link]').forEach(link=>link.classList.toggle('active',link.dataset.routeLink===route));
  document.getElementById('topbarPage').textContent=routeTitles[route];
- document.title=routeTitles[route]+' · OPIc IH~AL Study Guide';
+ document.title=route==='home'?'DH OPIc':routeTitles[route]+' · DH OPIc';
  q.value='';document.querySelectorAll('.hidden-by-search').forEach(el=>el.classList.remove('hidden-by-search'));
  stopSpeech();document.querySelectorAll('audio').forEach(audio=>audio.pause());
  if(route!=='practice'&&state.timerId){clearInterval(state.timerId);state.timerId=null;document.getElementById('timerStart').textContent='계속'}
@@ -1021,6 +1021,7 @@ function applyRoute(){
  closeNavigation();window.scrollTo({top:0,behavior:'auto'});
 }
 document.getElementById('menuToggle').addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');document.getElementById('menuToggle').setAttribute('aria-expanded',String(open))});
+document.getElementById('brandHome').addEventListener('click',event=>{event.preventDefault();history.replaceState(null,'',location.pathname+location.search+'#/home');location.reload()});
 document.getElementById('navClose').addEventListener('click',closeNavigation);
 document.getElementById('navBackdrop').addEventListener('click',closeNavigation);
 document.querySelectorAll('#siteNav a').forEach(link=>link.addEventListener('click',closeNavigation));
