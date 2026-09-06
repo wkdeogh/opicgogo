@@ -1,6 +1,7 @@
 # Local study source material (one file exceeds GitHub's 100 MB limit)
 *.pdf
 KakaoTalk_*.jpg
+모의고사*.txt
 
 # OS/editor noise
 .DS_Store

@@ -45,22 +45,24 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 .practice-toolbar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:16px 0}.control,.action{appearance:none;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;border-radius:11px;padding:10px 12px;font:inherit;font-weight:750;cursor:pointer}.control option{color:#111827}.action.primary{background:#fff;color:#111827}.action:disabled{opacity:.48;cursor:not-allowed}.prompt-card{background:#fff;color:#172033;border-radius:18px;padding:22px;min-height:210px}.prompt-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;color:#6366f1;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.prompt-card h3{font-size:clamp(21px,3vw,29px);line-height:1.35;margin:15px 0 10px;letter-spacing:-.025em}.prompt-card p{color:#64748b}.coach-points{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.coach-points span{font-size:12px;background:#eef2ff;color:#3730a3;border-radius:999px;padding:6px 9px}.timer-row{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-top:16px}.timer{font-size:40px;font-weight:950;font-variant-numeric:tabular-nums;letter-spacing:-.04em;min-width:112px}.timer-track{height:10px;background:rgba(255,255,255,.14);border-radius:99px;overflow:hidden}.timer-fill{height:100%;width:100%;background:linear-gradient(90deg,#38bdf8,#a78bfa);transition:width 1s linear}.record-panel{margin-top:14px;padding:15px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,255,255,.06)}.record-status{font-size:13px;color:#cbd5e1;margin-left:8px}.record-panel audio{width:100%;margin-top:12px}.self-check{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.self-check label{display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.08);padding:10px;border-radius:10px;font-size:12px}.trend-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.trend{padding:15px 10px;border-radius:13px;border:1px solid var(--line);background:#fff;text-align:center}.trend b{display:block;color:var(--accent);font-size:18px}.trend span{font-size:11px;color:var(--muted)}
 .today{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:10px;margin-bottom:28px}.today-intro,.today-stat{padding:16px;border-radius:16px;border:1px solid var(--line);background:#fff}.today-intro{background:#eef2ff;border-color:#c7d2fe}.today-intro b{color:#3730a3}.today-stat strong{font-size:25px;display:block;color:var(--accent)}.today-stat span{font-size:12px;color:var(--muted)}
 .quizbox{background:#111827;color:#fff;border-radius:24px;padding:24px}.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.quiz-progress{font-size:12px;color:#a5b4fc;font-weight:800}.quiz-question{font-size:21px;line-height:1.45;margin:18px 0}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quiz-option{border:1px solid #374151;background:#1f2937;color:#fff;border-radius:12px;padding:13px;text-align:left;font:inherit;cursor:pointer}.quiz-option:hover{border-color:#818cf8}.quiz-option.correct{background:#064e3b;border-color:#34d399}.quiz-option.wrong{background:#7f1d1d;border-color:#f87171}.quiz-explain{display:none;margin-top:14px;padding:13px;border-radius:11px;background:rgba(255,255,255,.08);color:#dbeafe}.quiz-actions{display:flex;gap:8px;margin-top:14px}.quiz-actions button{border:0;background:#fff;color:#111827;border-radius:10px;padding:10px 13px;font-weight:800;cursor:pointer}.quiz-actions .ghost{background:#312e81;color:#fff}.source-audio{width:100%;margin:8px 0}.sample-script{padding:13px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;font-size:13px;color:#475569}.priority-badge{display:inline-flex;padding:5px 8px;border-radius:999px;background:#dcfce7;color:#166534;font-size:11px;font-weight:900}.reference-note{padding:12px 15px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;color:#92400e;font-size:13px}
+.mock-shell{border:1px solid #dbe2ee;border-radius:24px;background:#fff;overflow:hidden;box-shadow:0 14px 38px rgba(15,23,42,.07)}.mock-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}.mock-title{display:flex;align-items:center;gap:10px;min-width:0}.mock-title select{border:1px solid var(--line);border-radius:10px;padding:9px 34px 9px 11px;background:#fff;font:inherit;font-weight:850;max-width:190px}.mock-title span{font-size:12px;color:var(--muted)}.mock-random{border:0;border-radius:10px;padding:10px 12px;background:var(--soft);color:#3730a3;font:inherit;font-weight:850;cursor:pointer}.mock-progress-wrap{padding:14px 20px 0}.mock-progress-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:7px}.mock-progress-track{height:7px;border-radius:99px;background:#eef0f5;overflow:hidden}.mock-progress-bar{height:100%;width:0;background:linear-gradient(90deg,#4f46e5,#0ea5e9);transition:width .25s}.mock-numbers{display:flex;gap:7px;padding:14px 20px;overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity}.mock-number{flex:0 0 42px;height:42px;border-radius:11px;border:1px solid var(--line);background:#fff;color:#475569;font-weight:850;cursor:pointer;scroll-snap-align:center}.mock-number.active{background:#312e81;color:#fff;border-color:#312e81}.mock-number.done:not(.active){background:#dcfce7;color:#166534;border-color:#86efac}.mock-stage{padding:0 20px 20px}.mock-question{border-radius:18px;background:linear-gradient(135deg,#111827,#312e81);color:#fff;padding:22px}.mock-question-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:#c7d2fe;text-transform:uppercase;letter-spacing:.08em;font-weight:850}.mock-question h3{font-size:clamp(19px,3vw,26px);line-height:1.42;margin:13px 0 4px;letter-spacing:-.02em}.icon-button{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;border-radius:10px;padding:8px 10px;cursor:pointer;font:inherit}.mock-answer-card{margin-top:12px;border:1px solid var(--line);border-radius:18px;overflow:hidden}.mock-answer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 15px;background:#f8fafc;border-bottom:1px solid var(--line)}.mock-answer-tabs{display:flex;gap:5px}.mock-tab{border:0;border-radius:9px;padding:8px 10px;background:transparent;color:#64748b;font:inherit;font-size:12px;font-weight:850;cursor:pointer}.mock-tab.active{background:#312e81;color:#fff}.mock-answer{padding:20px;white-space:pre-line;font-size:16px;line-height:1.9;color:#293548;min-height:230px}.mock-answer.fixed{border-left:4px solid #4f46e5}.mock-cues{display:flex;gap:8px;flex-wrap:wrap;padding:22px;min-height:230px;align-content:flex-start}.mock-cue{padding:9px 11px;border:1px solid #c7d2fe;background:#eef2ff;color:#3730a3;border-radius:11px;font-size:14px;font-weight:800}.mock-focus{padding:10px 20px 17px;color:#64748b;font-size:12px}.mock-actions{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;margin-top:12px}.mock-action{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;color:#334155;font:inherit;font-weight:850;cursor:pointer}.mock-action.next{background:#111827;color:#fff;border-color:#111827}.mock-action.done{background:#059669;color:#fff;border-color:#059669}.mobile-dock{display:none}
+.mock-answer[hidden],.mock-cues[hidden]{display:none}.mock-action:disabled{opacity:.4;cursor:not-allowed}
 .hidden-by-search{display:none!important}
 .footer{margin-top:60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
-@media(max-width:980px){.layout{grid-template-columns:1fr} aside{display:none} main{padding:26px 18px 60px} .card,.card.third{grid-column:1/-1} .flash-grid{grid-template-columns:1fr 1fr} .examples{grid-template-columns:1fr}.trend-grid{grid-template-columns:repeat(3,1fr)}.today{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.flash-grid,.quiz-options{grid-template-columns:1fr}.answer-flow{grid-template-columns:1fr 1fr}.upgrade{grid-template-columns:1fr}.arrow{display:none}.topbar{padding:10px 12px}.brand{font-size:13px}.trend-grid{grid-template-columns:1fr 1fr}.today{grid-template-columns:1fr 1fr}.today-intro{grid-column:1/-1}.self-check{grid-template-columns:1fr 1fr}.timer-row{grid-template-columns:1fr}.practice-shell,.quizbox{padding:17px}}
+@media(max-width:980px){.layout{grid-template-columns:1fr}aside{display:none}main{padding:26px 18px 92px}.card,.card.third{grid-column:1/-1}.flash-grid{grid-template-columns:1fr 1fr}.examples{grid-template-columns:1fr}.trend-grid{grid-template-columns:repeat(3,1fr)}.today{grid-template-columns:1fr 1fr}.mobile-dock{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);left:12px;right:12px;bottom:10px;z-index:80;padding:6px;background:rgba(17,24,39,.94);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:17px;box-shadow:0 12px 35px rgba(15,23,42,.3)}.mobile-dock a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#e5e7eb;font-size:10px;padding:6px 2px;border-radius:11px}.mobile-dock b{font-size:16px;line-height:1}.mobile-dock a:active{background:#312e81}}
+@media(max-width:620px){.flash-grid,.quiz-options{grid-template-columns:1fr}.answer-flow{grid-template-columns:1fr 1fr}.upgrade{grid-template-columns:1fr}.arrow{display:none}.topbar{padding:10px 12px}.brand{font-size:13px}.search input{font-size:16px}.trend-grid{grid-template-columns:1fr 1fr}.today{grid-template-columns:1fr 1fr}.today-intro{grid-column:1/-1}.self-check{grid-template-columns:1fr 1fr}.timer-row{grid-template-columns:1fr}.practice-shell,.quizbox{padding:17px}.mock-head{align-items:flex-start;padding:15px}.mock-title{align-items:flex-start;flex-direction:column;gap:5px}.mock-title select{font-size:16px}.mock-random{padding:9px;font-size:12px}.mock-progress-wrap{padding:13px 15px 0}.mock-numbers{padding:12px 15px}.mock-stage{padding:0 12px 14px}.mock-question{padding:18px 16px}.mock-answer{font-size:16px;line-height:1.82;padding:17px;min-height:280px}.mock-answer-head{align-items:flex-start;flex-direction:column}.mock-answer-tabs{width:100%}.mock-tab{flex:1}.mock-cues{padding:18px;min-height:280px}.mock-actions{grid-template-columns:1fr 1.25fr}.mock-actions .prev{grid-column:1}.mock-actions .memorize{grid-column:2}.mock-actions .next{grid-column:1/-1}.mock-action{min-height:48px}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="brand">OPIc <em>IH~AL</em> Guide</div>
-  <div class="search"><input id="search" placeholder="표현, 문법, 예문 검색... (예: present perfect, hiking, 수동태)"></div>
+  <div class="search"><input id="search" placeholder="표현과 예문 검색... (예: hiking, blow off steam)"></div>
 </header>
 <div class="layout">
 <aside>
   <div class="kicker">Contents</div>
   <nav>
-    <a href="#practice">오늘의 실전 연습</a><a href="#al-core">AL 7문장 자동화</a><a href="#recent">2022~2026 빈출</a><a href="#quiz">집중 퀴즈</a><a href="#samples">답안 음성</a>
+    <a href="#mock">모의고사 스크립트</a><a href="#practice">오늘의 실전 연습</a><a href="#al-core">AL 7문장 자동화</a><a href="#recent">2022~2026 빈출</a><a href="#quiz">집중 퀴즈</a><a href="#samples">답안 음성</a>
     <a href="#overview">시험 핵심</a><a href="#survey">Survey & 유형</a><a href="#strategy">IH~AL 전략</a>
     <a href="#answer">60~90초 답변 구조</a><a href="#vocab">Vocabulary Upgrade</a><a href="#idioms">Idioms</a>
     <a href="#examples">문장 업그레이드</a><a href="#misc">실전 단어 & 발음</a><a href="#relatives">선택 참고: 문장 패턴</a>
@@ -72,7 +74,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
   <div class="eyebrow">LAST-MINUTE OPIc TRAINING</div>
   <h1>시험 직전,<br>입으로 끝내는 OPIc</h1>
   <p>긴 문법 공부는 빼고 빈출 질문을 뽑아 60~90초 동안 말하고, 녹음하고, 바로 자가평가하세요. 업로드한 2022~2026 기출과 답안 자료를 실전 훈련 중심으로 재구성했습니다.</p>
-  <div class="chips"><span class="chip">2022–2026 기출</span><span class="chip">랜덤 문제은행</span><span class="chip">60/90초 타이머</span><span class="chip">답변 녹음</span><span class="chip">집중 퀴즈</span></div>
+  <div class="chips"><span class="chip">모의고사 스크립트</span><span class="chip">2022–2026 기출</span><span class="chip">랜덤 문제은행</span><span class="chip">60/90초 타이머</span><span class="chip">답변 녹음</span><span class="chip">집중 퀴즈</span></div>
 </section>
 
 <div class="today" aria-label="학습 현황">
@@ -81,6 +83,41 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
   <div class="today-stat"><strong id="quizCount">0</strong><span>퀴즈 풀이</span></div>
   <div class="today-stat"><strong id="correctRate">0%</strong><span>오늘 정답률</span></div>
 </div>
+
+<section id="mock">
+<div class="section-head"><div><span class="priority-badge">NEW · 스크립트 암기</span><h2>모의고사</h2><div class="desc">한 문제씩 질문을 듣고, 전체 스크립트와 핵심어 모드를 오가며 암기하세요. 완료 표시는 이 기기에 자동 저장됩니다.</div></div></div>
+<div class="mock-shell">
+  <div class="mock-head">
+    <div class="mock-title"><select id="mockSelect" aria-label="모의고사 선택"></select><span id="mockSubtitle"></span></div>
+    <button class="mock-random" id="mockRandom">미완료 랜덤</button>
+  </div>
+  <div class="mock-progress-wrap">
+    <div class="mock-progress-meta"><b id="mockProgressText">암기 0 / 15</b><span>초록색은 암기 완료</span></div>
+    <div class="mock-progress-track"><div class="mock-progress-bar" id="mockProgressBar"></div></div>
+  </div>
+  <div class="mock-numbers" id="mockNumbers" aria-label="문제 번호"></div>
+  <div class="mock-stage" id="mockStage">
+    <div class="mock-question">
+      <div class="mock-question-meta"><span id="mockType">Introduction</span><button class="icon-button" id="mockSpeakQuestion">🔊 질문 듣기</button></div>
+      <h3 id="mockQuestion"></h3>
+    </div>
+    <div class="mock-answer-card">
+      <div class="mock-answer-head">
+        <div><b id="mockAnswerLabel">답변 스크립트</b> <span class="priority-badge" id="mockFixedBadge" hidden>1번 고정</span></div>
+        <div class="mock-answer-tabs"><button class="mock-tab active" data-mock-view="script">전체 스크립트</button><button class="mock-tab" data-mock-view="cues">핵심어만</button><button class="mock-tab" id="mockSpeakAnswer">🔊 답변</button></div>
+      </div>
+      <div class="mock-answer" id="mockAnswer"></div>
+      <div class="mock-cues" id="mockCues" hidden></div>
+      <div class="mock-focus"><b>암기 포인트:</b> <span id="mockFocus"></span></div>
+    </div>
+    <div class="mock-actions">
+      <button class="mock-action prev" id="mockPrev">← 이전</button>
+      <button class="mock-action memorize" id="mockDone">✓ 암기 완료</button>
+      <button class="mock-action next" id="mockNext">다음 →</button>
+    </div>
+  </div>
+</div>
+</section>
 
 <section id="practice">
 <div class="section-head"><div><span class="priority-badge">1순위 · 소리 내어 말하기</span><h2>오늘의 실전 연습</h2><div class="desc">최근 기출에서 질문을 뽑고 실제 시험처럼 답하세요. 기록은 이 기기에만 저장됩니다.</div></div></div>
@@ -594,9 +631,16 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </div>
 </section>
 
-<div class="footer">Source set: 2022~2026 기출 · 1급특강 OT · OPIc 어휘/숙어/답변구조 자료 · 답안 음성 2종<br>Grammar in Use 원서는 시험 직전 학습 범위에서 제외했습니다. 학습 기록과 녹음은 서버로 전송되지 않습니다.</div>
+<div class="footer">Source set: 모의고사 1 · 2022~2026 기출 · 1급특강 OT · OPIc 어휘/숙어/답변구조 자료 · 답안 음성 2종<br>Grammar in Use 원서는 시험 직전 학습 범위에서 제외했습니다. 학습 기록과 녹음은 서버로 전송되지 않습니다.</div>
 </main>
 </div>
+<nav class="mobile-dock" aria-label="모바일 빠른 메뉴">
+  <a href="#mock"><b>▣</b><span>모의고사</span></a>
+  <a href="#practice"><b>◉</b><span>실전연습</span></a>
+  <a href="#quiz"><b>✓</b><span>퀴즈</span></a>
+  <a href="#vocab"><b>A+</b><span>핵심표현</span></a>
+</nav>
+<script src="mock-data.js"></script>
 <script>
 const q=document.getElementById('search');
 q.addEventListener('input',()=>{
@@ -605,6 +649,84 @@ q.addEventListener('input',()=>{
     el.classList.toggle('hidden-by-search', term && !el.innerText.toLowerCase().includes(term));
   });
 });
+
+const mockExams=window.OPIC_MOCK_EXAMS||[];
+const mockState={examIndex:0,questionIndex:0,view:'script',completed:{}};
+try{mockState.completed=JSON.parse(localStorage.getItem('opicMockCompleted')||'{}')}catch(e){mockState.completed={}}
+const currentExam=()=>mockExams[mockState.examIndex];
+const currentMockQuestion=()=>currentExam().questions[mockState.questionIndex];
+const completedSet=()=>new Set(mockState.completed[currentExam().id]||[]);
+function saveMockProgress(set){
+ mockState.completed[currentExam().id]=[...set].sort((a,b)=>a-b);
+ localStorage.setItem('opicMockCompleted',JSON.stringify(mockState.completed));
+}
+function buildMockSelector(){
+ const select=document.getElementById('mockSelect');
+ select.innerHTML=mockExams.map((exam,i)=>`<option value="${i}">${exam.title}</option>`).join('');
+ select.addEventListener('change',()=>{mockState.examIndex=Number(select.value);mockState.questionIndex=0;renderMockExam()});
+}
+function renderMockNumbers(){
+ const done=completedSet();
+ document.getElementById('mockNumbers').innerHTML=currentExam().questions.map((item,i)=>`<button class="mock-number${i===mockState.questionIndex?' active':''}${done.has(item.number)?' done':''}" data-mock-index="${i}" aria-label="${item.number}번 문제${done.has(item.number)?' 암기 완료':''}">${item.number}</button>`).join('');
+ document.querySelectorAll('.mock-number').forEach(button=>button.addEventListener('click',()=>{mockState.questionIndex=Number(button.dataset.mockIndex);mockState.view='script';renderMockExam()}));
+ const count=done.size,total=currentExam().questions.length;
+ document.getElementById('mockProgressText').textContent=`암기 ${count} / ${total}`;
+ document.getElementById('mockProgressBar').style.width=(count/total*100)+'%';
+}
+function renderMockExam(){
+ const exam=currentExam(),item=currentMockQuestion(),done=completedSet();
+ document.getElementById('mockSubtitle').textContent=exam.subtitle;
+ document.getElementById('mockType').textContent=`${item.number} / ${exam.questions.length} · ${item.type}`;
+ document.getElementById('mockQuestion').textContent=item.question;
+ document.getElementById('mockAnswer').textContent=item.answer;
+ document.getElementById('mockAnswer').classList.toggle('fixed',!!item.fixed);
+ document.getElementById('mockCues').innerHTML=item.cues.map(cue=>`<span class="mock-cue">${cue}</span>`).join('');
+ document.getElementById('mockFocus').textContent=item.focus;
+ document.getElementById('mockFixedBadge').hidden=!item.fixed;
+ document.getElementById('mockPrev').disabled=mockState.questionIndex===0;
+ document.getElementById('mockNext').disabled=mockState.questionIndex===exam.questions.length-1;
+ const doneButton=document.getElementById('mockDone');
+ doneButton.textContent=done.has(item.number)?'✓ 암기 완료됨':'✓ 암기 완료';
+ doneButton.classList.toggle('done',done.has(item.number));
+ switchMockView(mockState.view);
+ renderMockNumbers();
+ requestAnimationFrame(()=>document.querySelector('.mock-number.active')?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}));
+}
+function switchMockView(view){
+ mockState.view=view;
+ document.getElementById('mockAnswer').hidden=view!=='script';
+ document.getElementById('mockCues').hidden=view!=='cues';
+ document.querySelectorAll('[data-mock-view]').forEach(button=>button.classList.toggle('active',button.dataset.mockView===view));
+ document.getElementById('mockAnswerLabel').textContent=view==='script'?'답변 스크립트':'핵심어 회상 모드';
+}
+function moveMockQuestion(direction){
+ const next=mockState.questionIndex+direction;
+ if(next<0||next>=currentExam().questions.length)return;
+ mockState.questionIndex=next;mockState.view='script';renderMockExam();
+}
+function speakMock(text){
+ if(!('speechSynthesis' in window))return;
+ speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.86;speechSynthesis.speak(utterance);
+}
+document.querySelectorAll('[data-mock-view]').forEach(button=>button.addEventListener('click',()=>switchMockView(button.dataset.mockView)));
+document.getElementById('mockSpeakQuestion').addEventListener('click',()=>speakMock(currentMockQuestion().question));
+document.getElementById('mockSpeakAnswer').addEventListener('click',()=>speakMock(currentMockQuestion().answer));
+document.getElementById('mockPrev').addEventListener('click',()=>moveMockQuestion(-1));
+document.getElementById('mockNext').addEventListener('click',()=>moveMockQuestion(1));
+document.getElementById('mockDone').addEventListener('click',()=>{
+ const done=completedSet(),number=currentMockQuestion().number;
+ done.has(number)?done.delete(number):done.add(number);saveMockProgress(done);renderMockExam();
+});
+document.getElementById('mockRandom').addEventListener('click',()=>{
+ const done=completedSet(),questions=currentExam().questions;
+ const pool=questions.map((item,i)=>({item,i})).filter(x=>!done.has(x.item.number));
+ const choices=pool.length?pool:questions.map((item,i)=>({item,i}));
+ mockState.questionIndex=choices[Math.floor(Math.random()*choices.length)].i;mockState.view='cues';renderMockExam();
+});
+let mockTouchStart=null;
+document.getElementById('mockStage').addEventListener('touchstart',e=>{const t=e.changedTouches[0];mockTouchStart={x:t.clientX,y:t.clientY}},{passive:true});
+document.getElementById('mockStage').addEventListener('touchend',e=>{if(!mockTouchStart)return;const t=e.changedTouches[0],dx=t.clientX-mockTouchStart.x,dy=t.clientY-mockTouchStart.y;if(Math.abs(dx)>70&&Math.abs(dy)<45)moveMockQuestion(dx<0?1:-1);mockTouchStart=null},{passive:true});
+buildMockSelector();renderMockExam();
 
 const prompts=[
  {year:'2026',type:'combo',tag:'선택 주제 · 공원',en:'Tell me about a park you often visit. What does it look like, and what do you usually do there?',kr:'자주 가는 공원을 묘사하고 그곳에서 주로 하는 활동을 말해 보세요.',tips:['장소 전체 묘사','세부 2개','평소 활동','좋아하는 이유']},
