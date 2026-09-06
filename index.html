@@ -674,6 +674,7 @@ function renderMockNumbers(){
  document.getElementById('mockProgressBar').style.width=(count/total*100)+'%';
 }
 function renderMockExam(){
+ stopSpeech();
  const exam=currentExam(),item=currentMockQuestion(),done=completedSet();
  document.getElementById('mockSubtitle').textContent=exam.subtitle;
  document.getElementById('mockType').textContent=`${item.number} / ${exam.questions.length} · ${item.type}`;
@@ -704,13 +705,28 @@ function moveMockQuestion(direction){
  if(next<0||next>=currentExam().questions.length)return;
  mockState.questionIndex=next;mockState.view='script';renderMockExam();
 }
-function speakMock(text){
- if(!('speechSynthesis' in window))return;
- speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.86;speechSynthesis.speak(utterance);
+let activeSpeechButton=null;
+function stopSpeech(){
+ if('speechSynthesis' in window)speechSynthesis.cancel();
+ if(activeSpeechButton){
+  activeSpeechButton.textContent=activeSpeechButton.dataset.speechLabel;
+  activeSpeechButton.setAttribute('aria-pressed','false');
+  activeSpeechButton=null;
+ }
+}
+function toggleSpeech(button,text,rate=.86){
+ if(!('speechSynthesis' in window))return false;
+ if(activeSpeechButton===button){stopSpeech();return true}
+ stopSpeech();
+ button.dataset.speechLabel=button.dataset.speechLabel||button.textContent;
+ button.textContent='■ 정지';button.setAttribute('aria-pressed','true');activeSpeechButton=button;
+ const utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=rate;
+ const finish=()=>{if(activeSpeechButton===button)stopSpeech()};
+ utterance.onend=finish;utterance.onerror=finish;speechSynthesis.speak(utterance);return true;
 }
 document.querySelectorAll('[data-mock-view]').forEach(button=>button.addEventListener('click',()=>switchMockView(button.dataset.mockView)));
-document.getElementById('mockSpeakQuestion').addEventListener('click',()=>speakMock(currentMockQuestion().question));
-document.getElementById('mockSpeakAnswer').addEventListener('click',()=>speakMock(currentMockQuestion().answer));
+document.getElementById('mockSpeakQuestion').addEventListener('click',e=>toggleSpeech(e.currentTarget,currentMockQuestion().question));
+document.getElementById('mockSpeakAnswer').addEventListener('click',e=>toggleSpeech(e.currentTarget,currentMockQuestion().answer));
 document.getElementById('mockPrev').addEventListener('click',()=>moveMockQuestion(-1));
 document.getElementById('mockNext').addEventListener('click',()=>moveMockQuestion(1));
 document.getElementById('mockDone').addEventListener('click',()=>{
@@ -812,6 +828,7 @@ function renderStats(){
 }
 function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
 function showPrompt(forceNext=false){
+ if(forceNext)stopSpeech();
  const category=document.getElementById('promptCategory').value;
  const pool=prompts.map((p,i)=>({...p,_i:i})).filter(p=>category==='all'||p.type===category);
  let choice=pool[Math.floor(Math.random()*pool.length)];
@@ -826,9 +843,9 @@ function showPrompt(forceNext=false){
 }
 document.getElementById('newPrompt').addEventListener('click',()=>showPrompt(true));
 document.getElementById('promptCategory').addEventListener('change',()=>showPrompt(true));
-document.getElementById('speakPrompt').addEventListener('click',()=>{
+document.getElementById('speakPrompt').addEventListener('click',e=>{
  if(!('speechSynthesis' in window)){document.getElementById('practiceMessage').textContent='이 브라우저는 음성 읽기를 지원하지 않습니다.';return}
- speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(prompts[state.prompt].en); u.lang='en-US';u.rate=.88;speechSynthesis.speak(u);
+ toggleSpeech(e.currentTarget,prompts[state.prompt].en,.88);
 });
 
 function renderTimer(){
