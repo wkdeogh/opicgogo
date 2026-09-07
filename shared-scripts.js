@@ -6,6 +6,7 @@
   const mock=(examId,number)=>exams.find(exam=>exam.id===examId)?.questions.find(item=>item.number===number);
   const setMock=(targets,answer)=>targets.forEach(([examId,number])=>{const item=mock(examId,number);if(item)item.answer=answer});
   const setCues=(targets,cues,focus)=>targets.forEach(([examId,number])=>{const item=mock(examId,number);if(item){item.cues=cues;item.focus=focus}});
+  const setMockMeta=(targets,meta)=>targets.forEach(([examId,number])=>{const item=mock(examId,number);if(item)Object.assign(item,meta)});
 
   const scripts={
     movieCore:`I am really into action movies because they have fast stories and exciting scenes.
@@ -188,6 +189,30 @@ I can give you my phone number and identification information. Please contact me
 
 I’m sorry for the trouble, but it is important to me. Thank you for your help.`;
 
+  // update1 lecture: every Past–Present Comparison 2 topic follows one memorized frame.
+  const pastPresent2=({subject,past,pastComment,presentDriver,present,detail,personal,summary})=>`Um... let me see... I’m not familiar with the subject, but personally, I believe that ${subject} has changed noticeably.
+
+In the past, ${past}. I mean, ${pastComment}.
+
+However, unlike the past, ${presentDriver} nowadays. This has led people to ${present}, and even ${detail}.
+
+${personal}
+
+Overall, the biggest change is ${summary}.`;
+  const pastPresent2Answers={
+    bank:pastPresent2({subject:'the way people use banks',past:'visiting a branch to handle money and finances was the most common',pastComment:'it was useful, but it had clear limits because people had to visit during business hours',presentDriver:'online banking technology has developed considerably',present:'save, transfer, lend, and borrow money online',detail:'wire transfers can be made anywhere and at any time',personal:'Because I work shifts, I used to struggle to get to the bank on time. Thanks to online banking, managing my money is much more convenient.',summary:'that banking is no longer tied to a physical branch'}),
+    mobile:pastPresent2({subject:'the way people use mobile phones',past:'texting and talking on the phone were the most common uses',pastComment:'phones were useful, but their functions were limited',presentDriver:'mobile technology has developed considerably',present:'watch movies, listen to music, play games, and handle daily tasks on one device',detail:'all of these functions can be used while commuting',personal:'I used to find my long commute very tiring, but a smartphone with advanced features now helps me enjoy that time.',summary:'that a phone has become an all-in-one device'}),
+    recycling:pastPresent2({subject:'the way people recycle in Korea',past:'putting almost everything into one plastic bag was common',pastComment:'it was convenient, but it was harmful to the environment',presentDriver:'the recycling system has become much more organized',present:'sort waste by material',detail:'labels on plastic bottles have to be removed',personal:'I almost received a warning recently because I forgot to remove a few bottle labels before recycling them.',summary:'that recycling now requires careful sorting'}),
+    health:pastPresent2({subject:'the way people manage their health',past:'regular exercise was the most common method',pastComment:'it was effective, but it was time-consuming and not easy for everyone',presentDriver:'health-care and food-delivery services have developed considerably',present:'control what they eat more easily',detail:'well-balanced meals can be delivered every morning',personal:'I am a regular customer of a healthy meal-delivery shop because I am often too tired to cook. The meals arrive warm and on time.',summary:'that people can manage their health through convenient daily services'}),
+    weather:pastPresent2({subject:'the weather in Korea',past:'we had four clear seasons',pastComment:'each season had distinct but generally moderate features',presentDriver:'weather patterns have changed considerably',present:'deal with more extreme conditions',detail:'heat waves, thunderstorms, and sudden heavy rain occur more often',personal:'A flood warning was issued recently, and several neighborhoods were flooded after unusually heavy rain.',summary:'that the weather has become more extreme and unpredictable'}),
+    transportation:pastPresent2({subject:'the way people get around',past:'driving one’s own car was the most common choice',pastComment:'it was convenient, but fuel, parking, and maintenance were financially burdensome',presentDriver:'the public transportation system has developed considerably',present:'take buses or subways more often',detail:'commuting by subway has become the preferred choice for many people in the capital area',personal:'I also prefer the subway because it is predictable, reasonably priced, and free from road traffic.',summary:'that reliable public transportation has reduced the need to drive'}),
+    fashion:pastPresent2({subject:'fashion in Korea',past:'simple and practical clothing was the most common',pastComment:'people cared less about trends and personal preferences',presentDriver:'the fashion industry has developed considerably',present:'try different styles and change their outfits more often',detail:'athleisure, streetwear, Y2K fashion, and office-core styles are easy to see',personal:'I still dress simply, but I now have more choices and sometimes mix comfortable athletic clothes with casual items.',summary:'that fashion has become more varied and personal'}),
+    foodShopping:pastPresent2({subject:'the way people buy food',past:'visiting a market or grocery store in person was the most common',pastComment:'it was reliable, but choices were limited by store hours and location',presentDriver:'online shopping and delivery technology have developed considerably',present:'compare groceries and order them through an app',detail:'fresh food can be delivered to the door within a few hours',personal:'I still visit a store for fresh produce, but I order heavy or repetitive items online because it saves time.',summary:'that food shopping is no longer limited to a physical store'}),
+    travel:pastPresent2({subject:'the way people travel',past:'booking transportation and hotels through an agency was common',pastComment:'it was helpful, but comparing choices took time',presentDriver:'online travel services have developed considerably',present:'compare prices, read reviews, and make reservations themselves',detail:'tickets and rooms can be booked or changed on a phone',personal:'I now plan most trips with an app, although I book early because prices and popular destinations have become more crowded.',summary:'that travel planning is more convenient but also requires faster decisions'}),
+    freeTime:pastPresent2({subject:'the way people spend their free time',past:'watching scheduled television or meeting people in person was the most common',pastComment:'it was enjoyable, but entertainment choices were limited',presentDriver:'digital entertainment technology has developed considerably',present:'stream movies, listen to music, play games, and talk online',detail:'all of these activities are available anywhere and at any time',personal:'I often stream music during my commute, but I also walk outside so that screen time does not replace every offline activity.',summary:'that free-time activities have become more varied and convenient'}),
+    information:pastPresent2({subject:'the way people get information',past:'using newspapers, television, books, or libraries was the most common',pastComment:'the information was useful, but finding details took time',presentDriver:'internet and mobile technology have developed considerably',present:'search for information and compare different sources immediately',detail:'real-time news and videos can be checked anywhere on a phone',personal:'I use my phone for most searches now, but I check the publisher and compare sources because online information is not always accurate.',summary:'that information is faster to access but must be checked more carefully'})
+  };
+
   setMock([['mock-1',2],['mock-3',2],['mock-4',5],['mock-6',5]],scripts.homeDescription);
   setMock([['mock-1',5],['mock-1',6],['mock-9',2],['mock-9',3]],scripts.movieCore);
   setMock([['mock-1',9],['mock-1',10]],scripts.gatheringEvent);
@@ -245,6 +270,34 @@ I’m sorry for the trouble, but it is important to me. Thank you for your help.
   practice[43]={exam:'mock-3',number:9};
   practice[44]={exam:'mock-3',number:9};
 
+  const comparison2Meta={lectureType:'pastPresent2',templateId:'lecture-past-present-2',templateName:'과거현재비교2 공통 템플릿'};
+  const comparison2MockSets=[
+    {targets:[['mock-2',14]],answer:pastPresent2Answers.foodShopping,cues:['markets and stores','hours and location limits','online grocery shopping','door delivery','one common frame']},
+    {targets:[['mock-4',4]],answer:pastPresent2Answers.weather,cues:['four clear seasons','moderate features','more extreme weather','heavy rain · thunderstorms','one common frame']},
+    {targets:[['mock-5',7]],answer:pastPresent2Answers.fashion,cues:['simple and practical','fewer personal choices','more varied styles','athleisure · streetwear','one common frame']},
+    {targets:[['mock-7',13]],answer:pastPresent2Answers.recycling,cues:['one plastic bag','harmful to environment','sort by material','remove bottle labels','one common frame']},
+    {targets:[['mock-7',14]],answer:pastPresent2Answers.travel,cues:['travel agency','slow comparison','online travel services','phone reservations','one common frame']},
+    {targets:[['mock-8',4]],answer:pastPresent2Answers.bank,cues:['visit a branch','business-hour limits','online banking','anywhere · anytime','one common frame']},
+    {targets:[['mock-8',6]],answer:pastPresent2Answers.freeTime,cues:['scheduled TV','limited choices','digital entertainment','anywhere · anytime','one common frame']},
+    {targets:[['mock-9',9]],answer:pastPresent2Answers.mobile,cues:['calls and texts','limited functions','all-in-one device','use while commuting','one common frame']}
+  ];
+  comparison2MockSets.forEach(({targets,answer,cues})=>{
+    setMock(targets,answer);setCues(targets,cues,'강의자료 과거현재비교2 · 공통 골격에 주제어만 치환');setMockMeta(targets,comparison2Meta);
+  });
+  practice[23]=pastPresent2Answers.weather;
+  practice[10]=pastPresent2Answers.freeTime;
+  practice[17]=pastPresent2Answers.information;
+  practice[42]=pastPresent2Answers.health;
+  practice[45]=pastPresent2Answers.transportation;
+  window.OPIC_PRACTICE_META={
+    ...(window.OPIC_PRACTICE_META||{}),
+    10:{...comparison2Meta,topicVariant:'자유시간'},
+    17:{...comparison2Meta,topicVariant:'정보·인터넷'},
+    23:{...comparison2Meta,topicVariant:'날씨'},
+    42:{...comparison2Meta,topicVariant:'건강'},
+    45:{...comparison2Meta,topicVariant:'대중교통'}
+  };
+
   practice[12]=questionCall('I’d like to reserve a hotel room for a trip abroad',['Do you have a double room available for two nights next weekend?','What is the total price, including taxes?','whether breakfast and Wi-Fi are included.','What is the cancellation policy?'],'If a quiet room is available, please reserve it under the name Daeho and send me a confirmation.');
   practice[13]=problemCall('the computer I ordered three days ago','the battery lasts less than an hour even when it is fully charged.','updated the software and tried a different charger','exchange it for a new computer of the same model','give me a full refund','I have the receipt and all the original packaging.');
   practice[14]=problemCall('the haircut I received today','the sides are much shorter than I requested, and the front is uneven.','showed the stylist the original picture again','have another stylist fix it today','give me a free appointment tomorrow or a partial refund','The result is clearly different from the picture I showed.');
@@ -283,4 +336,5 @@ I’m sorry for the trouble, but it is important to me. Thank you for your help.
   addFamily('roleplay_car_rental',['M9-11']); addFamily('roleplay_license_problem',['M9-12']); addFamily('overseas_problem',['M9-13']); addFamily('holiday_description',['M9-14']); addFamily('holiday_concerns',['M9-15']);
   addFamily('appointment_core',['M10-2','M10-3','M10-4']); addFamily('friends_family_core',['M10-5','M10-6','M10-7']); addFamily('park_description',['M10-8']); addFamily('park_visit',['M10-9','M10-10']);
   addFamily('roleplay_travel_questions',['M10-11']); addFamily('roleplay_reschedule',['M10-12']); addFamily('cancellation_experience',['M10-13']); addFamily('appliance_core',['M10-14','M10-15']);
+  addFamily('past_present_comparison_2',['M2-14','M4-4','M5-7','M7-13','M7-14','M8-4','M8-6','M9-9','P11','P18','P24','P43','P46']);
 })();
