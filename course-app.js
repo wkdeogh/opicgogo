@@ -1,116 +1,118 @@
 const courseData = window.OPIC_COURSE;
+const studyLayout = window.OPIC_STUDY_LAYOUT;
 const courseRoot = document.getElementById('course');
-const courseEscape = value => String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function readCourseProgress() {
-  try {
-    const saved=JSON.parse(localStorage.getItem('opicCourseProgress')||'{}');
-    return {done:Array.isArray(saved.done)?saved.done:[],stars:Array.isArray(saved.stars)?saved.stars:[],last:typeof saved.last==='string'?saved.last:null};
-  } catch { return {done:[],stars:[],last:null}; }
+const studyEscape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const studyUnescape = value => String(value).replace(/\\([\\`*_{}\[\]()#+.!~>&-])/g,'$1');
+const studyPlain = value => studyUnescape(value).replace(/\*\*/g,'').replace(/^\* /,'');
+const studyInline = value => studyEscape(studyUnescape(value)).replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/^\* /,'');
+const sourcePart = value => courseData.lessons.find(item => item.id === (typeof value === 'number' ? 'lesson-'+String(value).padStart(3,'0') : value));
+const partNumber = item => Number(item.id.split('-')[1]);
+let studySaved = {};
+try { studySaved = JSON.parse(localStorage.getItem('opicStudyDesk') || '{}') || {}; } catch {}
+const studyState = {drafts:studySaved.drafts && typeof studySaved.drafts === 'object' ? studySaved.drafts : {}, last:typeof studySaved.last === 'string' ? studySaved.last : '', grammarMode:'read', hideExpressions:false};
+function saveStudy(){try {localStorage.setItem('opicStudyDesk',JSON.stringify({drafts:studyState.drafts,last:studyState.last}));} catch {}}
+function partLocation(number){
+  if(number===36)return {view:'grammar',tab:'relatives'};
+  if(number===6)return {view:'answers'};
+  if(number===46)return {view:'scripts',tab:'object'};
+  if(studyLayout.prep.includes(number))return {view:'prep'};
+  for(const view of ['answers','grammar','expressions','scripts']){
+    const group=studyLayout[view].find(item=>item.parts.includes(number));
+    if(group)return {view,tab:view==='answers'?undefined:group.id};
+  }
+  return {view:'answers'};
 }
-const courseProgress=readCourseProgress();
-let courseMode='read', courseFilter='all', courseTerm='';
-function saveCourseProgress() {
-  try { localStorage.setItem('opicCourseProgress',JSON.stringify(courseProgress)); }
-  catch { const status=document.getElementById('courseStatus');if(status)status.textContent='기기 저장 공간을 사용할 수 없어 이번 학습 중에만 기록됩니다.'; }
-  renderCourseResume();
+function studyHref(value){const part=sourcePart(value);if(!part)return '#/course/answers';const loc=partLocation(partNumber(part));return '#/course/'+loc.view+(loc.tab?'/'+loc.tab:'')+'/'+part.id;}
+function resolveStudyRoute(){
+  const bits=location.hash.replace(/^#\/?/,'').split('/');
+  const aliases={strategy:['prep'],'al-core':['prep'],survey:['prep','lesson-001'],answer:['answers'],patterns:['grammar'],examples:['grammar'],vocab:['expressions','vocab'],idioms:['expressions','idioms'],misc:['expressions','konglish'],connectives:['expressions','connectives'],fillers:['expressions','fillers']};
+  let path=bits[0]==='course'?bits.slice(1):(aliases[bits[0]]||['answers']);
+  if(path[0]?.startsWith('lesson-'))path=studyHref(path[0]).split('/').slice(2);
+  const old={strategy:['prep'],flow:['answers'],patterns:['grammar'],unexpected:['scripts','weather'],roleplay:['scripts','roleplay']};
+  if(old[path[0]])path=old[path[0]];
+  const view=studyLayout.views.some(item=>item.id===path[0])?path[0]:'answers';
+  const groups=['grammar','expressions','scripts'].includes(view)?studyLayout[view]:null;
+  const tab=groups?(groups.find(item=>item.id===path[1])||groups[0]).id:undefined;
+  return {view,tab,anchor:path.find(item=>/^lesson-\d+$/.test(item)),scenario:path.find(item=>studyLayout.scenarios.some(scene=>scene.id===item))};
 }
-function lessonLabel(item) {
-  const parent=item.path.at(-2);
-  return parent && parent!==item.title && !['문장력 올리기','OPIc 시험 개요와 전략','유형별 실전 문제와 답변 스크립트','문제 유형과 아이디어 정리','문장 구조','실전에서 바로 바꿔 끼우는 표현'].includes(parent)?`${parent} · ${item.title}`:item.title;
+function studyLabel(part){const loc=partLocation(partNumber(part));const view=studyLayout.views.find(item=>item.id===loc.view);const group=loc.tab?studyLayout[loc.view].find(item=>item.id===loc.tab):null;return view.title+(group?' · '+group.title:'');}
+function sourceLine(block){
+  if(block.kind==='table')return '<div class="study-table-wrap"><table class="study-table"><thead><tr>'+block.rows[0].map(cell=>'<th scope="col">'+studyInline(cell)+'</th>').join('')+'</tr></thead><tbody>'+block.rows.slice(1).map(row=>'<tr>'+row.map((cell,i)=>'<td data-label="'+studyEscape(studyPlain(block.rows[0][i]))+'">'+studyInline(cell)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  if(block.kind==='recall')return '<div class="study-pair"><div class="study-prompt">'+studyInline(block.prompt)+'</div><div class="study-answer">'+block.answers.map(answer=>'<p>'+studyInline(answer)+'</p>').join('')+'</div></div>';
+  if(/^[💡👉]$/.test(block.text.trim()))return '';
+  return '<p class="'+(!/[가-힣]/.test(block.text)?'english-line':'source-line')+'">'+studyInline(block.text)+'</p>';
 }
-function renderCourseResume() {
-  const target=courseData.lessons.find(l=>l.id===courseProgress.last) || courseData.lessons.find(l=>!courseProgress.done.includes(l.id)) || courseData.lessons[0];
-  document.getElementById('courseResume').innerHTML=`<div><span class="priority-badge">나의 학습</span><h2>한 단원씩, 말할 수 있을 때까지</h2><p>${courseProgress.done.length} / ${courseData.lessons.length} 단원 완료</p><progress max="${courseData.lessons.length}" value="${courseProgress.done.length}" aria-label="전체 단원 학습 진도"></progress></div><a class="course-button primary" href="#/course/${target.id}">${courseProgress.last?'이어서 학습':'학습 시작'} →</a>`;
+function readPart(value,heading=false){const part=sourcePart(value);return '<div class="source-fragment" data-part="'+part.id+'" id="source-'+part.id+'">'+(heading?'<h3>'+studyEscape(typeof heading==='string'?heading:part.title)+'</h3>':'')+part.blocks.map(sourceLine).join('')+'</div>';}
+function subTabs(view,active){return '<nav class="study-subtabs" aria-label="'+studyLayout.views.find(item=>item.id===view).title+' 분류">'+studyLayout[view].map(item=>'<a href="#/course/'+view+'/'+item.id+'" '+(item.id===active?'aria-current="page"':'')+'>'+studyEscape(item.title)+'</a>').join('')+'</nav>';}
+function reference(title,body,open=false){return '<details class="study-reference"'+(open?' open':'')+'><summary>'+title+'</summary><div class="reference-body">'+body+'</div></details>';}
+function renderPrep(){return '<div class="prep-grid"><article class="study-paper">'+readPart(3,true)+'</article><article class="study-paper">'+readPart(4,true)+readPart(2,true)+'</article></div>'+reference('Survey 선택안 · 시험 전 참고',readPart(1)+readPart(5,true));}
+function renderAnswerGuide(route){
+  const focused=route.anchor?studyLayout.answers.find(item=>item.parts.includes(partNumber(sourcePart(route.anchor)||{id:'lesson-0'}))):null;
+  return '<div class="type-jumps">'+studyLayout.answers.map(item=>'<button class="study-button" data-jump="'+item.id+'">'+item.title+'</button>').join('')+'</div><div class="study-tools"><button class="study-text-button" id="expandAnswerTypes">모든 유형 펼치기</button></div>'+studyLayout.answers.map((item,index)=>'<details class="answer-family" id="type-'+item.id+'"'+((focused?focused.id===item.id:index===0)?' open':'')+'><summary><b>'+item.title+'</b><span>'+item.flow+'</span></summary><div class="answer-family-body">'+item.parts.map(n=>readPart(n,n<18?'출제 특징':sourcePart(n).blocks[0].kind!=='recall')).join('')+(item.example?'<a class="lesson-link" href="'+studyHref(item.example)+'">'+(item.example===50?'인물 표현 보기':'예문에 적용하기')+' →</a>':'')+'</div></details>').join('')+reference('전체 출제 유형',readPart(6));
 }
-function courseRoute() {
-  const parts=location.hash.replace(/^#\/?/,'').split('/');
-  const aliases={strategy:'strategy','al-core':'strategy',answer:'flow',patterns:'patterns',vocab:'lesson-044',idioms:'lesson-041',examples:'patterns',misc:'lesson-045',connectives:'lesson-042',fillers:'lesson-043'};
-  return parts[0]==='course'?(parts[1]||'all'):(aliases[parts[0]]||'all');
+function renderGrammar(route){
+  const group=studyLayout.grammar.find(item=>item.id===route.tab),part=sourcePart(group.parts[0]);
+  return subTabs('grammar',route.tab)+'<div class="study-tools"><div class="study-switch" data-part="lesson-036" id="source-lesson-036"><button data-writing-mode="read" aria-pressed="'+(studyState.grammarMode==='read')+'">예문 함께 보기</button><button data-writing-mode="write" aria-pressed="'+(studyState.grammarMode==='write')+'">영작 연습</button></div><button class="study-button" data-quiz="'+part.id+'">문장 퀴즈 →</button></div><article class="writing-sheet" data-part="'+part.id+'" id="source-'+part.id+'" data-mode="'+studyState.grammarMode+'"><h3>'+studyEscape(part.title)+'</h3>'+part.blocks.map((block,index)=>{
+    if(block.kind!=='recall')return '<div class="writing-subhead">'+sourceLine(block)+'</div>';
+    const key=part.id+'-'+index;
+    return '<div class="writing-row"><div class="writing-prompt">'+studyInline(block.prompt)+'</div><div class="writing-work"><textarea data-draft="'+key+'" lang="en" aria-label="영작: '+studyEscape(studyPlain(block.prompt))+'" placeholder="영어로 써 보세요" spellcheck="false">'+studyEscape(studyState.drafts[key]||'')+'</textarea><details class="writing-answer"'+(studyState.grammarMode==='read'?' open':'')+'><summary>모범 답안 보기</summary>'+block.answers.map(answer=>'<p lang="en">'+studyInline(answer.replace(/^→\s*/,''))+'</p>').join('')+'</details></div></div>';
+  }).join('')+'</article>';
 }
-function renderCourse() {
-  const route=courseRoute(), item=courseData.lessons.find(l=>l.id===route);
-  if (item) { renderLesson(item); return; }
-  const group=courseData.groups.find(g=>g.id===route);
-  courseRoot.innerHTML=`<div class="section-head"><div><span class="priority-badge">${courseData.lessons.length}개 단원 · ${courseData.quizzes.length}개 회상 문제</span><h2>${group?group.title:'전체 학습'}</h2><p class="desc">${group?group.description:'전략과 답변 구조를 익히고, 표현을 떠올리며 소리 내어 말하세요.'}</p></div></div>
-    <nav class="course-tabs" aria-label="학습 영역"><a href="#/course"${!group?' aria-current="page"':''}>전체</a>${courseData.groups.map(g=>`<a href="#/course/${g.id}"${group?.id===g.id?' aria-current="page"':''}>${g.title}</a>`).join('')}</nav>
-    <div class="course-controls"><input id="courseSearch" type="search" placeholder="단원·표현·예문 검색" aria-label="단원 검색" value="${courseEscape(courseTerm)}"><select id="courseFilter" aria-label="학습 상태"><option value="all">전체 단원</option><option value="remaining">아직 학습하지 않은 단원</option><option value="starred">즐겨찾기</option><option value="done">학습 완료</option></select></div><p id="courseCount" class="mini" role="status"></p><div id="courseList"></div><p id="courseStatus" role="status"></p>`;
-  document.getElementById('courseFilter').value=courseFilter;
-  const renderList=()=>{
-    const term=courseTerm.toLocaleLowerCase();
-    const filtered=courseData.lessons.filter(l=>(!group||l.group===group.id)&&(!term||(l.path.join(' ')+' '+l.text).toLocaleLowerCase().includes(term))&&(courseFilter==='all'||courseFilter==='remaining'&&!courseProgress.done.includes(l.id)||courseFilter==='done'&&courseProgress.done.includes(l.id)||courseFilter==='starred'&&courseProgress.stars.includes(l.id)));
-    document.getElementById('courseCount').textContent=`${filtered.length}개 단원`;
-    document.getElementById('courseList').innerHTML=filtered.length?courseData.groups.map(g=>{
-      const items=filtered.filter(l=>l.group===g.id);
-      if (!items.length) return '';
-      return `<div class="course-group"><h3>${g.title}</h3><div class="lesson-grid">${items.map(l=>`<a class="lesson-card" href="#/course/${l.id}"><span class="lesson-meta">${courseProgress.done.includes(l.id)?'✓ 학습 완료':String(courseData.lessons.indexOf(l)+1).padStart(2,'0')}${courseProgress.stars.includes(l.id)?' · ★':''}</span><b>${courseEscape(lessonLabel(l))}</b><span>${l.blocks.filter(b=>b.kind==='recall').length?l.blocks.filter(b=>b.kind==='recall').length+'개 회상 연습':l.english.length>250?'스크립트 · 말하기':'개념 · 답변 소재'}</span></a>`).join('')}</div></div>`;
-    }).join(''):'<div class="course-empty">해당하는 단원이 없습니다. 검색어나 학습 상태를 바꿔 보세요.</div>';
-  };
-  document.getElementById('courseSearch').addEventListener('input',event=>{courseTerm=event.target.value;renderList()});
-  document.getElementById('courseFilter').addEventListener('change',event=>{courseFilter=event.target.value;renderList()});
-  renderList();
+function expressionParts(numbers){return numbers.map(n=>{
+  const part=sourcePart(n);let rows='',content='';
+  const flush=()=>{if(rows){content+='<table class="expression-table"><thead><tr><th scope="col">뜻 · 기본 표현</th><th scope="col">활용할 표현</th></tr></thead><tbody>'+rows+'</tbody></table>';rows='';}};
+  part.blocks.forEach(block=>{if(block.kind==='recall')rows+='<tr class="expression-row"><th scope="row">'+studyInline(block.prompt)+'</th><td><button class="expression-reveal study-text-button" aria-expanded="false">표현 보기</button><div class="expression-answer">'+block.answers.map(answer=>'<p>'+studyInline(answer.replace(/^→\s*/,''))+'</p>').join('')+'</div></td></tr>';else{flush();content+=sourceLine(block);}});flush();
+  return '<article class="study-paper expression-part" data-part="'+part.id+'" id="source-'+part.id+'"><h3>'+studyEscape(part.title)+'</h3>'+content+'</article>';
+}).join('');}
+function renderExpressions(route){
+  const group=studyLayout.expressions.find(item=>item.id===route.tab),hasRows=group.parts.some(n=>sourcePart(n).blocks.some(b=>b.kind==='recall'));
+  const quiz=courseData.quizzes.some(item=>item.lessonId===sourcePart(group.parts[0]).id);
+  return subTabs('expressions',route.tab)+'<div class="study-tools">'+(hasRows?'<input id="expressionSearch" type="search" class="study-search" aria-label="현재 표현 찾기" placeholder="뜻이나 표현 찾기"><label class="study-check"><input type="checkbox" id="hideExpressions" '+(studyState.hideExpressions?'checked':'')+'> 영어 가리기</label>':'')+(quiz?'<button class="study-button" data-quiz="'+sourcePart(group.parts[0]).id+'">표현 퀴즈 →</button>':'')+'</div><div id="expressionList" class="expression-list'+(studyState.hideExpressions?' hide-english':'')+'">'+expressionParts(group.parts)+'</div><p id="expressionEmpty" role="status" hidden>일치하는 표현이 없습니다.</p>';
 }
-function renderLesson(item) {
-  courseProgress.last=item.id; saveCourseProgress();
-  const index=courseData.lessons.indexOf(item), group=courseData.groups.find(g=>g.id===item.group);
-  const speech=item.blocks.flatMap(b=>b.kind==='recall'?b.answers: b.kind==='line'?[b.text]:[]).map(t=>t.replace(/\\([\[\]*_~.!&])/g,'$1').replace(/\*\*/g,'').replace(/^→\s*/,'').replace(/^\* /,'')).filter(t=>!/[가-힣]/.test(t)&&/[a-z]{2}/i.test(t)).join('\n');
-  const practiceIndex=prompts.findIndex(p=>p.lessonId===item.id);
-  const quiz=courseData.quizzes.find(q=>q.lessonId===item.id);
-  courseRoot.innerHTML=`<a class="course-back" href="#/course/${group.id}">← ${group.title}</a><div class="lesson-header"><div><span class="lesson-meta">${index+1} / ${courseData.lessons.length}</span><h2 tabindex="-1" id="lessonTitle">${courseEscape(lessonLabel(item))}</h2></div><button class="course-button" id="lessonStar" aria-label="단원 즐겨찾기" aria-pressed="${courseProgress.stars.includes(item.id)}">${courseProgress.stars.includes(item.id)?'★':'☆'}</button></div>
-    <div class="lesson-toolbar"><div class="course-segment" aria-label="학습 모드"><button data-course-mode="read" aria-pressed="${courseMode==='read'}">전체 보기</button><button data-course-mode="recall" aria-pressed="${courseMode==='recall'}">회상 연습</button></div>${speech?'<button class="course-button" id="lessonSpeak" aria-pressed="false">▶ 영어 듣기</button>':''}${practiceIndex>=0?'<button class="course-button" id="lessonPractice">말하기 연습 →</button>':''}${quiz?'<button class="course-button" id="lessonQuiz">퀴즈 풀기 →</button>':''}</div>
-    <article class="lesson-content" id="lessonContent" aria-label="학습 내용">${item.html}</article>
-    <div class="lesson-bottom"><button id="lessonDone" class="course-button primary" aria-pressed="${courseProgress.done.includes(item.id)}">${courseProgress.done.includes(item.id)?'✓ 학습 완료':'학습 완료 표시'}</button><div>${index>0?`<a class="course-button" href="#/course/${courseData.lessons[index-1].id}" aria-label="이전 단원">← 이전</a>`:''}${index<courseData.lessons.length-1?`<a class="course-button" href="#/course/${courseData.lessons[index+1].id}" aria-label="다음 단원">다음 →</a>`:'<a class="course-button" href="#/course">전체 학습 →</a>'}</div></div><p id="courseStatus" role="status"></p>`;
-  const setMode=mode=>{
-    courseMode=mode;
-    const content=document.getElementById('lessonContent');
-    content.innerHTML=item.html;
-    content.querySelectorAll('.recall').forEach(el=>el.open=mode==='read');
-    if(mode==='recall') content.querySelectorAll('.english-line').forEach(el=>{
-      if(el.textContent.split(' ').length<6)return;
-      const details=document.createElement('details'),summary=document.createElement('summary');
-      details.className='recall script-recall';summary.textContent=el.textContent.split(' ').slice(0,4).join(' ')+' …';
-      details.append(summary);el.replaceWith(details);details.append(el);
-    });
-    if(mode==='recall') content.querySelectorAll('tbody tr').forEach(row=>{
-      [...row.cells].slice(1).forEach(cell=>{const details=document.createElement('details'),summary=document.createElement('summary'),body=document.createElement('div');summary.textContent='정답 보기';body.innerHTML=cell.innerHTML;details.append(summary,body);cell.replaceChildren(details)});
-    });
-    document.querySelectorAll('[data-course-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.courseMode===mode)));
-  };
-  document.querySelectorAll('[data-course-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.courseMode)));
-  setMode(courseMode);
-  document.getElementById('lessonStar').addEventListener('click',event=>{
-    courseProgress.stars=courseProgress.stars.includes(item.id)?courseProgress.stars.filter(id=>id!==item.id):[...courseProgress.stars,item.id];
-    event.currentTarget.textContent=courseProgress.stars.includes(item.id)?'★':'☆';event.currentTarget.setAttribute('aria-pressed',String(courseProgress.stars.includes(item.id)));saveCourseProgress();
-  });
-  document.getElementById('lessonDone').addEventListener('click',event=>{
-    courseProgress.done=courseProgress.done.includes(item.id)?courseProgress.done.filter(id=>id!==item.id):[...courseProgress.done,item.id];
-    event.currentTarget.textContent=courseProgress.done.includes(item.id)?'✓ 학습 완료':'학습 완료 표시';event.currentTarget.setAttribute('aria-pressed',String(courseProgress.done.includes(item.id)));saveCourseProgress();
-  });
-  document.getElementById('lessonSpeak')?.addEventListener('click',event=>{if(!toggleSpeech(event.currentTarget,speech))document.getElementById('courseStatus').textContent='이 브라우저는 음성 읽기를 지원하지 않습니다.'});
-  document.getElementById('lessonPractice')?.addEventListener('click',()=>{state.prompt=practiceIndex;renderPrompt();location.hash='/practice'});
-  document.getElementById('lessonQuiz')?.addEventListener('click',()=>{
-    const select=document.getElementById('quizMode');
-    select.querySelector('[data-lesson-option]')?.remove();
-    const option=document.createElement('option');option.value=item.id;option.textContent=item.title;option.dataset.lessonOption='true';select.append(option);select.value=item.id;
-    state.currentQuiz=null;pickQuiz();location.hash='/quiz';
-  });
+function scriptCard(n,stage){
+  const part=sourcePart(n),index=prompts.findLastIndex(item=>item.lessonId===part.id),prompt=index>=0?prompts[index]:null;
+  return '<article class="study-paper script-card">'+(stage?'<span class="script-stage">'+stage+'</span>':'')+'<h3>'+studyEscape(stage?part.title.replace(/^\d+번:\s*/, ''):part.title)+'</h3>'+(prompt?'<p class="script-question" lang="en">'+studyEscape(prompt.en)+'</p>':'')+'<div class="script-copy">'+readPart(n)+'</div>'+(studyLayout.hints[n]?'<ol class="script-hints" hidden>'+studyLayout.hints[n].map(hint=>'<li>'+studyEscape(hint)+'</li>').join('')+'</ol>':'')+(part.english.length>100?'<div class="script-actions"><button class="study-button" data-listen="'+part.id+'">듣기</button>'+(studyLayout.hints[n]?'<button class="study-button" data-cues aria-pressed="false">가리고 말하기</button>':'')+(prompt?'<button class="study-text-button" data-practice="'+index+'">타이머·녹음 →</button>':'')+'</div>':'')+'</article>';
 }
-function renderGlobalSearch() {
-  const term=q.value.trim().toLocaleLowerCase(), output=document.getElementById('globalResults');
-  output.hidden=!term;
-  if(!term){output.innerHTML='';return}
-  const lessons=courseData.lessons.filter(l=>(l.path.join(' ')+' '+l.text).toLocaleLowerCase().includes(term));
-  const questions=typeItems.filter(l=>(l.question+' '+l.kr+' '+l.answer+' '+l.searchAliases).toLocaleLowerCase().includes(term));
-  output.innerHTML=`<div class="search-results-head"><b>학습 ${lessons.length} · 문제 ${questions.length}</b><button type="button" id="closeSearch" aria-label="검색 결과 닫기">✕</button></div>${lessons.slice(0,30).map(l=>`<a href="#/course/${l.id}"><small>${courseData.groups.find(g=>g.id===l.group).title}</small><b>${courseEscape(lessonLabel(l))}</b></a>`).join('')}${questions.length?'<a href="#/types" id="searchQuestions"><b>일치하는 문제 모두 보기 →</b></a>':''}${lessons.length>30?'<a href="#/course" id="searchAllLessons"><b>일치하는 단원 모두 보기 →</b></a>':''}${!lessons.length&&!questions.length?'<p>검색 결과가 없습니다.</p>':''}`;
-  document.getElementById('closeSearch').addEventListener('click',()=>{q.value='';output.hidden=true});
-  document.getElementById('searchQuestions')?.addEventListener('click',()=>{document.getElementById('typeSearch').value=term;renderTypeBrowser()});
-  document.getElementById('searchAllLessons')?.addEventListener('click',()=>{courseTerm=term;courseFilter='all';renderCourse()});
-  output.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{output.hidden=true;q.value=''}));
+function renderRoleplay(route){
+  const n=partNumber(sourcePart(route.anchor)||{id:'lesson-0'}),scene=studyLayout.scenarios.find(item=>item.parts.includes(n)||item.id===route.scenario)||studyLayout.scenarios[0];
+  return reference('롤플레이 공통 답변 틀 · 질문 → 문제 해결 → 경험','<div class="roleplay-framework">'+[81,82,83].map(num=>readPart(num,true)).join('')+'</div>',[81,82,83].includes(n))+'<nav class="scenario-tabs" aria-label="롤플레이 상황">'+studyLayout.scenarios.map(item=>'<a href="#/course/scripts/roleplay/'+item.id+'" '+(item.id===scene.id?'aria-current="page"':'')+'>'+item.title+'</a>').join('')+'</nav><div class="roleplay-trio">'+scene.parts.map((num,index)=>scriptCard(num,['01 · 질문하기','02 · 문제 해결하기','03 · 관련 경험'][index])).join('')+'</div>';
 }
-q.addEventListener('input',renderGlobalSearch);
-document.addEventListener('keydown',event=>{if(event.key==='Escape')document.getElementById('globalResults').hidden=true});
-document.addEventListener('click',event=>{if(!event.target.closest('.search'))document.getElementById('globalResults').hidden=true});
-window.addEventListener('hashchange',()=>{document.getElementById('globalResults').hidden=true;if(!courseRoot.classList.contains('route-hidden'))renderCourse()});
-renderCourseResume();
-document.querySelectorAll('[data-course-count]').forEach(el=>el.textContent=courseData.lessons.length);
-document.querySelectorAll('[data-recall-count]').forEach(el=>el.textContent=courseData.quizzes.length);
-if(!courseRoot.classList.contains('route-hidden'))renderCourse();
+function renderScripts(route){
+  const group=studyLayout.scripts.find(item=>item.id===route.tab);
+  return subTabs('scripts',route.tab)+(route.tab==='roleplay'?renderRoleplay(route):'<div class="scripts-document">'+group.parts.map(n=>[47,63,72,77].includes(n)?reference(sourcePart(n).title,readPart(n),[72,77].includes(n)):[54,62,65,68].includes(n)?'<article class="study-paper script-materials">'+readPart(n,true)+'</article>':scriptCard(n)).join('')+'</div>')+reference('스크립트 활용 · 60~90초로 말하기',readPart(46));
+}
+function renderCourseResume(){const el=document.getElementById('courseResume');if(!el)return;const bits=studyState.last.split('/'),view=studyLayout.views.find(item=>item.id===bits[2]);el.hidden=!view;if(!view)return;const group=bits[3]&&studyLayout[view.id]?.find?.(item=>item.id===bits[3]);el.innerHTML='<span>최근 학습 <b>'+studyEscape(view.title+(group?' · '+group.title:''))+'</b></span><a href="'+studyEscape(studyState.last)+'">이어서 보기 →</a>';}
+function renderCourse(){
+  renderCourseResume();document.querySelectorAll('[data-study-link]').forEach(link=>link.classList.remove('active'));if(courseRoot.classList.contains('route-hidden'))return;
+  const route=resolveStudyRoute(),view=studyLayout.views.find(item=>item.id===route.view);
+  courseRoot.innerHTML='<header class="study-heading"><div><span class="study-eyebrow">STUDY NOTE</span><h2>'+view.title+'</h2><p>'+view.description+'</p></div></header><nav class="study-main-tabs" aria-label="학습 메뉴">'+studyLayout.views.map(item=>'<a href="#/course/'+item.id+'" '+(route.view===item.id?'aria-current="page"':'')+'>'+item.title+'</a>').join('')+'</nav><div class="study-content">'+({prep:renderPrep,answers:renderAnswerGuide,grammar:renderGrammar,expressions:renderExpressions,scripts:renderScripts}[route.view])(route)+'</div>';
+  document.getElementById('topbarPage').textContent=view.title;document.title=view.title+' · DH OPIc';
+  document.querySelectorAll('[data-study-link]').forEach(link=>link.classList.toggle('active',link.dataset.studyLink===route.view));
+  const scene=route.view==='scripts'&&route.tab==='roleplay'?(studyLayout.scenarios.find(item=>item.parts.includes(partNumber(sourcePart(route.anchor)||{id:'lesson-0'})))?.id||route.scenario):null;
+  studyState.last='#/course/'+route.view+(route.tab?'/'+route.tab:'')+(scene?'/'+scene:'');saveStudy();bindStudyEvents();
+  if(route.anchor&&route.anchor!=='lesson-036'){const target=document.getElementById('source-'+route.anchor);if(target){for(let el=target.parentElement;el&&el!==courseRoot;el=el.parentElement)if(el.tagName==='DETAILS')el.open=true;requestAnimationFrame(()=>(target.closest('.script-card')||target).scrollIntoView({block:'start',behavior:'instant'}));}}
+}
+function bindStudyEvents(){
+  courseRoot.querySelectorAll('[data-jump]').forEach(button=>button.addEventListener('click',()=>{const target=document.getElementById('type-'+button.dataset.jump);target.open=true;target.scrollIntoView({block:'start',behavior:'smooth'});}));
+  courseRoot.querySelector('#expandAnswerTypes')?.addEventListener('click',event=>{const items=[...courseRoot.querySelectorAll('.answer-family')],open=items.some(item=>!item.open);items.forEach(item=>item.open=open);event.currentTarget.textContent=open?'모든 유형 접기':'모든 유형 펼치기';});
+  courseRoot.querySelectorAll('[data-writing-mode]').forEach(button=>button.addEventListener('click',()=>{studyState.grammarMode=button.dataset.writingMode;courseRoot.querySelector('.writing-sheet').dataset.mode=studyState.grammarMode;courseRoot.querySelectorAll('.writing-answer').forEach(item=>item.open=studyState.grammarMode==='read');courseRoot.querySelectorAll('[data-writing-mode]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));}));
+  courseRoot.querySelectorAll('[data-draft]').forEach(input=>input.addEventListener('input',()=>{studyState.drafts[input.dataset.draft]=input.value;saveStudy();}));
+  courseRoot.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>{const select=document.getElementById('quizMode'),id=button.dataset.quiz;if(![...select.options].some(option=>option.value===id))select.add(new Option(sourcePart(id).title,id));select.value=id;state.currentQuiz=null;pickQuiz();location.hash='/quiz';}));
+  courseRoot.querySelector('#hideExpressions')?.addEventListener('change',event=>{studyState.hideExpressions=event.target.checked;courseRoot.querySelector('#expressionList').classList.toggle('hide-english',studyState.hideExpressions);courseRoot.querySelectorAll('.expression-row').forEach(row=>row.classList.remove('revealed'));courseRoot.querySelectorAll('.expression-reveal').forEach(button=>button.setAttribute('aria-expanded','false'));});
+  courseRoot.querySelectorAll('.expression-reveal').forEach(button=>button.addEventListener('click',()=>{const visible=button.closest('tr').classList.toggle('revealed');button.setAttribute('aria-expanded',String(visible));button.textContent=visible?'다시 가리기':'표현 보기';}));
+  courseRoot.querySelector('#expressionSearch')?.addEventListener('input',event=>{const term=event.target.value.trim().toLocaleLowerCase(),rows=[...courseRoot.querySelectorAll('.expression-row')];rows.forEach(row=>row.hidden=!row.textContent.toLocaleLowerCase().includes(term));document.getElementById('expressionEmpty').hidden=rows.some(row=>!row.hidden);});
+  courseRoot.querySelectorAll('[data-listen]').forEach(button=>button.addEventListener('click',()=>toggleSpeech(button,sourcePart(button.dataset.listen).english,.88)));
+  courseRoot.querySelectorAll('[data-cues]').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.script-card'),hide=!card.querySelector('.script-copy').hidden;card.querySelector('.script-copy').hidden=hide;card.querySelector('.script-hints').hidden=!hide;button.textContent=hide?'스크립트 보기':'가리고 말하기';button.setAttribute('aria-pressed',String(hide));}));
+  courseRoot.querySelectorAll('[data-practice]').forEach(button=>button.addEventListener('click',()=>{document.getElementById('promptCategory').value='all';state.prompt=Number(button.dataset.practice);renderPrompt();document.getElementById('timerReset').click();location.hash='/practice';}));
+}
+const studySearchResults=document.createElement('div');studySearchResults.className='global-results';studySearchResults.id='studySearchResults';studySearchResults.hidden=true;q.parentElement.append(studySearchResults);q.setAttribute('aria-controls',studySearchResults.id);
+q.addEventListener('input',()=>{
+  const term=q.value.trim().toLocaleLowerCase();studySearchResults.hidden=!term;if(!term)return;
+  const matches=courseData.lessons.filter(part=>(part.title+' '+part.text).toLocaleLowerCase().includes(term));
+  studySearchResults.innerHTML='<div class="search-results-head">학습 자료 검색</div>'+(matches.length?matches.map(part=>'<a href="'+studyHref(part.id)+'"><small>'+studyEscape(studyLabel(part))+'</small><b>'+studyEscape(part.title)+'</b></a>').join(''):'<p>일치하는 학습 자료가 없습니다.</p>');
+});
+studySearchResults.addEventListener('click',event=>{if(event.target.closest('a'))studySearchResults.hidden=true;});
+document.addEventListener('click',event=>{if(!q.parentElement.contains(event.target))studySearchResults.hidden=true;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')studySearchResults.hidden=true;});
+window.addEventListener('hashchange',()=>{studySearchResults.hidden=true;renderCourse();});
+renderCourse();

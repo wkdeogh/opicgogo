@@ -5,7 +5,7 @@ const crypto = require('node:crypto');
 const source = fs.readFileSync('opic종합정리.md','utf8').replace(/\r\n/g,'\n');
 const html = fs.readFileSync('index.html','utf8');
 const context = {window:{}};
-for (const file of ['mock-data.js','mock-data-extra.js','practice-answers.js','shared-scripts.js','course-data.js','course-sync.js']) {
+for (const file of ['mock-data.js','mock-data-extra.js','practice-answers.js','shared-scripts.js','course-data.js','course-sync.js','course-layout.js']) {
   vm.runInNewContext(fs.readFileSync(file,'utf8'),context,{filename:file});
 }
 const data=context.window.OPIC_COURSE;
@@ -51,4 +51,36 @@ for (const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const value=decodeURIComponent(match[1]);
   if(!value.startsWith('http'))assert(fs.existsSync(value),`Missing asset ${value}`);
 }
-console.log(`PASS: ${covered.size} source content lines rendered, ${data.lessons.length} lessons, ${data.quizzes.length} recall questions, ${context.window.OPIC_COURSE_PRACTICE.length} new speaking prompts, 150 mock questions, script syntax and local assets.`);
+// Exercise the actual workspace renderers, including legacy links. Source storage
+// alone must never count as successful coverage of the learning interface.
+const layout=context.window.OPIC_STUDY_LAYOUT;
+const allocated=[...layout.prep,6,36,46,...['answers','grammar','expressions','scripts'].flatMap(view=>layout[view].flatMap(group=>group.parts))];
+assert.equal(new Set(allocated).size,data.lessons.length,'Every source fragment has a workspace');
+assert.equal(allocated.length,data.lessons.length,'No accidental duplicate allocation');
+assert.equal(layout.views[0].id,'answers','Survey must not be the learning entry point');
+layout.scenarios.forEach(scene=>assert.equal(scene.parts.length,3,'All three roleplay answers share a page'));
+const noop=()=>{};
+const stub={classList:{contains:()=>true},setAttribute:noop,addEventListener:noop,parentElement:{append:noop},hidden:true};
+Object.assign(context,{document:{getElementById:()=>stub,querySelectorAll:()=>[],createElement:()=>({...stub}),addEventListener:noop},localStorage:{getItem:()=>null},q:stub,prompts:context.window.OPIC_COURSE_PRACTICE,location:{hash:'#/home'}});
+context.window.addEventListener=noop;
+vm.createContext(context);
+vm.runInContext(fs.readFileSync('course-app.js','utf8'),context,{filename:'course-app.js'});
+const actualPages=[];
+function render(route,expression){context.location.hash=route;const page=vm.runInContext(expression||'({prep:renderPrep,answers:renderAnswerGuide,grammar:renderGrammar,expressions:renderExpressions,scripts:renderScripts}[resolveStudyRoute().view])(resolveStudyRoute())',context);actualPages.push(page);return page;}
+render('#/course/prep');render('#/course/answers');
+for(const view of ['grammar','expressions','scripts'])for(const group of layout[view])render('#/course/'+view+'/'+group.id);
+for(const scene of layout.scenarios){const page=render('#/course/scripts/roleplay/'+scene.id);scene.parts.forEach(n=>assert(page.includes('data-part="lesson-'+String(n).padStart(3,'0')+'"')));assert.equal((page.match(/class="study-paper script-card"/g)||[]).length,3);}
+const renderedText=normalize(decode(actualPages.join('\n'))).replace(/→/g,'');
+for(const [line,part] of covered){
+  const value=lines[line-1];
+  if(part==='lesson-036'){assert(actualPages.some(page=>page.includes('>영작 연습</button>')),'The source writing instruction must become a real exercise');continue;}
+  const cells=value.trim().startsWith('|')?value.trim().slice(1,-1).split('|'):[value];
+  for(const cell of cells)for(const phrase of cell.split('→'))assert(renderedText.includes(normalize(phrase).replace(/^\*/,'')),`Actual workspace omits source line ${line}: ${phrase}`);
+}
+const grammarLegacy=render('#/course/lesson-036');
+assert.equal((grammarLegacy.match(/class="writing-row"/g)||[]).length,24,'The old empty page must open the complete writing worksheet');
+assert(!grammarLegacy.includes('(영작 연습 필요)'),'Do not display a placeholder as a lesson');
+for(const part of data.lessons){const page=render('#/course/'+part.id);assert(page.includes('data-part="'+part.id+'"'),'Broken legacy material link: '+part.id);}
+assert(!actualPages.some(page=>/학습 완료 표시|회상 연습|36 \/ 97/.test(page)),'No fragment-completion UI');
+assert(!html.includes('data-course-count'),'Do not advertise internal source fragments as lessons');
+console.log(`PASS: ${covered.size} source content lines in actual study workspaces; meaningful grouping, writing worksheet, three-answer roleplays and all legacy links; ${data.quizzes.length} quiz questions, ${context.window.OPIC_COURSE_PRACTICE.length} speaking prompts, 150 mock questions, JavaScript and local assets.`);
