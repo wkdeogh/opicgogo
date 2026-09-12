@@ -59,13 +59,14 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 @media(max-width:620px){.flash-grid,.quiz-options,.route-grid{grid-template-columns:1fr}.answer-flow{grid-template-columns:1fr 1fr}.upgrade{grid-template-columns:1fr}.arrow{display:none}.topbar{padding:10px 12px}.brand{font-size:13px}.search input{font-size:16px}.trend-grid{grid-template-columns:1fr 1fr}.today{grid-template-columns:1fr 1fr}.today-intro{grid-column:1/-1}.self-check{grid-template-columns:1fr 1fr}.timer-row{grid-template-columns:1fr}.practice-shell,.quizbox{padding:17px}.route-card{min-height:104px}.type-summary{grid-template-columns:1fr 1fr}.type-summary-intro{grid-column:1/-1}.comparison2-focus{padding:17px}.comparison2-head{display:block}.comparison2-once{display:inline-flex;margin-top:10px}.comparison2-lines{grid-template-columns:1fr 1fr}.type-controls{grid-template-columns:1fr}.type-controls input,.type-controls select{font-size:16px}.type-question-list{grid-template-columns:1fr;padding:9px}.type-group>summary{grid-template-columns:38px 1fr;gap:9px;padding:13px}.type-group-count{grid-column:2}.survey-plan-head{display:block}.survey-progress{display:inline-flex;margin-top:10px}.survey-choice{grid-template-columns:34px 1fr 22px;padding:13px 11px;gap:10px}.survey-actions{align-items:flex-start;flex-direction:column}.survey-reset{width:100%;min-height:44px}.mock-head{align-items:flex-start;padding:15px}.mock-title{align-items:flex-start;flex-direction:column;gap:5px}.mock-title select{font-size:16px}.mock-random{padding:9px;font-size:12px}.mock-progress-wrap{padding:13px 15px 0}.mock-numbers{padding:12px 15px}.mock-stage{padding:0 12px 14px}.mock-question{padding:18px 16px}.mock-answer{font-size:16px;line-height:1.82;padding:17px;min-height:280px}.mock-answer-head{align-items:flex-start;flex-direction:column}.mock-answer-tabs{width:100%}.mock-tab{flex:1}.mock-cues{padding:18px;min-height:280px}.mock-actions{grid-template-columns:1fr 1.25fr}.mock-actions .prev{grid-column:1}.mock-actions .memorize{grid-column:2}.mock-actions .next{grid-column:1/-1}.mock-action{min-height:48px}}
 @media(max-width:620px){.template-summary{grid-template-columns:1fr 1fr}.template-summary>p{grid-column:1/-1}.template-controls,.template-list{grid-template-columns:1fr}.template-controls select,.template-controls input{font-size:16px}.template-card>summary{padding:13px}}
 </style>
+<link rel="stylesheet" href="course.css">
 </head>
 <body>
 <header class="topbar">
   <button class="menu-toggle" id="menuToggle" aria-label="전체 메뉴 열기" aria-expanded="false">☰</button>
   <a class="brand" id="brandHome" href="#/home" aria-label="DH OPIc 홈으로 새로고침">DH <em>OPIc</em></a>
   <div class="topbar-page" id="topbarPage">홈</div>
-  <div class="search"><input id="search" placeholder="표현과 예문 검색... (예: hiking, blow off steam)"></div>
+  <div class="search"><input id="search" type="search" aria-label="전체 학습 검색" autocomplete="off" placeholder="단원·표현·문제 검색"><div id="globalResults" class="global-results" hidden></div></div>
 </header>
 <div class="layout">
 <aside id="siteNav">
@@ -73,22 +74,22 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
   <div class="kicker">Contents</div>
   <nav>
     <a href="#/home" data-route-link="home">홈</a>
-    <span class="nav-group">Practice</span>
+    <span class="nav-group">학습</span><a href="#/course" data-route-link="course">전체 학습</a><a href="#/course/flow">유형별 답변 구조</a><a href="#/course/scripts">묘사 · 비교 · 사회 이슈</a><a href="#/course/unexpected">돌발 · 날씨와 교통</a><a href="#/course/roleplay">롤플레이</a><span class="nav-group">실전 연습</span>
     <a href="#/mock" data-route-link="mock">모의고사 스크립트</a><a href="#/types" data-route-link="types">문제 유형별 보기</a><a href="#/templates" data-route-link="templates">답변 템플릿</a><a href="#/practice" data-route-link="practice">오늘의 실전 연습</a><a href="#/quiz" data-route-link="quiz">집중 퀴즈</a><a href="#/samples" data-route-link="samples">답안 음성</a>
-    <span class="nav-group">Strategy</span>
-    <a href="#/al-core" data-route-link="al-core">AL 7문장 자동화</a><a href="#/recent" data-route-link="recent">2022~2026 빈출</a><a href="#/overview" data-route-link="overview">시험 핵심</a><a href="#/survey" data-route-link="survey">Survey & 유형</a><a href="#/strategy" data-route-link="strategy">IH~AL 전략</a><a href="#/answer" data-route-link="answer">60~90초 답변 구조</a>
-    <span class="nav-group">Expressions</span>
-    <a href="#/vocab" data-route-link="vocab">Vocabulary Upgrade</a><a href="#/idioms" data-route-link="idioms">Idioms</a><a href="#/examples" data-route-link="examples">문장 업그레이드</a><a href="#/misc" data-route-link="misc">실전 단어 & 발음</a><a href="#/patterns" data-route-link="patterns">선택 참고: 문장 패턴</a>
+    <span class="nav-group">시험 준비</span>
+    <a href="#/recent" data-route-link="recent">2022~2026 빈출</a><a href="#/overview" data-route-link="overview">시험 핵심</a><a href="#/survey" data-route-link="survey">Survey & 유형</a><a href="#/strategy" data-route-link="strategy">IH~AL 전략</a><a href="#/answer" data-route-link="answer">60~90초 답변 구조</a>
+    <span class="nav-group">표현과 문장력</span>
+    <a href="#/vocab" data-route-link="vocab">Vocabulary Upgrade</a><a href="#/idioms" data-route-link="idioms">Idioms</a><a href="#/connectives" data-route-link="connectives">연결어 18</a><a href="#/fillers" data-route-link="fillers">필러 14</a><a href="#/misc" data-route-link="misc">콩글리쉬 고치기</a><a href="#/patterns" data-route-link="patterns">문장력 · 영작</a>
   </nav>
-  <div class="source-note"><b>시험 직전 모드</b><br>2022~2026 기출과 OPIc 전용 자료만 반영. Grammar in Use 원서는 학습 범위에서 제외했습니다.</div>
+
 </aside>
 <button class="nav-backdrop" id="navBackdrop" aria-label="메뉴 닫기"></button>
 <main>
 <section class="hero searchable" id="home">
   <div class="eyebrow">LAST-MINUTE OPIc TRAINING</div>
   <h1>시험 직전,<br>입으로 끝내는 OPIc</h1>
-  <p>긴 문법 공부는 빼고 빈출 질문을 뽑아 60~90초 동안 말하고, 녹음하고, 바로 자가평가하세요. 업로드한 2022~2026 기출과 답안 자료를 실전 훈련 중심으로 재구성했습니다.</p>
-  <div class="chips"><span class="chip">모의고사 스크립트</span><span class="chip">문제 유형별 보기</span><span class="chip">답변 템플릿</span><span class="chip">2022–2026 기출</span><span class="chip">랜덤 문제은행</span><span class="chip">60/90초 타이머</span><span class="chip">답변 녹음</span><span class="chip">집중 퀴즈</span></div>
+  <p>답변 구조를 익히고, 표현을 떠올리고, 60~90초 동안 말하세요. Survey부터 영작과 롤플레이까지 한 단원씩 완성해 보세요.</p>
+  <div class="chips"><span class="chip">종합 학습 <span data-course-count>97</span>단원</span><span class="chip">영작 · 표현 회상 <span data-recall-count>190</span>개</span><span class="chip">모의고사 스크립트</span><span class="chip">문제 유형별 보기</span><span class="chip">답변 템플릿</span><span class="chip">2022–2026 기출</span><span class="chip">랜덤 문제은행</span><span class="chip">60/90초 타이머</span><span class="chip">답변 녹음</span><span class="chip">집중 퀴즈</span></div>
 </section>
 
 <div class="today" id="today" aria-label="학습 현황">
@@ -99,18 +100,19 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </div>
 
 <section class="home-menu" id="homeMenu">
-  <div class="section-head"><div><h2>학습 메뉴</h2><div class="desc">필요한 학습 화면만 열어 집중하세요. 주소를 북마크하면 해당 메뉴로 바로 들어올 수 있습니다.</div></div></div>
-  <div class="route-grid">
+<div id="courseResume" class="course-resume"></div>
+  <div class="section-head"><div><h2>학습 메뉴</h2><div class="desc">오늘 연습할 영역을 선택하세요.</div></div></div>
+  <div class="route-grid"><a class="route-card primary" href="#/course"><span class="route-icon">ALL</span><b>전체 학습</b><span><span data-course-count>97</span>단원 · 읽기 · 회상 · 말하기</span></a>
     <a class="route-card primary" href="#/mock"><span class="route-icon">01</span><b>모의고사</b><span>10세트 · 150문항 스크립트 암기</span></a>
-    <a class="route-card" href="#/types"><span class="route-icon">02</span><b>문제 유형별 보기</b><span>196문항 · 17개 세부 유형</span></a>
+    <a class="route-card" href="#/types"><span class="route-icon">02</span><b>문제 유형별 보기</b><span>모의고사 · 실전 연습 · 유형별 분류</span></a>
     <a class="route-card" href="#/templates"><span class="route-icon">03</span><b>답변 템플릿</b><span>유형별 공통 골격 암기</span></a>
     <a class="route-card" href="#/practice"><span class="route-icon">04</span><b>실전 연습</b><span>랜덤 질문 · 타이머 · 녹음</span></a>
     <a class="route-card" href="#/quiz"><span class="route-icon">05</span><b>집중 퀴즈</b><span>숙어 · 어휘 · 전략 복습</span></a>
     <a class="route-card" href="#/survey"><span class="route-icon">06</span><b>설문 선택</b><span>강사님 지정 Survey 체크리스트</span></a>
-    <a class="route-card" href="#/al-core"><span class="route-icon">07</span><b>AL 전략</b><span>7문장 만능 골격 자동화</span></a>
+    <a class="route-card" href="#/al-core"><span class="route-icon">07</span><b>AL 전략</b><span>고득점 필수 요소 · AL 전략 12</span></a>
     <a class="route-card" href="#/recent"><span class="route-icon">08</span><b>빈출 주제</b><span>2022~2026 기출 우선순위</span></a>
     <a class="route-card" href="#/vocab"><span class="route-icon">09</span><b>핵심 표현</b><span>어휘 업그레이드와 숙어</span></a>
-    <a class="route-card" href="#/patterns"><span class="route-icon">10</span><b>문장 패턴</b><span>관계사 · 현재완료 · 수동태</span></a>
+    <a class="route-card" href="#/patterns"><span class="route-icon">10</span><b>문장 패턴</b><span>관계사 · 현재완료 · 수동태 · 비교급</span></a>
     <a class="route-card" href="#/samples"><span class="route-icon">11</span><b>쉐도잉</b><span>답안 음성과 핵심 스크립트</span></a>
   </div>
 </section>
@@ -170,7 +172,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 <div class="section-head"><div><span class="priority-badge">암기용 공통 골격</span><h2>답변 템플릿</h2><div class="desc">문제의 주제만 바꿔 반복해서 사용할 수 있는 답변 골격입니다. 먼저 구조를 외운 뒤 대괄호 안의 내용만 교체하세요.</div></div></div>
 <div class="template-summary">
   <div><strong id="templateCount">0</strong><span>공통 템플릿</span></div>
-  <div><strong>17</strong><span>연결된 문제 유형</span></div>
+  <div><strong>19</strong><span>핵심 유형 번호</span></div>
   <p>질문의 유형을 고른 뒤 공통 골격을 소리 내어 말하고, 대괄호 부분만 주제에 맞게 바꿔 연습하세요.</p>
 </div>
 <div class="template-controls">
@@ -198,7 +200,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
     <div class="coach-points" id="coachPoints"><span>장소 전체 묘사</span><span>세부 2개</span><span>평소 활동</span><span>좋아하는 이유</span></div>
     <details style="margin-top:15px"><summary><b>막히면 쓰는 AL 골격</b></summary><div class="sample-script">Well, I'd say ___ is probably my favorite ___. The main reason is that ___. There is/are ___, which ___. I've been/I've done ___ for ___. Actually, I remember one time when ___. At first ___, but eventually ___. So I'd say ___.</div></details>
     <div class="practice-example-actions"><button class="practice-example-button" id="togglePracticeAnswer" aria-expanded="false">답변스크립트 보기</button><button class="practice-example-button speak" id="speakPracticeAnswer" hidden>🔊 답변스크립트 듣기</button></div>
-    <div class="practice-example" id="practiceExample" hidden></div>
+    <div class="practice-example" id="practiceExample" hidden></div><a id="practiceLesson" class="lesson-link" hidden>관련 단원 학습 →</a>
   </div>
   <div class="practice-toolbar">
     <button class="action" data-seconds="60">60초</button><button class="action" data-seconds="90">90초</button>
@@ -210,22 +212,9 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
     <audio id="recordedAudio" controls hidden></audio>
   </div>
   <div class="self-check" id="selfCheck">
-    <label><input type="checkbox"> 질문에 바로 답함</label><label><input type="checkbox"> 경험·세부 2개</label><label><input type="checkbox"> 연결어·숙어 사용</label><label><input type="checkbox"> 3초 침묵 없음</label>
+    <label><input type="checkbox"> 질문에 바로 답함</label><label><input type="checkbox"> 경험·세부 설명</label><label><input type="checkbox"> 관계사 사용</label><label><input type="checkbox"> 완료시제 사용</label><label><input type="checkbox"> 연결어·숙어 사용</label><label><input type="checkbox"> 3초 침묵 없음</label>
   </div>
   <div class="practice-toolbar"><button class="action primary" id="completePractice">연습 완료로 기록</button><span class="record-status" id="practiceMessage"></span></div>
-</div>
-</section>
-
-<section id="al-core">
-<div class="section-head"><div><span class="priority-badge">AL 전략 안내 반영</span><h2>문법 대신 7문장 자동화</h2><div class="desc">어려운 문법을 늘리는 대신, 쉬운 영어를 끊김 없이 연결하는 데 집중하세요. 권장 비중은 말하기 패턴 80%, 문법 20%입니다.</div></div></div>
-<div class="card full searchable">
-  <div class="answer-flow"><div class="step"><b>① 한 문장</b>핵심 답변</div><div class="step"><b>② 설명</b>이유·세부</div><div class="step"><b>③ 경험</b>작은 에피소드</div><div class="step"><b>④ 느낌</b>결론</div><div class="step"><b>문제형</b>상황→행동→결과</div><div class="step"><b>비교형</b>과거→현재</div></div>
-</div>
-<div class="grid" style="margin-top:14px">
-  <div class="card searchable"><h3>어떤 주제에도 꽂는 7개</h3><div class="strategy"><div><b>Well, I'd say ~</b> is probably my favorite / the most important ~.</div><div><b>The main reason is that ~.</b></div><div>There is / are ~, <b>which ~.</b></div><div><b>I've been / I've done ~ for ~.</b></div><div><b>Actually, I remember one time when ~.</b></div><div><b>At first ~, but eventually ~.</b></div><div><b>So I'd say ~.</b></div></div></div>
-  <div class="card searchable"><h3>점수로 이어지는 조합</h3><p><b>전체 경험 + 특정 사건</b><br>I've been to Busan many times, but the last time I went there, I stayed near Haeundae.</p><p><b>과거 + 현재 변화</b><br>Back then, hiking was mostly popular among older people, but these days, many young people are into it.</p><p><b>문제 + 해결</b><br>At first, we were confused, so I explained what had happened. Luckily, everything worked out in the end.</p><div class="callout">개인 경험 하나는 반드시 넣고, 70~80점짜리 영어를 90초 동안 자연스럽게 이어 가는 것을 목표로 하세요.</div></div>
-  <div class="card searchable"><h3>단어가 안 떠오를 때 우회</h3><p><b>humid</b> → really hot with a lot of moisture in the air</p><p><b>tripod</b> → the thing you use to hold a camera</p><p><b>trail</b> → the path people use when they hike</p><p class="mini">정확한 단어를 찾느라 멈추는 것보다 쉬운 말로 설명을 이어가는 편이 낫습니다.</p></div>
-  <div class="card searchable"><h3>실전 필러</h3><div class="taglist"><span class="tag">Um... let me see...</span><span class="tag">Give me a second.</span><span class="tag">Let me think about it for a minute.</span><span class="tag">It's on the tip of my tongue.</span><span class="tag">I'm not sure how to say it.</span><span class="tag">I haven't thought about it before, but...</span></div><details style="margin-top:12px"><summary><b>상황별 전체 표현 보기</b></summary><div class="sample-script"><b>기억이 흐릴 때</b><br>Well, that's all I remember for now.<br>It's hard to remember.<br>It's been a long time since then, but I'll try to remember as much as I can.<br>I can't remember it clearly.<br><br><b>주제가 낯설 때</b><br>I'm not familiar with the subject.<br>I'm not sure if this word is right.<br><br><b>앞 답변을 재활용할 때</b><br>As I mentioned earlier...<br>I already discussed this earlier, but let me try again, though.</div></details><p class="mini">Uh, um만 반복하지 말고 상황에 맞는 한 문장으로 생각할 시간을 확보하세요.</p></div>
 </div>
 </section>
 
@@ -236,8 +225,8 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </div>
 <div class="grid" style="margin-top:14px">
   <div class="card searchable"><h3>콤보는 3개로 묶어 준비</h3><p><b>묘사 → 평소 활동 → 기억나는 경험</b>을 한 세트로 연습하세요. 집·음악·공원·영화·하이킹·여행에 같은 구조를 재사용하면 효율적입니다.</p></div>
-  <div class="card searchable"><h3>롤플레이 만능 흐름</h3><p><b>상황 확인 질문 3개 → 문제 설명 → 대안 2개 → 확인</b>. 예약, 구매, 분실, 파손, 일정 변경에 그대로 적용하세요.</p></div>
-  <div class="card full searchable"><h3>시험 직전 최소 준비 세트</h3><div class="taglist"><span class="tag">집 묘사·변화·주말</span><span class="tag">음악 장르·기기·라이브 경험</span><span class="tag">공원 묘사·활동·최근 경험</span><span class="tag">하이킹 준비·계기·부상</span><span class="tag">여행지·준비·문제 경험</span><span class="tag">호텔/식당 예약과 불만</span><span class="tag">기술 구매·분실·교환</span><span class="tag">건강 습관·변화·시도</span><span class="tag">과거현재비교2 공통 틀</span></div><p class="mini" style="margin-top:12px">중복되는 답변은 공통 템플릿으로 묶었습니다. 같은 골격에 장소·인물·사건만 바꿔 연습하세요.</p><a class="practice-example-button" style="display:inline-block;margin-top:6px" href="#/practice">46문제 연습하기 →</a></div>
+  <div class="card searchable"><h3>롤플레이 만능 흐름</h3><p><b>상황 확인 질문 3개 → 문제 설명 → 대안 3개 → 확인</b>. 예약, 구매, 분실, 파손, 일정 변경에 그대로 적용하세요.</p></div>
+  <div class="card full searchable"><h3>시험 직전 최소 준비 세트</h3><div class="taglist"><span class="tag">집 묘사·변화·주말</span><span class="tag">음악 장르·기기·라이브 경험</span><span class="tag">공원 묘사·활동·최근 경험</span><span class="tag">하이킹 준비·계기·부상</span><span class="tag">여행지·준비·문제 경험</span><span class="tag">호텔/식당 예약과 불만</span><span class="tag">기술 구매·분실·교환</span><span class="tag">건강 습관·변화·시도</span><span class="tag">과거현재비교2 공통 틀</span></div><p class="mini" style="margin-top:12px">중복되는 답변은 공통 템플릿으로 묶었습니다. 같은 골격에 장소·인물·사건만 바꿔 연습하세요.</p><a class="practice-example-button" style="display:inline-block;margin-top:6px" href="#/practice">실전 문제 연습하기 →</a></div>
 </div>
 </section>
 
@@ -263,6 +252,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </div>
 </section>
 
+<section id="course" class="route-hidden"></section>
 <section id="survey">
 <div class="section-head"><div><h2>2. Survey & 문제 유형</h2><div class="desc">자료에서 추천 강도가 높은 주제와 돌발/문제 유형.</div></div></div>
 <div class="card full survey-plan searchable">
@@ -279,7 +269,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
   <label class="survey-choice"><span class="survey-num">6</span><span><span class="survey-question">귀하는 주로 어떤 운동을 즐기십니까?</span><span class="survey-answer-tags"><span>걷기</span><span>조깅</span><span>하이킹/트래킹</span><span>신체 운동을 즐기지 않음</span></span></span><input type="checkbox" data-survey-check="6" aria-label="6번 선택 확인"></label>
   <label class="survey-choice"><span class="survey-num">7</span><span><span class="survey-question">다음 중 어떤 휴가나 출장 경험이 있습니까?</span><span class="survey-answer-tags"><span>국내 여행</span><span>해외 여행</span></span></span><input type="checkbox" data-survey-check="7" aria-label="7번 선택 확인"></label>
  </div>
- <div class="survey-actions"><span>확인 체크는 이 기기에 자동 저장됩니다.</span><button class="survey-reset" id="surveyReset" type="button">체크 초기화</button></div>
+ <a class="lesson-link" href="#/course/lesson-001">설문 전체와 소재 연결 학습 →</a><div class="survey-actions"><span>확인 체크는 이 기기에 자동 저장됩니다.</span><button class="survey-reset" id="surveyReset" type="button">체크 초기화</button></div>
 </div>
 <div class="grid">
  <div class="card searchable"><h3>선택 주제 COMBOS</h3><div class="taglist">
@@ -296,405 +286,10 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </div>
 </section>
 
-<section id="strategy">
-<div class="section-head"><div><h2>3. IH~AL 획득 전략</h2><div class="desc">고득점 파트에 반복적으로 등장하는 요소만 압축.</div></div></div>
-<div class="grid">
- <div class="card searchable"><h3>IH~AL 전략 8</h3><div class="strategy">
-  <div>기초 어휘 변경 + 숙어 사용</div><div>반복 어휘 회피 — 동의어 활용</div><div>자연스러운 연결어 삽입</div><div>관계사 사용</div><div>완료시제 사용</div><div>최상급·비교급 사용</div><div>수동태 사용</div><div>시간 조절 — 장황하지 않게 핵심 중심</div>
- </div></div>
- <div class="card searchable"><h3>AL 전략 체크리스트</h3><div class="checklist">
-  <div class="check">현재·과거·미래·진행·완료 시제의 정확한 사용</div><div class="check">현재완료 사용</div><div class="check">형용사·부사의 원급/비교급/최상급</div><div class="check">다양한 형용사·부사</div><div class="check">접속사·연결어</div><div class="check">합성어</div><div class="check">관용어구</div><div class="check">구동사</div><div class="check">수동태</div><div class="check">관계사</div><div class="check">다양한 주어 형태</div><div class="check">복수형 명사의 정확한 사용</div>
- </div></div>
- <div class="card full searchable"><h3>Higher Level 필수 감각</h3><div class="checklist">
-  <div class="check must">관계사를 썼다</div><div class="check must">완료시제를 썼다</div><div class="check">수동태를 썼다</div><div class="check">비교급·최상급을 썼다</div><div class="check">다양한 주어를 썼다</div><div class="check must">3초 이상의 묵음이 없었다</div><div class="check must">동의어·숙어로 반복을 피했다</div><div class="check">숙어적 표현을 썼다</div>
- </div></div>
- <div class="card full searchable"><h3>자료에 나온 자연스러운 filler</h3><p><b>Um... let me see...</b> / <b>Give me a second.</b> / <b>It's on the tip of my tongue.</b> / <b>I'm not familiar with the subject, but...</b></p><p class="mini">핵심은 긴 침묵을 피하면서 답변을 이어 가는 것. 과거현재비교2는 “Um... let me see... I'm not familiar with the subject, but...”로 시작을 고정합니다.</p></div>
-</div>
-</section>
-
-<section id="answer">
-<div class="section-head"><div><h2>4. 60~90초 답변 구조</h2><div class="desc">자료의 ‘경험 말하기’ 구조를 바로 외우기 쉽게 시각화.</div></div></div>
-<div class="card full searchable">
- <div class="answer-flow">
-  <div class="step"><b>① 서론</b>1문장</div><div class="step"><b>② 기본정보</b>1문장</div><div class="step"><b>③ 핵심사건</b>1~2문장</div><div class="step"><b>④ 결과</b>1~2문장</div><div class="step"><b>⑤ 마무리</b>1문장</div><div class="step"><b>⏱ 목표</b>60~90초</div>
- </div>
- <div class="callout" style="margin-top:14px"><b>원칙:</b> “절대 장황한 응답 금지” — 겹치지 않는 구조와 어휘로 핵심만 간단히.</div>
-</div>
-</section>
-
-<section id="vocab">
-<div class="section-head"><div><h2>5. Vocabulary Upgrade</h2><div class="desc">기초 단어를 상위 표현으로 바꾸는 27개 세트.</div></div></div>
-<div class="table-wrap searchable"><table><thead><tr><th>Basic</th><th>Upgrade options</th></tr></thead><tbody><tr><td><strong>every day</strong></td><td>on a daily basis</td></tr>
-<tr><td><strong>every month</strong></td><td>on a monthly basis</td></tr>
-<tr><td><strong>every year</strong></td><td>on a yearly basis</td></tr>
-<tr><td><strong>regularly</strong></td><td>on a regular basis</td></tr>
-<tr><td><strong>before</strong></td><td>from my memory / as far as I remember</td></tr>
-<tr><td><strong>But</strong></td><td>However / although / nevertheless / on the other hand / whereas / while / despite</td></tr>
-<tr><td><strong>have a lot of stress</strong></td><td>be under massive pressure</td></tr>
-<tr><td><strong>like</strong></td><td>fall into / be into / be keen on / is highly preferred by / be interested in</td></tr>
-<tr><td><strong>And</strong></td><td>plus / in addition / moreover / besides / furthermore / what’s more</td></tr>
-<tr><td><strong>have</strong></td><td>be equipped with / receive / possess / own / hold / experience / undergo / encounter / face / suffer from / obtain / acquire / maintain</td></tr>
-<tr><td><strong>cheap</strong></td><td>inexpensive / affordable / reasonably priced / economical / budget-friendly / low-cost / cost-effective</td></tr>
-<tr><td><strong>because of</strong></td><td>due to / owing to / as a result of / on account of / thanks to / as a consequence of</td></tr>
-<tr><td><strong>not enough</strong></td><td>insufficient / a scarcity of / inadequate / limited / short of / run out of</td></tr>
-<tr><td><strong>can</strong></td><td>be able to / be capable of + -ing / be in a position to / have the ability to / be allowed to</td></tr>
-<tr><td><strong>make</strong></td><td>prepare / achieve / allow / lead / ensure / contribute / cause / force / encourage / motivate / enable</td></tr>
-<tr><td><strong>bad</strong></td><td>detrimental / harmful / deteriorate(v) / undesirable / unpleasant / disappointing / unsatisfactory / inconvenient / unreliable / low-quality</td></tr>
-<tr><td><strong>good</strong></td><td>ideal / desirable / optimal / suitable / pertinent / outstanding / remarkable / exceptional / superb / beneficial</td></tr>
-<tr><td><strong>reduce / relieve</strong></td><td>lower / minimize / lessen / ease / alleviate / mitigate / diminish</td></tr>
-<tr><td><strong>many</strong></td><td>numerous / countless / a large number of / a considerable number of / a wide range of / various / a majority of</td></tr>
-<tr><td><strong>much</strong></td><td>a great deal of / a large amount of / an enormous amount of</td></tr>
-<tr><td><strong>important</strong></td><td>critical / indispensable / significant / vital / core / pivotal / crucial / essential</td></tr>
-<tr><td><strong>want</strong></td><td>would like to / plan / intend / aim / desire / look forward to / be eager to / be willing to / feel like + -ing / be dying to + V</td></tr>
-<tr><td><strong>need</strong></td><td>require / necessitate / be in need of / call for / necessary</td></tr>
-<tr><td><strong>give</strong></td><td>provide / offer / supply / deliver / present / grant / award / pass / lend / send / share</td></tr>
-<tr><td><strong>do</strong></td><td>perform / carry out / conduct / complete / accomplish / handle / manage / work on</td></tr>
-<tr><td><strong>beautiful</strong></td><td>gorgeous / stunning / breathtaking / spectacular / magnificent / attractive / charming / picturesque / scenic</td></tr>
-<tr><td><strong>sick</strong></td><td>ill / unwell / under the weather / nauseous / dizzy / feverish</td></tr></tbody></table></div>
-</section>
-
-<section id="idioms">
-<div class="section-head"><div><h2>6. Idioms 29</h2><div class="desc">카드를 클릭하면 뜻이 나옵니다. 여행·운동·감정·평가 표현 중심.</div></div></div>
-<div class="flash-grid"><button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="blow off steam flashcard">
-      <span class="front"><b>blow off steam</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>스트레스를 풀다</b><small>to release stress or frustration</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="clear my head flashcard">
-      <span class="front"><b>clear my head</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>머리를 식히다</b><small>to relax and stop thinking about problems</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="get in shape flashcard">
-      <span class="front"><b>get in shape</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>몸을 만들다</b><small>to become healthier and more physically fit</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="work up a sweat flashcard">
-      <span class="front"><b>work up a sweat</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>땀을 흘리며 운동하다</b><small>to exercise enough to start sweating</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="break a sweat flashcard">
-      <span class="front"><b>break a sweat</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>땀을 내다</b><small>to start sweating, usually from exercise</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="take my mind off things flashcard">
-      <span class="front"><b>take my mind off things</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>걱정을 잊다</b><small>to stop thinking about worries or problems</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="get away from it all flashcard">
-      <span class="front"><b>get away from it all</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>일상에서 벗어나다</b><small>to escape from your usual routine or stress</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="make the most of flashcard">
-      <span class="front"><b>make the most of</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>~을 최대한 활용하다</b><small>to use an opportunity as well as possible</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="soak up the atmosphere flashcard">
-      <span class="front"><b>soak up the atmosphere</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>분위기를 만끽하다</b><small>to fully enjoy the atmosphere of a place</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="off the beaten path flashcard">
-      <span class="front"><b>off the beaten path</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>잘 알려지지 않은 곳</b><small>away from places that are popular with tourists</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="a breath of fresh air flashcard">
-      <span class="front"><b>a breath of fresh air</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>신선한 자극 / 활력소</b><small>something new and refreshing</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="a change of scenery flashcard">
-      <span class="front"><b>a change of scenery</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>분위기 전환</b><small>a change of surroundings or environment</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="have a blast / have a ball flashcard">
-      <span class="front"><b>have a blast / have a ball</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>아주 즐거운 시간을 보내다</b><small>to have a very enjoyable time</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="have the time of my life flashcard">
-      <span class="front"><b>have the time of my life</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>정말 즐거운 시간을 보내다</b><small>to have an extremely enjoyable experience</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="be blown away by flashcard">
-      <span class="front"><b>be blown away by</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>~에 깊은 감명을 받다</b><small>to be extremely impressed by something</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="be in awe of flashcard">
-      <span class="front"><b>be in awe of</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>~에 감탄하다</b><small>to feel great admiration or amazement</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="live up to my expectations flashcard">
-      <span class="front"><b>live up to my expectations</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>기대에 부응하다</b><small>to be as good as I expected</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="fall short of my expectations flashcard">
-      <span class="front"><b>fall short of my expectations</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>기대에 못 미치다</b><small>to be less good than I expected</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="steal the show flashcard">
-      <span class="front"><b>steal the show</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>단연 돋보이다</b><small>to attract the most attention or praise</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="get carried away flashcard">
-      <span class="front"><b>get carried away</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>너무 신나서 몰입하다</b><small>to become so excited that you lose control of your emotions</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="be in the mood for flashcard">
-      <span class="front"><b>be in the mood for</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>~을 하고 싶은 기분이다</b><small>to feel like doing or having something</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="not be my cup of tea flashcard">
-      <span class="front"><b>not be my cup of tea</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>내 취향이 아니다</b><small>to not be something that I personally like</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="hit the spot flashcard">
-      <span class="front"><b>hit the spot</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>딱 마음에 들다 / 만족시키다</b><small>to be exactly what you wanted or needed</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="go the extra mile flashcard">
-      <span class="front"><b>go the extra mile</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>한층 더 노력하다</b><small>to make an extra effort to do something well</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="once in a lifetime flashcard">
-      <span class="front"><b>once in a lifetime</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>평생 한 번 있을까 말까 한</b><small>something that happens only once in a person&#x27;s life</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="have mixed feelings about flashcard">
-      <span class="front"><b>have mixed feelings about</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>~에 대해 복잡한 감정이 들다</b><small>to have both positive and negative feelings about something</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="a must-see flashcard">
-      <span class="front"><b>a must-see</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>꼭 봐야 할 것</b><small>something that is highly recommended to see</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="worth every penny flashcard">
-      <span class="front"><b>worth every penny</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>돈이 전혀 아깝지 않은</b><small>completely worth the money you paid</small></span>
-    </button>
-<button class="flashcard searchable" onclick="this.classList.toggle('flipped')" aria-label="leave a lasting impression flashcard">
-      <span class="front"><b>leave a lasting impression</b><small>클릭해서 뜻 보기</small></span>
-      <span class="back"><b>오래도록 깊은 인상을 남기다</b><small>to make an impression that remains for a long time</small></span>
-    </button></div>
-</section>
-
-<section id="relatives">
-<div class="reference-note">선택 참고: 시험이 얼마 남지 않았다면 이 문법을 따로 외우지 말고, 이미 익숙한 예문 한두 개만 답변에 재사용하세요.</div>
-<div class="section-head" style="margin-top:16px"><div><h2>선택 참고 · 관계사</h2><div class="desc">who / which / that 중 익숙한 형태 하나만 사용해도 충분합니다.</div></div></div>
-<details class="topic searchable" open>
-          <summary>관계대명사 who / which / that<span>6 examples</span></summary>
-          <div class="examples"><div class="example-card searchable">
-      <div class="kr">그녀가 추천한 책은 정말 재미있었다</div>
-      <div class="en">The book that she recommended was really interesting.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그는 항상 다른 사람을 도와주는 사람이다</div>
-      <div class="en">He is a person who always helps others.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">내가 가장 좋아하는 카페는 새로 리모델링되었다</div>
-      <div class="en">The café that I like the most has been newly remodeled.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그녀가 만든 음식은 모두에게 인기가 있었다</div>
-      <div class="en">The food that she made was popular with everyone.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그는 절대 약속을 어기지 않는 사람이다</div>
-      <div class="en">He is a person who never breaks his promises.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">내가 입고 있는 재킷은 동생이 선물해 준 것이다</div>
-      <div class="en">The jacket that I&#x27;m wearing was a gift from my younger brother.</div>
-    </div></div>
-        </details>
-<details class="topic searchable" >
-          <summary>소유격 관계대명사 whose<span>4 examples</span></summary>
-          <div class="examples"><div class="example-card searchable">
-      <div class="kr">우리는 차가 고장 난 남자를 도와주었다</div>
-      <div class="en">We helped a man whose car had broken down.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그녀는 목소리가 정말 아름다운 가수이다</div>
-      <div class="en">She is a singer whose voice is beautiful.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">나는 아이들이 모두 해외에 사는 노부부를 만났다</div>
-      <div class="en">I met an elderly couple whose children all live abroad.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그는 아이디어가 항상 독창적인 직원이다</div>
-      <div class="en">He is an employee whose ideas are always creative.</div>
-    </div></div>
-        </details>
-<details class="topic searchable" >
-          <summary>관계부사 where<span>4 examples</span></summary>
-          <div class="examples"><div class="example-card searchable">
-      <div class="kr">이곳은 내가 아내를 처음 만난 식당이다</div>
-      <div class="en">This is the restaurant where I first met my wife.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">우리는 조용히 공부할 수 있는 장소를 찾고 있다</div>
-      <div class="en">We are looking for a place where we can study quietly.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그녀는 모두가 서로를 아는 작은 마을에서 자랐다</div>
-      <div class="en">She grew up in a small town where everyone knows each other.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">이것이 내가 매주 운동하는 헬스장이다</div>
-      <div class="en">This is the gym where I work out every week.</div>
-    </div></div>
-        </details>
-<details class="topic searchable" >
-          <summary>관계부사 when<span>3 examples</span></summary>
-          <div class="examples"><div class="example-card searchable">
-      <div class="kr">나는 우리가 처음 만났던 날을 아직도 기억한다</div>
-      <div class="en">I still remember the day when we first met.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">크리스마스는 가족들이 함께 시간을 보내는 시기이다</div>
-      <div class="en">Christmas is a time when families spend time together.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">나는 인생이 완전히 바뀌었던 순간을 절대 잊지 못할 것이다</div>
-      <div class="en">I will never forget the moment when my life completely changed.</div>
-    </div></div>
-        </details>
-<details class="topic searchable" >
-          <summary>혼합 관계사<span>7 examples</span></summary>
-          <div class="examples"><div class="example-card searchable">
-      <div class="kr">내가 존경하는 사람은 항상 배우는 것을 멈추지 않는다</div>
-      <div class="en">The person who I admire never stops learning.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">우리가 예약한 호텔은 바다 바로 앞에 있었다</div>
-      <div class="en">The hotel that we booked was right in front of the ocean.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그녀는 내가 지금까지 만난 사람 중 가장 친절한 사람이다</div>
-      <div class="en">She is the kindest person that I have ever met.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그녀는 항상 내가 필요할 때 나를 도와주는 친구이다</div>
-      <div class="en">She is a friend who always helps me whenever I need her.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">우리는 전망이 정말 아름다운 식당에서 저녁을 먹었다</div>
-      <div class="en">We had dinner at a restaurant where the view was amazing.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">우리는 서비스가 매우 훌륭한 호텔에 머물렀다</div>
-      <div class="en">We stayed at a hotel where the service was excellent.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">내가 가장 행복했던 순간은 가족과 함께 여행했을 때였다</div>
-      <div class="en">The happiest moment in my life was when I traveled with my family.</div>
-    </div></div>
-        </details>
-</section>
-
-<section id="perfect">
-<div class="section-head"><div><h2>8. 현재완료</h2><div class="desc">경험, 최근 변화, 지속을 표현할 때 자료에서 반복적으로 사용.</div></div></div>
-<div class="examples"><div class="example-card searchable">
-      <div class="kr">우리 가족은 날씨가 좋을 때마다 근처 공원에서 산책을 해 왔다</div>
-      <div class="en">My family has gone for walks in a nearby park whenever the weather has been nice.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">내 친구들 중 몇 명은 스트레스를 풀기 위해 최근에 조깅을 시작했다</div>
-      <div class="en">Some of my friends have recently started jogging to relieve stress.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">나는 지금까지 여러 산을 하이킹해 봤지만, 그중에서도 제주도에서의 하이킹이 가장 기억에 남는다</div>
-      <div class="en">I have hiked several mountains so far, but hiking in Jeju has been the most memorable.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">우리 부부는 결혼한 후 지금까지 함께 여러 공연을 관람해 왔다</div>
-      <div class="en">My spouse and I have attended various performances together since we got married.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">내 친구들은 최근에 유명한 가수의 콘서트에 다녀왔고, 그 공연에 대해 계속 이야기하고 있다</div>
-      <div class="en">My friends have recently been to a concert by a famous singer, and they have kept talking about the performance.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">나는 예전보다 음악을 훨씬 많이 듣게 되었고, 특히 출퇴근할 때 음악을 즐겨 듣는다</div>
-      <div class="en">I have started listening to music much more than I used to, and I have especially enjoyed listening to music during my commute.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">최근 몇 년 동안 영화관에 가는 대신 집에서 영화를 보는 사람들이 많아졌다</div>
-      <div class="en">In recent years, many people have started watching movies at home instead of going to the theater.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">우리 가족은 국내에서 여러 곳을 여행해 봤지만, 아직 가 보지 못한 곳도 많다</div>
-      <div class="en">My family has traveled to many places in Korea, but there are still many places we haven&#x27;t been to.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">나는 해외여행을 하면서 다양한 문화를 경험해 왔고, 그 경험을 통해 새로운 것에 대한 시야가 넓어졌다</div>
-      <div class="en">I have experienced various cultures while traveling abroad, and those experiences have broadened my perspective on new things.</div>
-    </div></div>
-</section>
-
-<section id="passive">
-<div class="section-head"><div><h2>9. 수동태</h2><div class="desc">장소·콘서트·영화·여행 묘사에 바로 끼워 넣을 수 있는 자료 예문.</div></div></div>
-<div class="examples"><div class="example-card searchable">
-      <div class="kr">이 공원은 집에서 가깝기 때문에 많은 사람들에게 산책 장소로 이용된다</div>
-      <div class="en">This park is used by a great number of people as a place to walk because it is close to their homes.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">공원은 깨끗하게 관리되기 때문에 많은 사람들이 이곳에서 조깅을 한다</div>
-      <div class="en">The park is kept clean, so countless people jog here.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">이 산책로는 나무가 많아서 많은 사람들에게 사랑받고 있다</div>
-      <div class="en">This walking trail is loved by quite a few people because there are many trees.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">날씨가 좋으면 이 해변은 많은 관광객들에게 방문된다</div>
-      <div class="en">When the weather is nice, this beach is visited by tons of tourists.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그 도시는 아름다운 풍경으로 유명하기 때문에 많은 관광객들에게 방문된다</div>
-      <div class="en">The city is visited by numerous tourists because it is known for its stunning scenery.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">그 영화는 재미있었기 때문에 많은 사람들에게 추천되었다</div>
-      <div class="en">The movie was recommended by a number of people because it was interesting.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">콘서트가 인기가 많아서 티켓은 빠르게 판매되었다</div>
-      <div class="en">The tickets were sold quickly because the concert was very popular.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">콘서트가 시작되기 전에 많은 사진이 팬들에 의해 찍혔다</div>
-      <div class="en">Loads of pictures were taken by fans before the concert started.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">나는 집에 있을 때 주로 라디오를 듣는데, 내가 좋아하는 노래들이 자주 재생된다</div>
-      <div class="en">When I am at home, I usually listen to radio, and my favorite songs are played often.</div>
-    </div>
-<div class="example-card searchable">
-      <div class="kr">여행을 가면 사진을 많이 찍는데, 그 사진들은 나중에 가족들에게 보여진다</div>
-      <div class="en">When I travel, I take a lot of pictures, and they are shown to my family later.</div>
-    </div></div>
-<div class="card full searchable" style="margin-top:10px"><h3>노래 묘사에 붙이기 좋은 형용사</h3><div class="taglist"><span class="tag">meaningful</span><span class="tag">touching</span><span class="tag">powerful</span><span class="tag">catchy</span><span class="tag">relatable</span><span class="tag">poetic</span><span class="tag">inspiring</span><span class="tag">thought-provoking</span></div></div>
-</section>
-
-<section id="examples">
-<div class="section-head"><div><h2>10. 문장 업그레이드</h2><div class="desc">voca 자료의 ‘기초 문장 → 상위 문장’ 변환 예시.</div></div></div>
-<div class="card full searchable">
-<div class="upgrade"><div class="basic">I walk in the park every day.</div><div class="arrow">→</div><div class="advanced">Walking in the park on a daily basis helps me alleviate stress.</div></div><div class="upgrade"><div class="basic">I like jogging.</div><div class="arrow">→</div><div class="advanced">I am interested in jogging, and I jog on a regular basis.</div></div><div class="upgrade"><div class="basic">I have a lot of stress, so I walk.</div><div class="arrow">→</div><div class="advanced">I am under massive pressure at work, so I walk to alleviate stress.</div></div><div class="upgrade"><div class="basic">The beach is beautiful.</div><div class="arrow">→</div><div class="advanced">The beach offers breathtaking scenery.</div></div><div class="upgrade"><div class="basic">I watch movies every month.</div><div class="arrow">→</div><div class="advanced">I enjoy watching a wide range of movies on a monthly basis.</div></div><div class="upgrade"><div class="basic">I want to go to a concert.</div><div class="arrow">→</div><div class="advanced">I am looking forward to attending a concert by my favorite singer.</div></div><div class="upgrade"><div class="basic">I travel domestically every year.</div><div class="arrow">→</div><div class="advanced">I prefer visiting a wide range of domestic destinations on a yearly basis.</div></div><div class="upgrade"><div class="basic">I want to travel abroad.</div><div class="arrow">→</div><div class="advanced">I would like to travel abroad to experience picturesque scenery.</div></div>
-</div>
-</section>
-
-<section id="misc">
-<div class="section-head"><div><h2>11. 실전 단어 & 발음</h2><div class="desc">한국식 표현을 영어로 바꿀 때 주의할 단어와 발음 체크 목록.</div></div></div>
-<div class="grid">
- <div class="card searchable"><h3>단어 치환</h3>
-  <p><b>아르바이트</b> → part-time</p><p><b>츄리닝</b> → sweatsuit</p><p><b>모닝콜</b> → wakeup call</p><p><b>원피스</b> → dress</p><p><b>와이셔츠</b> → dress shirt</p><p><b>원룸</b> → studio</p><p><b>다이어트</b> → go on a diet / weight loss</p><p><b>서비스</b> → free / complimentary</p><p><b>A/S</b> → repair service / after sales service / follow-up service / warrantee service</p>
- </div>
- <div class="card searchable"><h3>발음 체크</h3><div class="taglist"><span class="tag">Genre</span><span class="tag">Infamous</span><span class="tag">Eiffel tower</span><span class="tag">Salmon</span><span class="tag">Choir</span><span class="tag">Basic</span><span class="tag">Basil</span><span class="tag">Coyote</span><span class="tag">Mozzarella</span><span class="tag">Conscience</span><span class="tag">Buffet</span><span class="tag">Film</span><span class="tag">Margarine</span><span class="tag">Caffeine</span></div></div>
-</div>
-</section>
-
 <section id="quiz">
-<div class="section-head"><div><span class="priority-badge">3순위 · 5분 회상</span><h2>집중 퀴즈</h2><div class="desc">숙어·어휘·답변 전략·롤플레이를 섞은 문제은행입니다. 틀린 문제는 다음 회차에 더 자주 나옵니다.</div></div></div>
+<div class="section-head"><div><span class="priority-badge">3순위 · 5분 회상</span><h2>집중 퀴즈</h2><div class="desc">영작·표현·전략을 복습하세요. 틀린 문제는 더 자주 나옵니다.</div></div></div>
 <div class="quizbox searchable">
-  <div class="quiz-top"><select class="control" id="quizMode" aria-label="퀴즈 범위"><option value="all">전체 섞기</option><option value="idiom">숙어</option><option value="vocab">어휘 업그레이드</option><option value="strategy">답변 전략</option><option value="roleplay">롤플레이</option></select><div class="quiz-progress" id="quizProgress">문제 1 · 0점</div></div>
+  <div class="quiz-top"><select class="control" id="quizMode" aria-label="퀴즈 범위"><option value="all">전체 섞기</option><option value="idiom">숙어</option><option value="vocab">어휘 업그레이드</option><option value="grammar">문장력 · 영작</option><option value="connective">연결어</option><option value="filler">필러</option><option value="strategy">답변 전략</option><option value="roleplay">롤플레이</option></select><div class="quiz-progress" id="quizProgress">문제 1 · 0점</div></div>
   <div class="quiz-question" id="quizQuestion">‘스트레스를 풀다’에 가장 자연스러운 표현은?</div>
   <div class="quiz-options" id="quizOptions"></div>
   <div class="quiz-explain" id="quizExplain"></div>
@@ -702,37 +297,27 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </div>
 </section>
 
-<section id="samples">
-<div class="section-head"><div><h2>답안 음성 쉐도잉</h2><div class="desc">사진 자료의 모범 흐름과 업로드한 음성을 함께 들으며 억양과 연결 속도를 따라 하세요.</div></div></div>
-<div class="grid">
-  <div class="card searchable"><h3>홍수 경험 · memorable experience</h3><audio class="source-audio" controls preload="metadata" src="답안음성-홍수경험.mp3"></audio><details><summary>핵심 스크립트 보기</summary><div class="sample-script">As far as I remember, it happened two or three years ago at a beach which is well-known for its picturesque surroundings. My wife and I went there to blow off steam. However, the weather was completely unexpected. A flood warning was issued, and to make things worse, there was a flood in the streets. In the end, we had to go back home with wet clothes.</div></details></div>
-  <div class="card searchable"><h3>6중 추돌 사고 · transportation problem</h3><audio class="source-audio" controls preload="metadata" src="답안음성-6중추돌사고경험.mp3"></audio><details><summary>핵심 스크립트 보기</summary><div class="sample-script">My family and I were heading to the theater when we got caught up in traffic gridlock. We waited until the traffic eased off, but it didn't get better. There was a six-car rear-end collision on the road ahead. Eventually, we ended up going back home and spent the whole day on the road.</div></details></div>
-  <div class="card full searchable"><h3>3단계 쉐도잉</h3><div class="answer-flow"><div class="step"><b>① 듣기</b>스크립트 없이</div><div class="step"><b>② 따라 말하기</b>한 문장씩</div><div class="step"><b>③ 녹음</b>원음과 비교</div><div class="step"><b>④ 치환</b>장소·사건 변경</div><div class="step"><b>⑤ 재답변</b>60초 완성</div><div class="step"><b>목표</b>멈춤 최소화</div></div></div>
-</div>
-</section>
+<section id="samples"><div class="section-head"><div><h2>답안 음성 쉐도잉</h2><p class="desc">음성을 듣고 억양과 문장 연결을 따라 말하세요.</p></div></div><div class="course-tabs"><a href="#/course/lesson-076">홍수 경험 스크립트</a><a href="#/course/lesson-080">교통체증 스크립트</a><a href="#/course/roleplay">롤플레이 스크립트</a></div><div class="audio-list"><div class="card"><h3>1. 롤플레이-mp3</h3><audio controls preload="none" aria-label="1. 롤플레이-mp3 음성" src="mp3/1.%20%EB%A1%A4%ED%94%8C%EB%A0%88%EC%9D%B4-mp3.mp3"></audio></div><div class="card"><h3>1. 롤플레이-mp3문제해결</h3><audio controls preload="none" aria-label="1. 롤플레이-mp3문제해결 음성" src="mp3/1.%20%EB%A1%A4%ED%94%8C%EB%A0%88%EC%9D%B4-mp3%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0.mp3"></audio></div><div class="card"><h3>1. 롤플레이-망가트린경험</h3><audio controls preload="none" aria-label="1. 롤플레이-망가트린경험 음성" src="mp3/1.%20%EB%A1%A4%ED%94%8C%EB%A0%88%EC%9D%B4-%EB%A7%9D%EA%B0%80%ED%8A%B8%EB%A6%B0%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>1. 우리나라 사람들 교통수단</h3><audio controls preload="none" aria-label="1. 우리나라 사람들 교통수단 음성" src="mp3/1.%20%EC%9A%B0%EB%A6%AC%EB%82%98%EB%9D%BC%20%EC%82%AC%EB%9E%8C%EB%93%A4%20%EA%B5%90%ED%86%B5%EC%88%98%EB%8B%A8.mp3"></audio></div><div class="card"><h3>1. 자기소개</h3><audio controls preload="none" aria-label="1. 자기소개 음성" src="mp3/1.%20%EC%9E%90%EA%B8%B0%EC%86%8C%EA%B0%9C.mp3"></audio></div><div class="card"><h3>1. 휴가 가는 친척의 집을 봐주기로 해서 전화로 질문</h3><audio controls preload="none" aria-label="1. 휴가 가는 친척의 집을 봐주기로 해서 전화로 질문 음성" src="mp3/1.%20%ED%9C%B4%EA%B0%80%20%EA%B0%80%EB%8A%94%20%EC%B9%9C%EC%B2%99%EC%9D%98%20%EC%A7%91%EC%9D%84%20%EB%B4%90%EC%A3%BC%EA%B8%B0%EB%A1%9C%20%ED%95%B4%EC%84%9C%20%EC%A0%84%ED%99%94%EB%A1%9C%20%EC%A7%88%EB%AC%B8.mp3"></audio></div><div class="card"><h3>10. mp3. 경험</h3><audio controls preload="none" aria-label="10. mp3. 경험 음성" src="mp3/10.%20mp3.%20%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>11. 해외여행 세부사항</h3><audio controls preload="none" aria-label="11. 해외여행 세부사항 음성" src="mp3/11.%20%ED%95%B4%EC%99%B8%EC%97%AC%ED%96%89%20%EC%84%B8%EB%B6%80%EC%82%AC%ED%95%AD.mp3"></audio></div><div class="card"><h3>12. 본인이 여행 가기전 준비과정</h3><audio controls preload="none" aria-label="12. 본인이 여행 가기전 준비과정 음성" src="mp3/12.%20%EB%B3%B8%EC%9D%B8%EC%9D%B4%20%EC%97%AC%ED%96%89%20%EA%B0%80%EA%B8%B0%EC%A0%84%20%EC%A4%80%EB%B9%84%EA%B3%BC%EC%A0%95.mp3"></audio></div><div class="card"><h3>13. 여행 중 있었던 잊을 수 없는 경험</h3><audio controls preload="none" aria-label="13. 여행 중 있었던 잊을 수 없는 경험 음성" src="mp3/13.%20%EC%97%AC%ED%96%89%20%EC%A4%91%20%EC%9E%88%EC%97%88%EB%8D%98%20%EC%9E%8A%EC%9D%84%20%EC%88%98%20%EC%97%86%EB%8A%94%20%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>14. 집 어렸을 때 살았던 집과 지금 집 비교</h3><audio controls preload="none" aria-label="14. 집 어렸을 때 살았던 집과 지금 집 비교 음성" src="mp3/14.%20%EC%A7%91%20%EC%96%B4%EB%A0%B8%EC%9D%84%20%EB%95%8C%20%EC%82%B4%EC%95%98%EB%8D%98%20%EC%A7%91%EA%B3%BC%20%EC%A7%80%EA%B8%88%20%EC%A7%91%20%EB%B9%84%EA%B5%90.mp3"></audio></div><div class="card"><h3>15 집 주택 시장 문제</h3><audio controls preload="none" aria-label="15 집 주택 시장 문제 음성" src="mp3/15%20%EC%A7%91%20%EC%A3%BC%ED%83%9D%20%EC%8B%9C%EC%9E%A5%20%EB%AC%B8%EC%A0%9C.mp3"></audio></div><div class="card"><h3>2 오늘의 날씨 상태 묘사</h3><audio controls preload="none" aria-label="2 오늘의 날씨 상태 묘사 음성" src="mp3/2%20%EC%98%A4%EB%8A%98%EC%9D%98%20%EB%82%A0%EC%94%A8%20%EC%83%81%ED%83%9C%20%EB%AC%98%EC%82%AC.mp3"></audio></div><div class="card"><h3>2. 본인이 자주 이용하는 교통수단</h3><audio controls preload="none" aria-label="2. 본인이 자주 이용하는 교통수단 음성" src="mp3/2.%20%EB%B3%B8%EC%9D%B8%EC%9D%B4%20%EC%9E%90%EC%A3%BC%20%EC%9D%B4%EC%9A%A9%ED%95%98%EB%8A%94%20%EA%B5%90%ED%86%B5%EC%88%98%EB%8B%A8.mp3"></audio></div><div class="card"><h3>2. 자주 가는 미용실 묘사</h3><audio controls preload="none" aria-label="2. 자주 가는 미용실 묘사 음성" src="mp3/2.%20%EC%9E%90%EC%A3%BC%20%EA%B0%80%EB%8A%94%20%EB%AF%B8%EC%9A%A9%EC%8B%A4%20%EB%AC%98%EC%82%AC.mp3"></audio></div><div class="card"><h3>2. 친척집에 도착했는데 문 잠겨있고, 열쇠 못찾아 친척에게 도움 요청</h3><audio controls preload="none" aria-label="2. 친척집에 도착했는데 문 잠겨있고, 열쇠 못찾아 친척에게 도움 요청 음성" src="mp3/2.%20%EC%B9%9C%EC%B2%99%EC%A7%91%EC%97%90%20%EB%8F%84%EC%B0%A9%ED%96%88%EB%8A%94%EB%8D%B0%20%EB%AC%B8%20%EC%9E%A0%EA%B2%A8%EC%9E%88%EA%B3%A0%2C%20%EC%97%B4%EC%87%A0%20%EB%AA%BB%EC%B0%BE%EC%95%84%20%EC%B9%9C%EC%B2%99%EC%97%90%EA%B2%8C%20%EB%8F%84%EC%9B%80%20%EC%9A%94%EC%B2%AD.mp3"></audio></div><div class="card"><h3>3 어렸을 때 날씨와 최근 날씨 비교</h3><audio controls preload="none" aria-label="3 어렸을 때 날씨와 최근 날씨 비교 음성" src="mp3/3%20%EC%96%B4%EB%A0%B8%EC%9D%84%20%EB%95%8C%20%EB%82%A0%EC%94%A8%EC%99%80%20%EC%B5%9C%EA%B7%BC%20%EB%82%A0%EC%94%A8%20%EB%B9%84%EA%B5%90.mp3"></audio></div><div class="card"><h3>3 우리나라 날씨와 계절 묘사</h3><audio controls preload="none" aria-label="3 우리나라 날씨와 계절 묘사 음성" src="mp3/3%20%EC%9A%B0%EB%A6%AC%EB%82%98%EB%9D%BC%20%EB%82%A0%EC%94%A8%EC%99%80%20%EA%B3%84%EC%A0%88%20%EB%AC%98%EC%82%AC.mp3"></audio></div><div class="card"><h3>3 우리나라사람들하는보편적야외활동들</h3><audio controls preload="none" aria-label="3 우리나라사람들하는보편적야외활동들 음성" src="mp3/3%20%EC%9A%B0%EB%A6%AC%EB%82%98%EB%9D%BC%EC%82%AC%EB%9E%8C%EB%93%A4%ED%95%98%EB%8A%94%EB%B3%B4%ED%8E%B8%EC%A0%81%EC%95%BC%EC%99%B8%ED%99%9C%EB%8F%99%EB%93%A4.mp3"></audio></div><div class="card"><h3>3. 미용실 세부사항</h3><audio controls preload="none" aria-label="3. 미용실 세부사항 음성" src="mp3/3.%20%EB%AF%B8%EC%9A%A9%EC%8B%A4%20%EC%84%B8%EB%B6%80%EC%82%AC%ED%95%AD.mp3"></audio></div><div class="card"><h3>3. 어렸을 떄의 교통수단</h3><audio controls preload="none" aria-label="3. 어렸을 떄의 교통수단 음성" src="mp3/3.%20%EC%96%B4%EB%A0%B8%EC%9D%84%20%EB%96%84%EC%9D%98%20%EA%B5%90%ED%86%B5%EC%88%98%EB%8B%A8.mp3"></audio></div><div class="card"><h3>3. 친구,가족을 위해 무엇을 해 주기로 했다가 못 지켰던 경험</h3><audio controls preload="none" aria-label="3. 친구,가족을 위해 무엇을 해 주기로 했다가 못 지켰던 경험 음성" src="mp3/3.%20%EC%B9%9C%EA%B5%AC%2C%EA%B0%80%EC%A1%B1%EC%9D%84%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%84%20%ED%95%B4%20%EC%A3%BC%EA%B8%B0%EB%A1%9C%20%ED%96%88%EB%8B%A4%EA%B0%80%20%EB%AA%BB%20%EC%A7%80%EC%BC%B0%EB%8D%98%20%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>4 극단적 날씨 관련 경험</h3><audio controls preload="none" aria-label="4 극단적 날씨 관련 경험 음성" src="mp3/4%20%EA%B7%B9%EB%8B%A8%EC%A0%81%20%EB%82%A0%EC%94%A8%20%EA%B4%80%EB%A0%A8%20%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>4. 교통편 사용중 본인이 겪은 문제</h3><audio controls preload="none" aria-label="4. 교통편 사용중 본인이 겪은 문제 음성" src="mp3/4.%20%EA%B5%90%ED%86%B5%ED%8E%B8%20%EC%82%AC%EC%9A%A9%EC%A4%91%20%EB%B3%B8%EC%9D%B8%EC%9D%B4%20%EA%B2%AA%EC%9D%80%20%EB%AC%B8%EC%A0%9C.mp3"></audio></div><div class="card"><h3>4. 최근 미용실에 갔던 경험 묘사</h3><audio controls preload="none" aria-label="4. 최근 미용실에 갔던 경험 묘사 음성" src="mp3/4.%20%EC%B5%9C%EA%B7%BC%20%EB%AF%B8%EC%9A%A9%EC%8B%A4%EC%97%90%20%EA%B0%94%EB%8D%98%20%EA%B2%BD%ED%97%98%20%EB%AC%98%EC%82%AC.mp3"></audio></div><div class="card"><h3>5. 하이킹 장소</h3><audio controls preload="none" aria-label="5. 하이킹 장소 음성" src="mp3/5.%20%ED%95%98%EC%9D%B4%ED%82%B9%20%EC%9E%A5%EC%86%8C.mp3"></audio></div><div class="card"><h3>6. 하이킹시 입는옷과 사물.챙기는것들</h3><audio controls preload="none" aria-label="6. 하이킹시 입는옷과 사물.챙기는것들 음성" src="mp3/6.%20%ED%95%98%EC%9D%B4%ED%82%B9%EC%8B%9C%20%EC%9E%85%EB%8A%94%EC%98%B7%EA%B3%BC%20%EC%82%AC%EB%AC%BC.%EC%B1%99%EA%B8%B0%EB%8A%94%EA%B2%83%EB%93%A4.mp3"></audio></div><div class="card"><h3>7. 하이킹 다친경험</h3><audio controls preload="none" aria-label="7. 하이킹 다친경험 음성" src="mp3/7.%20%ED%95%98%EC%9D%B4%ED%82%B9%20%EB%8B%A4%EC%B9%9C%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>8. mp3. 친구에게 질의</h3><audio controls preload="none" aria-label="8. mp3. 친구에게 질의 음성" src="mp3/8.%20mp3.%20%EC%B9%9C%EA%B5%AC%EC%97%90%EA%B2%8C%20%EC%A7%88%EC%9D%98.mp3"></audio></div><div class="card"><h3>9. mp3. 고장 대안제시</h3><audio controls preload="none" aria-label="9. mp3. 고장 대안제시 음성" src="mp3/9.%20mp3.%20%EA%B3%A0%EC%9E%A5%20%EB%8C%80%EC%95%88%EC%A0%9C%EC%8B%9C.mp3"></audio></div><div class="card"><h3>답안음성-6중추돌사고경험</h3><audio controls preload="none" aria-label="답안음성-6중추돌사고경험 음성" src="mp3/%EB%8B%B5%EC%95%88%EC%9D%8C%EC%84%B1-6%EC%A4%91%EC%B6%94%EB%8F%8C%EC%82%AC%EA%B3%A0%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>답안음성-홍수경험</h3><audio controls preload="none" aria-label="답안음성-홍수경험 음성" src="mp3/%EB%8B%B5%EC%95%88%EC%9D%8C%EC%84%B1-%ED%99%8D%EC%88%98%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>차렌트Q1. 렌터카 업체에 전화해서 차 렌트 문의</h3><audio controls preload="none" aria-label="차렌트Q1. 렌터카 업체에 전화해서 차 렌트 문의 음성" src="mp3/%EC%B0%A8%EB%A0%8C%ED%8A%B8Q1.%20%EB%A0%8C%ED%84%B0%EC%B9%B4%20%EC%97%85%EC%B2%B4%EC%97%90%20%EC%A0%84%ED%99%94%ED%95%B4%EC%84%9C%20%EC%B0%A8%20%EB%A0%8C%ED%8A%B8%20%EB%AC%B8%EC%9D%98.mp3"></audio></div><div class="card"><h3>차렌트Q2. 렌터카에 문제 있어 회사에 전화로 해결</h3><audio controls preload="none" aria-label="차렌트Q2. 렌터카에 문제 있어 회사에 전화로 해결 음성" src="mp3/%EC%B0%A8%EB%A0%8C%ED%8A%B8Q2.%20%EB%A0%8C%ED%84%B0%EC%B9%B4%EC%97%90%20%EB%AC%B8%EC%A0%9C%20%EC%9E%88%EC%96%B4%20%ED%9A%8C%EC%82%AC%EC%97%90%20%EC%A0%84%ED%99%94%EB%A1%9C%20%ED%95%B4%EA%B2%B0.mp3"></audio></div><div class="card"><h3>차렌트Q3. 렌터카 이용 경험</h3><audio controls preload="none" aria-label="차렌트Q3. 렌터카 이용 경험 음성" src="mp3/%EC%B0%A8%EB%A0%8C%ED%8A%B8Q3.%20%EB%A0%8C%ED%84%B0%EC%B9%B4%20%EC%9D%B4%EC%9A%A9%20%EA%B2%BD%ED%97%98.mp3"></audio></div><div class="card"><h3>호텔1. 새로운 도시를 방문하여 당일 저녁 호텔 투숙 전화 문의</h3><audio controls preload="none" aria-label="호텔1. 새로운 도시를 방문하여 당일 저녁 호텔 투숙 전화 문의 음성" src="mp3/%ED%98%B8%ED%85%941.%20%EC%83%88%EB%A1%9C%EC%9A%B4%20%EB%8F%84%EC%8B%9C%EB%A5%BC%20%EB%B0%A9%EB%AC%B8%ED%95%98%EC%97%AC%20%EB%8B%B9%EC%9D%BC%20%EC%A0%80%EB%85%81%20%ED%98%B8%ED%85%94%20%ED%88%AC%EC%88%99%20%EC%A0%84%ED%99%94%20%EB%AC%B8%EC%9D%98.mp3"></audio></div><div class="card"><h3>호텔2. 호텔 객실이 매우 작고 지저분하여 안내 데스크에 전화로 문제 해결</h3><audio controls preload="none" aria-label="호텔2. 호텔 객실이 매우 작고 지저분하여 안내 데스크에 전화로 문제 해결 음성" src="mp3/%ED%98%B8%ED%85%942.%20%ED%98%B8%ED%85%94%20%EA%B0%9D%EC%8B%A4%EC%9D%B4%20%EB%A7%A4%EC%9A%B0%20%EC%9E%91%EA%B3%A0%20%EC%A7%80%EC%A0%80%EB%B6%84%ED%95%98%EC%97%AC%20%EC%95%88%EB%82%B4%20%EB%8D%B0%EC%8A%A4%ED%81%AC%EC%97%90%20%EC%A0%84%ED%99%94%EB%A1%9C%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0.mp3"></audio></div><div class="card"><h3>호텔3. 호텔에서 기억에 남는 본인만의 경험 묘사</h3><audio controls preload="none" aria-label="호텔3. 호텔에서 기억에 남는 본인만의 경험 묘사 음성" src="mp3/%ED%98%B8%ED%85%943.%20%ED%98%B8%ED%85%94%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%96%B5%EC%97%90%20%EB%82%A8%EB%8A%94%20%EB%B3%B8%EC%9D%B8%EB%A7%8C%EC%9D%98%20%EA%B2%BD%ED%97%98%20%EB%AC%98%EC%82%AC.mp3"></audio></div></div></section>
 
-<div class="footer">Source set: 모의고사 1~10 · 2022~2026 기출 · 1급특강 OT · 유형분류·과거현재비교·필러 자료 · OPIc 어휘/숙어/답변구조 자료 · 답안 음성 2종<br>Grammar in Use 원서는 시험 직전 학습 범위에서 제외했습니다. 학습 기록과 녹음은 서버로 전송되지 않습니다.</div>
+<div class="footer">학습 기록은 이 기기에 저장됩니다.</div>
 </main>
 </div>
 <nav class="mobile-dock" aria-label="모바일 빠른 메뉴">
   <a href="#/home" data-route-link="home"><b>⌂</b><span>홈</span></a>
   <a href="#/mock" data-route-link="mock"><b>▣</b><span>모의고사</span></a>
-  <a href="#/types" data-route-link="types"><b>☷</b><span>유형별</span></a>
-  <a href="#/templates" data-route-link="templates"><b>▤</b><span>템플릿</span></a>
+  <a href="#/course" data-route-link="course"><b>☷</b><span>전체학습</span></a>
+  <a href="#/quiz" data-route-link="quiz"><b>▤</b><span>퀴즈</span></a>
   <a href="#/practice" data-route-link="practice"><b>◉</b><span>실전연습</span></a>
 </nav>
 <script src="mock-data.js"></script>
 <script src="mock-data-extra.js"></script>
 <script src="practice-answers.js"></script>
 <script src="shared-scripts.js"></script>
+<script src="course-data.js"></script>
+<script src="course-sync.js"></script>
 <script>
 const q=document.getElementById('search');
-q.addEventListener('input',()=>{
-  const term=q.value.trim().toLowerCase();
-  document.querySelectorAll('.searchable').forEach(el=>{
-    el.classList.toggle('hidden-by-search', term && !el.innerText.toLowerCase().includes(term));
-  });
-});
+
 
 const mockExams=window.OPIC_MOCK_EXAMS||[];
 const mockState={examIndex:0,questionIndex:0,view:'script',completed:{}};
@@ -752,7 +337,7 @@ function buildMockSelector(){
 function renderMockNumbers(){
  const done=completedSet();
  document.getElementById('mockNumbers').innerHTML=currentExam().questions.map((item,i)=>`<button class="mock-number${i===mockState.questionIndex?' active':''}${done.has(item.number)?' done':''}" data-mock-index="${i}" aria-label="${item.number}번 문제${done.has(item.number)?' 암기 완료':''}">${item.number}</button>`).join('');
- document.querySelectorAll('.mock-number').forEach(button=>button.addEventListener('click',()=>{mockState.questionIndex=Number(button.dataset.mockIndex);mockState.view='script';renderMockExam()}));
+ document.querySelectorAll('#mockNumbers .mock-number').forEach(button=>button.addEventListener('click',()=>{mockState.questionIndex=Number(button.dataset.mockIndex);mockState.view='script';renderMockExam()}));
  const count=done.size,total=currentExam().questions.length;
  document.getElementById('mockProgressText').textContent=`암기 ${count} / ${total}`;
  document.getElementById('mockProgressBar').style.width=(count/total*100)+'%';
@@ -877,6 +462,10 @@ const prompts=[
  {year:'추가연습',type:'random',tag:'돌발 · 대중교통 · 과거현재비교2',en:'Now, tell me how transportation has changed over the years. How is the way people get around different now compared to the past?',kr:'사람들의 이동 방식과 대중교통이 과거와 현재 어떻게 달라졌는지 말하세요.',tips:['공통 필러','과거 자가용','현재 대중교통','개인 사례']}
 ];
 
+Object.entries(window.OPIC_COURSE_PRACTICE_LINKS).forEach(([index,number])=>{prompts[index].lessonId='lesson-'+String(number).padStart(3,'0')});
+prompts.push(...window.OPIC_COURSE_PRACTICE);
+window.OPIC_COURSE_PRACTICE.forEach((item,index)=>{window.OPIC_PRACTICE_ANSWERS[prompts.length-window.OPIC_COURSE_PRACTICE.length+index]=item.answer});
+
 const quizBank=[
  {id:'i1',type:'idiom',q:'‘스트레스를 풀다’에 가장 자연스러운 표현은?',a:'blow off steam',o:['blow off steam','steal the show','hit the spot','get carried away'],e:'blow off steam = 쌓인 스트레스나 답답함을 풀다.'},
  {id:'i2',type:'idiom',q:'‘머리를 식히다’에 해당하는 표현은?',a:'clear my head',o:['clear my head','work up a sweat','make the most of','be in awe of'],e:'clear my head는 걱정이나 복잡한 생각에서 잠시 벗어난다는 뜻입니다.'},
@@ -899,21 +488,21 @@ const quizBank=[
  {id:'s3',type:'strategy',q:'질문을 잘 못 들었을 때 가장 먼저 할 일은?',a:'두 번째 청취에서 핵심어와 유형을 잡는다',o:['두 번째 청취에서 핵심어와 유형을 잡는다','외운 답안을 아무거나 말한다','오래 침묵한다','질문 전체를 그대로 반복한다'],e:'who/where/when과 describe/compare/experience 같은 유형어를 먼저 잡으세요.'},
  {id:'s4',type:'strategy',q:'비교 문제에서 최소한 포함해야 할 구조는?',a:'과거 특징 + 현재 특징 + 가장 큰 변화',o:['과거 특징 + 현재 특징 + 가장 큰 변화','현재 특징만 세 번 반복','장소 묘사만 하기','질문 세 개 던지기'],e:'used to / these days / the biggest change is 같은 표지를 활용하세요.'},
  {id:'s5',type:'strategy',q:'경험 답변을 자연스럽게 시작하는 filler는?',a:'As far as I remember, ...',o:['As far as I remember, ...','You must listen to me.','There is no answer.','Repeat the question.'],e:'Well, let me see...와 함께 긴 침묵을 막는 짧은 완충 표현입니다.'},
- {id:'s6',type:'strategy',q:'AL 전략 안내가 권장하는 공부 비중은?',a:'말하기 패턴 80% · 문법 20%',o:['말하기 패턴 80% · 문법 20%','문법 80% · 말하기 20%','암기 100%','어려운 단어 100%'],e:'문법을 새로 파기보다 점수에 잘 먹히는 말하기 패턴을 자동화하는 것이 핵심입니다.'},
  {id:'s7',type:'strategy',q:'현재완료와 과거시제를 섞는 가장 좋은 방식은?',a:'현재완료로 전체 경험, 과거로 특정 사건',o:['현재완료로 전체 경험, 과거로 특정 사건','현재완료만 계속 반복','과거 없이 미래만 사용','시제를 쓰지 않고 단어만 나열'],e:"I've been there many times, but the last time I went there...처럼 연결하세요."},
- {id:'s8',type:'strategy',q:'AL답게 들리는 기본 답변 흐름은?',a:'핵심 답변 → 설명 → 경험 → 느낌',o:['핵심 답변 → 설명 → 경험 → 느낌','어려운 단어 → 침묵 → 결론','질문 반복 → 정보 나열','문법 설명 → 번역'],e:'한 문장으로 답을 주고, 구체화한 뒤 작은 개인 경험과 느낌으로 닫습니다.'},
  {id:'s9',type:'strategy',q:'tripod가 생각나지 않을 때 가장 좋은 대응은?',a:'the thing you use to hold a camera라고 우회한다',o:['the thing you use to hold a camera라고 우회한다','생각날 때까지 침묵한다','한국어로 말한다','답변을 종료한다'],e:'모르는 단어는 쉬운 영어로 paraphrase해서 흐름을 유지하세요.'},
  {id:'s10',type:'strategy',q:'문제 경험 답변의 만능 순서는?',a:'상황 → 문제 → 행동 → 결과 → 느낌',o:['상황 → 문제 → 행동 → 결과 → 느낌','느낌 → 새 주제 → 침묵','어휘 → 문법 → 번역','질문 → 질문 → 질문'],e:'여행, 식당, 호텔, 쇼핑, 인터넷, 휴대폰에 모두 재사용할 수 있습니다.'},
  {id:'r1',type:'roleplay',q:'예약 롤플레이에서 가장 좋은 질문 묶음은?',a:'날짜·가격·가능 여부·포함 서비스',o:['날짜·가격·가능 여부·포함 서비스','내 취미·가족·날씨·뉴스','과거·현재·산업·건강','색상 하나만 반복 질문'],e:'상대가 실제 예약을 처리하는 데 필요한 정보를 묻는 것이 핵심입니다.'},
- {id:'r2',type:'roleplay',q:'문제 해결 롤플레이의 핵심 순서는?',a:'문제 설명 → 대안 2개 → 확인',o:['문제 설명 → 대안 2개 → 확인','사과만 하고 종료','질문을 반복하고 종료','관련 없는 경험부터 길게 말하기'],e:'교환/환불, 일정 변경, 다른 객실처럼 실행 가능한 대안을 제시하세요.'},
+ {id:'r2',type:'roleplay',q:'문제 해결 롤플레이의 핵심 순서는?',a:'문제 설명 → 대안 3개 → 확인',o:['문제 설명 → 대안 3개 → 확인','사과만 하고 종료','질문을 반복하고 종료','관련 없는 경험부터 길게 말하기'],e:'교환/환불, 일정 변경, 다른 객실처럼 실행 가능한 대안을 제시하세요.'},
  {id:'r3',type:'roleplay',q:'친구에게 약속을 잡을 때 빠지면 안 되는 것은?',a:'시간과 장소 확인',o:['시간과 장소 확인','과거 날씨 비교','산업 성장 과정','가구 재질 묘사'],e:'시간, 장소, 활동, 준비물 중 3~4개를 질문하면 안정적입니다.'},
  {id:'r4',type:'roleplay',q:'물건이 파손되어 전화할 때 먼저 밝혀야 할 것은?',a:'구매/대여 정보와 구체적인 문제',o:['구매/대여 정보와 구체적인 문제','좋아하는 영화 장르','어릴 때 집 모습','우리나라 휴일'],e:'상황을 식별할 정보와 증상을 먼저 주면 해결 요청이 자연스럽습니다.'},
  {id:'r5',type:'roleplay',q:'정중하게 대안을 확인하는 마무리는?',a:'Would either of those options be possible?',o:['Would either of those options be possible?','You have to do it now.','That is all my story.','I do not have a question.'],e:'두 대안을 낸 후 가능 여부를 확인하면 롤플레이가 깔끔하게 끝납니다.'},
- {id:'u1',type:'strategy',q:'과거현재비교2는 시험 전체에서 몇 문항을 대비하면 되는가?',a:'1문항',o:['1문항','3문항 연속','5문항','매 문항'],e:'과거현재비교2는 전체에서 딱 1문항이므로 공통 틀 하나를 우선 자동화하세요.'},
  {id:'u2',type:'strategy',q:'과거현재비교2 공통 틀의 가장 안정적인 순서는?',a:'필러 → 과거와 한계 → 현재 변화 → 사례',o:['필러 → 과거와 한계 → 현재 변화 → 사례','현재만 묘사 → 종료','질문 세 개 → 사과','사례 없이 단어 나열'],e:'주제가 은행·날씨·패션으로 바뀌어도 이 순서는 그대로 유지합니다.'},
  {id:'u3',type:'strategy',q:'주제가 낯설 때 시간을 벌기 좋은 표현은?',a:"I'm not familiar with the subject, but...",o:["I'm not familiar with the subject, but...",'I have no answer.','Please change the topic.','I cannot speak English.'],e:'모른다고 끝내지 않고 but 뒤에서 준비한 공통 템플릿으로 연결합니다.'},
  {id:'u4',type:'strategy',q:'앞에서 말한 내용을 다시 활용할 때 가장 자연스러운 시작은?',a:'As I mentioned earlier, ...',o:['As I mentioned earlier, ...','Again answer now.','I already finished.','No more details.'],e:'같은 소재를 재사용하면서도 답변을 자연스럽게 연결하는 필러입니다.'}
 ];
+
+quizBank.splice(0,quizBank.length,...quizBank.filter(item=>!['idiom','vocab'].includes(item.type)&&!['s6','s8','u1'].includes(item.id)),...window.OPIC_COURSE.quizzes);
+quizBank.push({id:'latest-comparison',type:'strategy',q:'과거·현재 비교의 출제 범위는?',a:'1~3문항, 평균 2문항',o:['1~3문항, 평균 2문항','항상 딱 1문항','출제되지 않음','항상 5문항'],e:'과거현재비교1은 관심사·집, 비교2는 돌발 주제를 준비합니다.'});
 
 const state={
  prompt:0,seconds:60,remaining:60,timerId:null,mediaRecorder:null,chunks:[],
@@ -949,101 +538,24 @@ const typeDefinitions=[
  {key:'badExperience',number:'05',label:'당황·안 좋은 경험',flow:'배경 → 문제 → 대처 → 결과',frequency:'경험형 묶음'},
  {key:'specificExperience',number:'06',label:'특정·기억나는 경험',flow:'배경 → 핵심 사건 → 결과·감정',frequency:'경험형 총 3~5문항'},
  {key:'pastPresent1',number:'07',label:'과거현재비교1',flow:'선택 주제·집의 과거 → 현재 → 변화',frequency:'평균 2문항 · 2~13번'},
- {key:'pastPresent2',number:'08',label:'과거현재비교2',flow:'공통 필러 → 과거 한계 → 현재 발전 → 사례',frequency:'전체에서 딱 1문항'},
+ {key:'pastPresent2',number:'08',label:'과거현재비교2',flow:'공통 필러 → 과거 한계 → 현재 발전 → 사례',frequency:'1~3문항 · 평균 2문항 · 돌발 14~15번'},
+ {key:'placeDescription1',number:'09',label:'장소 묘사 1',flow:'이름·위치 → 비교 특징 → 시설 → 경험',frequency:'시설과 관련 경험 중심'},
+ {key:'placeDescription2',number:'10',label:'장소 묘사 2',flow:'이름·위치 → 개인적 의미 → 시설 → 선호 이유',frequency:'개인적 의미와 선호 이유 중심'},
+ {key:'unclassified',number:'19',label:'기타 유형',flow:'질문의 요구 파악 → 핵심 답변 → 세부 설명',frequency:'유형을 잡기 어려운 1~3문항'},
  {key:'compareContrast',number:'11',label:'비교대조',flow:'공통점 → A 특징 → B 특징 → 차이점',frequency:'보통 1문항 · 자주 나오진 않음'},
  {key:'socialIssue',number:'12',label:'사회이슈',flow:'사건·현상 → 경위·원인 → 결과·대처',frequency:'14~15번 자리'},
  {key:'activityDescription',number:'13',label:'활동 묘사',flow:'Before → As soon as → After / 순서대로',frequency:'거의 매달 1문항'},
  {key:'detailDescription',number:'14',label:'세부사항',flow:'언제·어디서·누구와·왜·빈도',frequency:'거의 매달 1문항'},
  {key:'reasonOpinion',number:'15',label:'이유 말하기',flow:'결론 → 이유 2개 → 효과·의견',frequency:'거의 매달 1문항'},
  {key:'roleplayAsk',number:'16',label:'롤플레이 · 질문하기',flow:'목적 → 질문 3~4개 → 예약·확인',frequency:'롤플레이 세트'},
- {key:'roleplaySolve',number:'17',label:'롤플레이 · 문제 해결',flow:'문제 설명 → 대안 2개 → 확인',frequency:'롤플레이 세트'},
+ {key:'roleplaySolve',number:'17',label:'롤플레이 · 문제 해결',flow:'문제 설명 → 대안 3개 → 확인',frequency:'롤플레이 세트'},
  {key:'roleplayExperience',number:'18',label:'롤플레이 · 경험',flow:'연결 경험의 배경 → 문제·사건 → 해결·결과',frequency:'롤플레이 세트 후속'}
 ];
-const answerTemplates=[
- {id:'intro',category:'describe',number:'00',title:'자기소개 고정 답변',types:'자기소개',use:'시험 1번에서 그대로 사용',script:mockExams[0].questions[0].answer},
- {id:'description',category:'describe',number:'01·02·14',title:'묘사 공통 템플릿',types:'사물 묘사 · 인물 묘사 · 세부사항',use:'장소·사물·인물의 전체 모습과 세부 특징을 말할 때',script:`Well, I'd say [대상] is [한 문장 소개].
-
-To be specific, [첫 번째 특징]. Turning to [두 번째 특징], [구체적인 설명].
-
-What I like or notice most is [개인적인 포인트].
-
-Overall, [대상을 한 문장으로 정리].`},
- {id:'origin',category:'experience',number:'03',title:'계기 말하기 템플릿',types:'계기 말하기',use:'관심을 갖게 된 시작점과 현재까지의 변화를 말할 때',script:`I first became interested in [주제] when [시기·계기].
-
-Before that, I thought [예전 생각]. One day, [구체적인 사건].
-
-I had such a good time that [생각의 변화].
-
-Since then, I have [현재까지 이어진 행동].`},
- {id:'experience',category:'experience',number:'04·05·06·18',title:'경험 공통 템플릿',types:'마지막 경험 · 문제 경험 · 기억나는 경험 · 롤플레이 후속 경험',use:'언제·어디서·누구와 있었는지 말한 뒤 사건과 결과를 연결할 때',script:`As far as I remember, it happened [언제] at [어디서]. I was with [누구].
-
-At first, [처음 상황]. However, [핵심 사건·문제].
-
-So, I [내가 한 행동]. Eventually, [결과].
-
-I felt [감정], and since then, [배운 점·달라진 행동].`},
- {id:'past-present-1',category:'compare',number:'07',title:'과거현재비교1 템플릿',types:'선택 주제 · 집',use:'개인 취향·활동·장소가 과거와 현재 어떻게 달라졌는지 말할 때',script:`When I was younger, [과거의 모습·취향] used to be common for me.
-
-Back then, [과거 세부사항].
-
-These days, however, I [현재의 모습·취향]. [현재 세부사항].
-
-The biggest difference is that [핵심 변화]. Personally, I prefer [현재/과거] because [이유].`},
- {id:'past-present-2',category:'compare',number:'08',title:'과거현재비교2 템플릿',types:'돌발 주제',use:'시험 전체에서 한 문항. 주제 내용만 바꾸고 골격은 그대로 사용',script:`Um... let me see... I'm not familiar with the subject, but personally, I believe that [주제] has changed noticeably.
-
-In the past, [과거의 일반적인 모습] was the most common. I mean, it was [장점], but [한계].
-
-However, unlike the past, [현재의 시스템·기술] has developed considerably nowadays. This has led people to [현재의 행동], and even [구체적인 현재 사례].
-
-In fact, [짧은 개인 사례].
-
-Overall, the biggest change is [한 문장 요약].`},
- {id:'compare-contrast',category:'compare',number:'11',title:'비교대조 템플릿',types:'비교대조',use:'두 장소·사람·대상의 공통점과 차이점을 말할 때',script:`[A] and [B] have one important thing in common: [공통점].
-
-[A] is [A의 특징], which [세부 설명]. On the other hand, [B] is [B의 특징], so [세부 설명].
-
-The biggest difference is that [핵심 차이].
-
-I personally prefer [A/B] because [이유].`},
- {id:'social-issue',category:'opinion',number:'12',title:'사회이슈 템플릿',types:'뉴스 · 산업 · 사회 문제',use:'사건의 원인·결과와 정부나 사람들의 대처를 말할 때',script:`One issue people have been talking about is [사건·현상].
-
-It was mainly caused by [원인·경위]. As a result, [영향·결과].
-
-In response, [정부·기업·사람들의 대처].
-
-I think [내 의견], because [이유].`},
- {id:'activity',category:'opinion',number:'13',title:'활동 묘사 템플릿',types:'활동 · 과정 · 일상',use:'무엇을 하기 전부터 끝날 때까지 순서대로 설명할 때',script:`Before I [활동], I usually [준비 1] and [준비 2].
-
-As soon as I get to [장소], I [첫 활동]. After that, I [다음 활동].
-
-Last but not least, I [마지막 활동].
-
-This routine helps me [효과·이유].`},
- {id:'reason',category:'opinion',number:'15',title:'이유 말하기 템플릿',types:'선호 · 장점 · 의견',use:'선택이나 의견을 먼저 말하고 이유 두 가지를 붙일 때',script:`I prefer [선택] for two main reasons.
-
-Above all, [첫 번째 이유]. For example, [짧은 사례].
-
-In addition, [두 번째 이유]. It helps me [효과].
-
-That is why [선택] is the best option for me.`},
- {id:'roleplay-ask',category:'roleplay',number:'16',title:'롤플레이 질문하기 템플릿',types:'정보 문의 · 예약 · 제3자 질문',use:'목적을 밝히고 필요한 질문을 3~4개 할 때',script:`Hello. I'm calling because [전화 목적], and I have a few questions.
-
-First, [질문 1]? Also, [질문 2]?
-
-I'd also like to know [질문 3]. One more question: [질문 4]?
-
-Could you [예약·확인 요청]? Thank you for your help.`},
- {id:'roleplay-solve',category:'roleplay',number:'17',title:'롤플레이 문제 해결 템플릿',types:'교환 · 환불 · 일정 변경 · 분실',use:'문제를 설명하고 실행 가능한 대안 두 개를 제시할 때',script:`Hello. I'm calling about [예약·구매·서비스 정보].
-
-Unfortunately, [구체적인 문제]. I already [시도한 조치], but the problem is still there.
-
-Could you [해결책 1]? If that is not possible, I would like [해결책 2].
-
-Please tell me which option is possible and [소요 시간·다음 단계]. Thank you.`}
-];
+const answerTemplates=window.OPIC_COURSE_TEMPLATES;
 function classifyType(item){
  const text=(item.question+' '+item.topic).toLowerCase();
  if(/introduction|tell me something about yourself/.test(text))return'intro';
+ if(item.lectureType && typeDefinitions.some(def=>def.key===item.lectureType))return item.lectureType;
  if(item.lectureType==='pastPresent2')return'pastPresent2';
  if(/that's the end of the situation/.test(text))return'roleplayExperience';
  if(item.isRoleplay||/role-?play/.test(text))return /problem|resolve|cannot|can't|couldn't|lost|unhappy|wrong|exchange|late|accident|complain|non-refundable|isn't sure|left my|valid for renting|explain how/.test(text)?'roleplaySolve':'roleplayAsk';
@@ -1058,18 +570,19 @@ function classifyType(item){
  if(/experience|memorable|when .*child|as a child|special time|have you ever|trip you took|time you ate|time you listened|personally tried/.test(text))return'specificExperience';
  if(/device|appliance|furniture|equipment|what are .* like.*technology|technology are commonly used|new technology product|new product.*technology/.test(text))return'objectDescription';
  if(/person you know|friend.*family member|family member.*what|actor or actress|favorite (?:musician|singer|actor)|police officer|farmer|banker|neighbor.*like/.test(text))return'personDescription';
+ if(/(?:park|beach|home|hotel|restaurant|salon).*(?:description|describe|look like|what is it like|what are they like)|describe.*(?:home|park|beach|place)/.test(text))return'placeDescription1';
  if(/from beginning to end|what activities do you|what do you usually do (?:at|when)|what happens before/.test(text))return'activityDescription';
  if(/\bdescription\b|what does .* look like|what is (?:it|the place) like|what are they like|describe (?:a|the|your)|what .* look like/.test(text))return'detailDescription';
  if(/\broutine\b|usually do|\btypical\b|prepare|preparation|what steps|how recycling is done|what do you do when|what do you do to|what efforts|housework|how do people prepare|what activities|what happens before|process/.test(text))return'activityDescription';
  if(/why|reason|prefer|favorite|advantage|benefit|what kind.*like|what kinds.*like/.test(text))return'reasonOpinion';
- return'detailDescription';
+ return'unclassified';
 }
 const typeItems=[];
 mockExams.forEach((exam,examIndex)=>exam.questions.forEach(item=>typeItems.push({
- source:'mock',sourceLabel:`모의 ${examIndex+1} · ${item.number}번`,ref:`M${examIndex+1}-${item.number}`,topic:item.type,question:item.question,kr:'',answer:item.answer,isRoleplay:/role-?play/i.test(item.type),lectureType:item.lectureType,templateId:item.templateId,templateName:item.templateName
+ source:'mock',sourceLabel:`모의 ${examIndex+1} · ${item.number}번`,ref:`M${examIndex+1}-${item.number}`,topic:item.type,question:item.question,kr:'',answer:item.answer,isRoleplay:/role-?play/i.test(item.type),lectureType:item.lectureType,templateId:item.templateId,templateName:item.templateName,lessonId:item.lessonId
 })));
 prompts.forEach((item,index)=>typeItems.push({
- source:'practice',sourceLabel:`실전 · ${index+1}번`,ref:`P${index+1}`,topic:item.tag,question:item.en,kr:item.kr,answer:resolvePracticeAnswer(index),isRoleplay:item.type==='roleplay',...(window.OPIC_PRACTICE_META?.[index]||{})
+ source:'practice',sourceLabel:`실전 · ${index+1}번`,ref:`P${index+1}`,topic:item.tag,question:item.en,kr:item.kr,answer:resolvePracticeAnswer(index),isRoleplay:item.type==='roleplay',lessonId:item.lessonId,lectureType:item.lectureType,...(window.OPIC_PRACTICE_META?.[index]||{})
 }));
 const typeScriptIds=new Map(),typeScriptUses=new Map();
 const typeSearchAliases=[[/home|apartment|housing/, '집 주거 아파트'],[/beach/, '해변'],[/music|concert/, '음악 콘서트'],[/park/, '공원'],[/travel|trip|vacation|flight|hotel/, '여행 호텔'],[/transport|subway|bus/, '교통 대중교통 지하철 버스'],[/restaurant|food|meal|delivery|takeout/, '식당 음식 배달'],[/health|dentist/, '건강 치과'],[/bank/, '은행'],[/free time/, '자유시간 여가'],[/technology|phone|computer|appliance/, '기술 휴대폰 컴퓨터 가전'],[/holiday/, '명절 휴일'],[/recycl/, '재활용'],[/appointment|reservation/, '약속 예약'],[/friend|family/, '친구 가족'],[/fashion|clothes/, '패션 옷'],[/weather/, '날씨'],[/industry|company|career|job/, '산업 회사 직업'],[/gathering|party/, '모임 파티']];
@@ -1078,7 +591,7 @@ const escapeTypeHtml=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;'
 function renderTypeBrowser(){
  const source=document.getElementById('typeSourceFilter').value,term=document.getElementById('typeSearch').value.trim().toLowerCase();
  const openGroups=new Set([...document.querySelectorAll('.type-group[open]')].map(group=>group.dataset.typeGroup));
- const filtered=typeItems.filter(item=>(source==='all'||item.source===source)&&(!term||(item.question+' '+item.kr+' '+item.topic+' '+item.sourceLabel+' '+item.scriptId+' '+item.searchAliases).toLowerCase().includes(term)));
+ const filtered=typeItems.filter(item=>(source==='all'||item.source===source)&&(!term||(item.question+' '+item.kr+' '+item.answer+' '+item.topic+' '+item.sourceLabel+' '+item.scriptId+' '+item.searchAliases).toLowerCase().includes(term)));
  document.getElementById('typeQuestionCount').textContent=typeItems.length;
  document.getElementById('typeCategoryCount').textContent=typeDefinitions.length;
  document.getElementById('typeScriptCount').textContent=typeScriptIds.size;
@@ -1086,7 +599,7 @@ function renderTypeBrowser(){
  document.getElementById('typeNav').innerHTML=activeTypes.map(def=>`<button type="button" data-type-jump="${def.key}">${def.number} ${def.label}</button>`).join('');
  document.getElementById('typeGroups').innerHTML=activeTypes.length?activeTypes.map((def,index)=>{
   const items=filtered.filter(item=>item.category===def.key),scripts=new Set(items.map(item=>item.scriptId)).size;
-  const cards=items.map(item=>{const uses=typeScriptUses.get(item.scriptKey),sharedLabel=item.templateName?`${item.scriptId} · 공통 틀`:`${item.scriptId}${uses>1?` · ${uses}문항 공유`:''}`;return `<article class="type-question"><div class="type-question-meta"><span class="type-source${item.source==='practice'?' practice':''}">${escapeTypeHtml(item.sourceLabel)}</span><span class="type-topic">${escapeTypeHtml(item.topic)}</span><span class="type-shared">${escapeTypeHtml(sharedLabel)}</span></div><p>${escapeTypeHtml(item.question)}</p>${item.kr?`<p class="kr">${escapeTypeHtml(item.kr)}</p>`:''}<details class="type-script"><summary>${item.templateName?escapeTypeHtml(item.templateName)+' · ':''}답변스크립트 보기</summary><div class="type-script-body">${escapeTypeHtml(item.answer)}</div></details></article>`}).join('');
+  const cards=items.map(item=>{const uses=typeScriptUses.get(item.scriptKey),sharedLabel=item.templateName?`${item.scriptId} · 공통 틀`:`${item.scriptId}${uses>1?` · ${uses}문항 공유`:''}`;return `<article class="type-question"><div class="type-question-meta"><span class="type-source${item.source==='practice'?' practice':''}">${escapeTypeHtml(item.sourceLabel)}</span><span class="type-topic">${escapeTypeHtml(item.topic)}</span><span class="type-shared">${escapeTypeHtml(sharedLabel)}</span></div><p>${escapeTypeHtml(item.question)}</p>${item.kr?`<p class="kr">${escapeTypeHtml(item.kr)}</p>`:''}<details class="type-script"><summary>${item.templateName?escapeTypeHtml(item.templateName)+' · ':''}답변스크립트 보기</summary><div class="type-script-body">${escapeTypeHtml(item.answer)}</div>${item.lessonId?`<a class="lesson-link" href="#/course/${item.lessonId}">관련 단원 학습 →</a>`:''}</details></article>`}).join('');
   const shouldOpen=term||openGroups.has(def.key);
   return `<details class="type-group" data-type-group="${def.key}"${shouldOpen?' open':''}><summary><span class="type-group-icon">${def.number}</span><span class="type-group-title"><b>${def.label}</b><span>${def.flow}</span><span class="type-frequency">${def.frequency}</span></span><span class="type-group-count">${items.length}문항 · ${scripts}스크립트</span></summary><div class="type-question-list">${cards}</div></details>`;
  }).join(''):'<div class="type-empty">조건에 맞는 문제가 없습니다. 검색어나 출처를 바꿔 보세요.</div>';
@@ -1101,7 +614,7 @@ function renderTemplateBrowser(){
  document.getElementById('templateCount').textContent=answerTemplates.length;
  document.getElementById('templateList').innerHTML=filtered.length?filtered.map(item=>{
   const script=escapeTypeHtml(item.script).replace(/\[([^\]]+)\]/g,'<mark>[$1]</mark>');
-  return `<details class="template-card"><summary><span class="template-number">${escapeTypeHtml(item.number)}</span><span class="template-title"><b>${escapeTypeHtml(item.title)}</b><span>${escapeTypeHtml(item.types)}</span></span></summary><div class="template-body"><div class="template-use">${escapeTypeHtml(item.use)}</div><div class="template-script">${script}</div></div></details>`;
+  return `<details class="template-card"><summary><span class="template-number">${escapeTypeHtml(item.number)}</span><span class="template-title"><b>${escapeTypeHtml(item.title)}</b><span>${escapeTypeHtml(item.types)}</span></span></summary><div class="template-body"><div class="template-use">${escapeTypeHtml(item.use)}</div><div class="template-script">${script}</div><a class="lesson-link" href="#/course/${item.lessonId}">단원 학습 →</a></div></details>`;
  }).join(''):'<div class="template-empty">조건에 맞는 템플릿이 없습니다.</div>';
 }
 document.getElementById('templateCategory').addEventListener('change',renderTemplateBrowser);
@@ -1121,6 +634,7 @@ function renderPrompt(){
  document.getElementById('promptIndex').textContent=(state.prompt+1)+' / '+prompts.length;
  document.getElementById('promptText').textContent=choice.en;
  document.getElementById('promptKr').textContent=choice.kr;
+ const lessonLink=document.getElementById('practiceLesson');lessonLink.hidden=!choice.lessonId;if(choice.lessonId)lessonLink.href='#/course/'+choice.lessonId;
  document.getElementById('coachPoints').innerHTML=choice.tips.map(t=>'<span>'+t+'</span>').join('');
  document.getElementById('practiceExample').textContent=resolvePracticeAnswer(state.prompt);
  document.getElementById('practiceExample').hidden=true;
@@ -1181,7 +695,7 @@ recordButton.addEventListener('click',async()=>{
  }catch(e){recordStatus.textContent='마이크 권한이 필요합니다. 브라우저 주소창에서 권한을 확인하세요.'}
 });
 
-function quizPool(){const mode=document.getElementById('quizMode').value;return quizBank.filter(x=>mode==='all'||x.type===mode)}
+function quizPool(){const mode=document.getElementById('quizMode').value;return quizBank.filter(x=>mode==='all'||x.type===mode||x.lessonId===mode)}
 function pickQuiz(){
  const pool=quizPool();const weighted=pool.flatMap(x=>state.wrong.has(x.id)?[x,x,x]:[x]);
  let item=weighted[Math.floor(Math.random()*weighted.length)];if(pool.length>1) while(item===state.currentQuiz)item=weighted[Math.floor(Math.random()*weighted.length)];
@@ -1196,7 +710,7 @@ function answerQuiz(e){
  document.querySelectorAll('.quiz-option').forEach(b=>{b.disabled=true;if(b.dataset.answer===state.currentQuiz.a)b.classList.add('correct')});
  if(!ok){e.currentTarget.classList.add('wrong');state.wrong.add(state.currentQuiz.id)}else{state.quizScore++;state.wrong.delete(state.currentQuiz.id)}
  localStorage.setItem('opicWrong',JSON.stringify([...state.wrong]));state.quizSeen++;state.daily.quiz++;if(ok)state.daily.correct++;saveDaily();
- const ex=document.getElementById('quizExplain');ex.innerHTML=(ok?'✓ 정답! ':'정답: <b>'+state.currentQuiz.a+'</b><br>')+state.currentQuiz.e;ex.style.display='block';
+ const ex=document.getElementById('quizExplain');ex.innerHTML=(ok?'✓ 정답! ':'정답: <b>'+state.currentQuiz.a+'</b><br>')+escapeTypeHtml(state.currentQuiz.e)+(state.currentQuiz.lessonId?'<br><a class="lesson-link" href="#/course/'+state.currentQuiz.lessonId+'">관련 단원 복습 →</a>':'');ex.style.display='block';
  document.getElementById('nextQuiz').disabled=false;document.getElementById('quizProgress').textContent='문제 '+state.quizSeen+' · '+state.quizScore+'점';
 }
 document.getElementById('nextQuiz').addEventListener('click',pickQuiz);
@@ -1205,12 +719,12 @@ document.getElementById('restartQuiz').addEventListener('click',()=>{state.quizS
 renderStats();showPrompt();renderTimer();pickQuiz();
 
 const routes={
- home:['home','today','homeMenu'],mock:['mock'],types:['types'],templates:['templates'],practice:['practice'],'al-core':['al-core'],recent:['recent'],
- overview:['overview'],survey:['survey'],strategy:['strategy'],answer:['answer'],vocab:['vocab'],idioms:['idioms'],
- patterns:['relatives','perfect','passive'],examples:['examples'],misc:['misc'],quiz:['quiz'],samples:['samples']
+ course:['course'],connectives:['course'],fillers:['course'],home:['home','today','homeMenu'],mock:['mock'],types:['types'],templates:['templates'],practice:['practice'],'al-core':['course'],recent:['recent'],
+ overview:['overview'],survey:['survey'],strategy:['course'],answer:['course'],vocab:['course'],idioms:['course'],
+ patterns:['course'],examples:['course'],misc:['course'],quiz:['quiz'],samples:['samples']
 };
 const routeTitles={
- home:'홈',mock:'모의고사',types:'문제 유형별 보기',templates:'답변 템플릿',practice:'실전 연습','al-core':'AL 7문장',recent:'빈출 주제',overview:'시험 핵심',
+ course:'전체 학습',connectives:'연결어',fillers:'필러',home:'홈',mock:'모의고사',types:'문제 유형별 보기',templates:'답변 템플릿',practice:'실전 연습','al-core':'AL 전략',recent:'빈출 주제',overview:'시험 핵심',
  survey:'Survey & 유형',strategy:'IH~AL 전략',answer:'답변 구조',vocab:'Vocabulary',idioms:'Idioms',
  patterns:'문장 패턴',examples:'문장 업그레이드',misc:'단어 & 발음',quiz:'집중 퀴즈',samples:'답안 음성'
 };
@@ -1252,4 +766,5 @@ window.addEventListener('hashchange',applyRoute);
 if(!location.hash)history.replaceState(null,'','#/home');
 applyRoute();
 </script>
+<script src="course-app.js"></script>
 </body></html>
