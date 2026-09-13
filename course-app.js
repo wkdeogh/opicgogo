@@ -45,7 +45,7 @@ function sourceLine(block){
   if(/^[💡👉]$/.test(block.text.trim()))return '';
   return '<p class="'+(!/[가-힣]/.test(block.text)?'english-line':'source-line')+'">'+studyInline(block.text)+'</p>';
 }
-function readPart(value,heading=false){const part=sourcePart(value);return '<div class="source-fragment" data-part="'+part.id+'" id="source-'+part.id+'">'+(heading?'<h3>'+studyEscape(typeof heading==='string'?heading:part.title)+'</h3>':'')+part.blocks.map(sourceLine).join('')+'</div>';}
+function readPart(value,heading=false){const part=sourcePart(value);return '<div class="source-fragment" data-part="'+part.id+'" id="source-'+part.id+'">'+(heading?'<h3>'+studyEscape(typeof heading==='string'?heading:part.title)+'</h3>':'')+(part.scanPage?'<small class="scan-source">교재 '+(part.scanPage+17)+'쪽</small>':'')+part.blocks.map(sourceLine).join('')+'</div>';}
 function subTabs(view,active){return '<nav class="study-subtabs" aria-label="'+studyLayout.views.find(item=>item.id===view).title+' 분류">'+studyLayout[view].map(item=>'<a href="#/course/'+view+'/'+item.id+'" '+(item.id===active?'aria-current="page"':'')+'>'+studyEscape(item.title)+'</a>').join('')+'</nav>';}
 function reference(title,body,open=false){return '<details class="study-reference"'+(open?' open':'')+'><summary>'+title+'</summary><div class="reference-body">'+body+'</div></details>';}
 function renderPrep(){return '<div class="prep-grid"><article class="study-paper">'+readPart(3,true)+'</article><article class="study-paper">'+readPart(4,true)+readPart(2,true)+'</article></div>'+reference('Survey 선택안 · 시험 전 참고',readPart(1)+readPart(5,true));}
@@ -74,7 +74,9 @@ function renderExpressions(route){
 }
 function scriptCard(n,stage){
   const part=sourcePart(n),index=prompts.findLastIndex(item=>item.lessonId===part.id),prompt=index>=0?prompts[index]:null;
-  const actions=(part.english?'<button class="study-button" data-listen="'+part.id+'">답변 듣기</button>':'')+(studyLayout.hints[n]?'<button class="study-button" data-cues aria-pressed="false">가리고 말하기</button>':'')+(prompt?'<button class="study-text-button" data-practice="'+index+'">타이머·녹음 →</button>':'');
+  const matching=prompts.flatMap((item,i)=>item.lessonId===part.id&&part.questions.includes(item.en)?[i]:[]);
+  const practiceIndices=matching.length?matching:(index>=0?[index]:[]);
+  const actions=(part.english?'<button class="study-button" data-listen="'+part.id+'">답변 듣기</button>':'')+(studyLayout.hints[n]?'<button class="study-button" data-cues aria-pressed="false">가리고 말하기</button>':'')+practiceIndices.map((i,j)=>'<button class="study-text-button" data-practice="'+i+'">'+(practiceIndices.length>1?'질문 '+(j+1)+' 연습':'타이머·녹음')+' →</button>').join('');
   return '<article class="study-paper script-card'+(!part.english?' question-only':'')+'">'+(stage?'<span class="script-stage">'+stage+'</span>':'')+'<h3>'+studyEscape(part.title)+'</h3>'+(prompt&&!part.questions.length?'<p class="script-question" lang="en">'+studyEscape(prompt.en)+'</p>':'')+'<div class="script-copy">'+readPart(n)+'</div>'+(studyLayout.hints[n]?'<ol class="script-hints" hidden>'+studyLayout.hints[n].map(hint=>'<li>'+studyEscape(hint)+'</li>').join('')+'</ol>':'')+(actions?'<div class="script-actions">'+actions+'</div>':'')+'</article>';
 }
 function renderRoleplay(route){
@@ -86,6 +88,7 @@ function renderScripts(route){
   const group=studyLayout.scripts.find(item=>item.id===route.tab);
   let body;
   if(route.tab==='roleplay')body=renderRoleplay(route);
+  else if(route.tab==='scenarios')body='<div class="study-tools"><input id="scanScenarioSearch" class="study-search" type="search" aria-label="롤플레이 상황 찾기" placeholder="상황 찾기"></div>'+studyLayout.scanScenarios.map((scene,i)=>'<details class="study-topic scan-scenario"'+(i===0?' open':'')+'><summary>'+studyEscape(scene.title)+'</summary><div class="roleplay-trio">'+scene.parts.map(n=>scriptCard(n)).join('')+'</div></details>').join('')+'<p id="scanScenarioEmpty" role="status" hidden>일치하는 상황이 없습니다.</p>';
   else if(route.tab==='place')body=studyLayout.placePairs.map((pair,i)=>scriptTopic(pair.title,pair.parts,i===0)).join('');
   else if(['change','compare','issue'].includes(route.tab))body=group.parts.map((n,i)=>sourcePart(n).english?scriptTopic(sourcePart(n).title,[n],i===0||i===1&&route.tab==='compare'):reference(sourcePart(n).title,readPart(n),true)).join('');
   else body='<div class="scripts-document">'+group.parts.map(n=>sourcePart(n).title==='예시 문제'?reference('예시 문제',readPart(n)):scriptCard(n)).join('')+'</div>';
@@ -103,6 +106,7 @@ function renderCourse(){
   if(route.anchor&&route.anchor!=='lesson-036'){const target=document.getElementById('source-'+route.anchor);if(target){for(let el=target.parentElement;el&&el!==courseRoot;el=el.parentElement)if(el.tagName==='DETAILS')el.open=true;requestAnimationFrame(()=>(target.closest('.script-card')||target).scrollIntoView({block:'start',behavior:'instant'}));}}
 }
 function bindStudyEvents(){
+  courseRoot.querySelector('#scanScenarioSearch')?.addEventListener('input',event=>{const term=event.target.value.trim().toLocaleLowerCase(),items=[...courseRoot.querySelectorAll('.scan-scenario')];items.forEach(item=>item.hidden=!item.textContent.toLocaleLowerCase().includes(term));document.getElementById('scanScenarioEmpty').hidden=items.some(item=>!item.hidden);});
   courseRoot.querySelectorAll('[data-jump]').forEach(button=>button.addEventListener('click',()=>{const target=document.getElementById('type-'+button.dataset.jump);target.open=true;target.scrollIntoView({block:'start',behavior:'smooth'});}));
   courseRoot.querySelector('#expandAnswerTypes')?.addEventListener('click',event=>{const items=[...courseRoot.querySelectorAll('.answer-family')],open=items.some(item=>!item.open);items.forEach(item=>item.open=open);event.currentTarget.textContent=open?'모든 유형 접기':'모든 유형 펼치기';});
   courseRoot.querySelectorAll('[data-writing-mode]').forEach(button=>button.addEventListener('click',()=>{studyState.grammarMode=button.dataset.writingMode;courseRoot.querySelector('.writing-sheet').dataset.mode=studyState.grammarMode;courseRoot.querySelectorAll('.writing-answer').forEach(item=>item.open=studyState.grammarMode==='read');courseRoot.querySelectorAll('[data-writing-mode]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));}));

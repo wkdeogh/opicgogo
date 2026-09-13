@@ -19,6 +19,8 @@ node scripts/build-course.mjs
 node scripts/verify-course.cjs
 ```
 
+교재 스캔의 추가 자료는 `scan-source.mjs`에 PDF 쪽수와 함께 수동 판독한 내용으로 관리합니다. `node scripts/build-scan.mjs`로 앱용 `scan-data.js`와 `docs/교재스캔-차이점-검토.md`, `docs/교재스캔-반영내역.md`를 갱신하고 `node scripts/verify-scan.mjs`로 검증합니다. `scan-sync.js`는 비어 있던 답변만 보완하고 새 자료를 기존 학습 분류에 연결합니다. 선택 대기 답변은 앱 데이터에 포함하지 않습니다. 문서 선택 결과를 반영하기 전까지 기존 답변을 교체하지 않습니다.
+
 Windows에서 Node의 경로 해석이 제한되는 환경은 두 명령에 `--preserve-symlinks-main --preserve-symlinks`를 추가합니다.
 
 - `course-data.js`: 원문 전체, 출처별 콘텐츠 조각, 표, 예문과 퀴즈를 생성합니다. 직접 편집하지 않습니다. 조각 번호는 출처 추적과 기존 링크를 위한 내부 식별자입니다.

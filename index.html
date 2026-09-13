@@ -174,11 +174,11 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </section>
 
 <section id="templates">
-<div class="section-head"><div><span class="priority-badge">암기용 공통 골격</span><h2>답변 템플릿</h2><div class="desc">문제의 주제만 바꿔 반복해서 사용할 수 있는 답변 골격입니다. 먼저 구조를 외운 뒤 대괄호 안의 내용만 교체하세요.</div></div></div>
+<div class="section-head"><div><span class="priority-badge">암기용 공통 골격</span><h2>답변 템플릿</h2><div class="desc">유형별 답변 순서와 문장 틀</div></div></div>
 <div class="template-summary">
   <div><strong id="templateCount">0</strong><span>공통 템플릿</span></div>
   <div><strong>19</strong><span>핵심 유형 번호</span></div>
-  <p>질문의 유형을 고른 뒤 공통 골격을 소리 내어 말하고, 대괄호 부분만 주제에 맞게 바꿔 연습하세요.</p>
+  <p>질문에 맞는 유형을 고르고 빈칸에 자신의 내용을 넣어 말하세요.</p>
 </div>
 <div class="template-controls">
   <select id="templateCategory" aria-label="템플릿 범위"><option value="all">전체 템플릿</option><option value="describe">묘사</option><option value="experience">경험</option><option value="compare">비교</option><option value="opinion">활동·의견</option><option value="roleplay">롤플레이</option></select>
@@ -288,6 +288,8 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 <script src="course-data.js"></script>
 <script src="course-layout.js"></script>
 <script src="course-sync.js"></script>
+<script src="scan-data.js"></script>
+<script src="scan-sync.js"></script>
 <script>
 const q=document.getElementById('search');
 
@@ -321,7 +323,7 @@ function renderMockExam(){
  document.getElementById('mockSubtitle').textContent=exam.subtitle;
  document.getElementById('mockType').textContent=`${item.number} / ${exam.questions.length} · ${item.type}`;
  document.getElementById('mockQuestion').textContent=item.question;
- document.getElementById('mockAnswer').textContent=item.answer||'이름·용도 → 외형 → 특징 → 활용 순서로 답변하세요.';
+ document.getElementById('mockAnswer').textContent=item.answer||def.flow;
  document.getElementById('mockSpeakAnswer').disabled=!item.answer;
  document.getElementById('mockAnswer').classList.toggle('fixed',!!item.fixed);
  document.getElementById('mockCues').innerHTML=item.cues.map(cue=>`<span class="mock-cue">${cue}</span>`).join('');
@@ -576,7 +578,7 @@ function renderTypeBrowser(){
   const cards=items.map(item=>{
     const uses=typeScriptUses.get(item.scriptKey);
     const sharedLabel=item.answer?(item.templateName?`${item.scriptId} · 공통 틀`:`${item.scriptId}${uses>1?` · ${uses}문항 공유`:''}`):'직접 답변 연습';
-    return `<article class="type-question"><div class="type-question-meta"><span class="type-source${item.source==='practice'?' practice':''}">${escapeTypeHtml(item.sourceLabel)}</span><span class="type-topic">${escapeTypeHtml(item.topic)}</span><span class="type-shared">${escapeTypeHtml(sharedLabel)}</span></div><p>${escapeTypeHtml(item.question)}</p>${item.kr?`<p class="kr">${escapeTypeHtml(item.kr)}</p>`:''}<details class="type-script"><summary>${item.templateName?escapeTypeHtml(item.templateName)+' · ':''}${item.answer?'답변스크립트 보기':'답변 구성 보기'}</summary><div class="type-script-body">${escapeTypeHtml(item.answer||'이름·용도 → 외형 → 특징 → 활용 순서로 답변하세요.')}</div>${item.lessonId?`<a class="lesson-link" href="#/course/${item.lessonId}">학습 자료 보기 →</a>`:''}</details></article>`;
+    return `<article class="type-question"><div class="type-question-meta"><span class="type-source${item.source==='practice'?' practice':''}">${escapeTypeHtml(item.sourceLabel)}</span><span class="type-topic">${escapeTypeHtml(item.topic)}</span><span class="type-shared">${escapeTypeHtml(sharedLabel)}</span></div><p>${escapeTypeHtml(item.question)}</p>${item.kr?`<p class="kr">${escapeTypeHtml(item.kr)}</p>`:''}<details class="type-script"><summary>${item.templateName?escapeTypeHtml(item.templateName)+' · ':''}${item.answer?'답변스크립트 보기':'답변 구성 보기'}</summary><div class="type-script-body">${escapeTypeHtml(item.answer||def.flow)}</div>${item.lessonId?`<a class="lesson-link" href="#/course/${item.lessonId}">학습 자료 보기 →</a>`:''}</details></article>`;
   }).join('');
   const shouldOpen=term||openGroups.has(def.key);
   return `<details class="type-group" data-type-group="${def.key}"${shouldOpen?' open':''}><summary><span class="type-group-icon">${def.number}</span><span class="type-group-title"><b>${def.label}</b><span>${def.flow}</span><span class="type-frequency">${def.frequency}</span></span><span class="type-group-count">${items.length}문항 · ${scripts}스크립트</span></summary><div class="type-question-list">${cards}</div></details>`;
@@ -600,11 +602,11 @@ document.getElementById('templateSearch').addEventListener('input',renderTemplat
 renderTemplateBrowser();
 function renderPromptNumbers(){
  const holder=document.getElementById('promptNumbers');
- holder.innerHTML=prompts.map((prompt,index)=>`<button class="mock-number${index===state.prompt?' active':''}" data-prompt-index="${index}" aria-label="실전연습 ${index+1}번">${index+1}</button>`).join('');
+ holder.innerHTML=`<button class="control" data-prompt-index="${state.prompt-1}" ${state.prompt===0?'disabled':''} aria-label="이전 문제">←</button><select class="control" aria-label="실전 연습 문제 선택">${prompts.map((prompt,index)=>`<option value="${index}" ${index===state.prompt?'selected':''}>${index+1} · ${escapeTypeHtml(prompt.tag)}</option>`).join('')}</select><button class="control" data-prompt-index="${state.prompt+1}" ${state.prompt===prompts.length-1?'disabled':''} aria-label="다음 문제">→</button>`;
  holder.querySelectorAll('[data-prompt-index]').forEach(button=>button.addEventListener('click',()=>{
   state.prompt=Number(button.dataset.promptIndex);renderPrompt();
  }));
- requestAnimationFrame(()=>holder.querySelector('.active')?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}));
+ holder.querySelector('select').addEventListener('change',event=>{state.prompt=Number(event.target.value);renderPrompt();});
 }
 function renderPrompt(){
  stopSpeech();const choice=prompts[state.prompt];
