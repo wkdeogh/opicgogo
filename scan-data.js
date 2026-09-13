@@ -571,5 +571,259 @@ window.OPIC_SCAN = {
         "질문하기"
       ]
     }
+  ],
+  "selections": [
+    {
+      "id": "weather-experience",
+      "choice": "textbook",
+      "target": 1042,
+      "section": "scripts/experience",
+      "reason": "동일한 홍수 사건이며 시점과 방문 목적이 명확하고 선택용 표현이 적은 교재 전체 답변을 채택합니다.",
+      "page": 5,
+      "title": "폭우·홍수 경험",
+      "number": 1042,
+      "questions": [
+        "Tell me about a memorable incident related to the weather. What was the problem and how did you deal with the situation? What made that incident unforgettable?"
+      ],
+      "text": "Let me see... the memorable time related to the beach...... well.... As far as I remember, about... two or three years ago... it happened at Dongtan beach which is well-known for its picturesque surroundings. My wife and I went there to blow off steam. We got there and were having a ball hitting the water. However, the weather was completely unexpected. The flood warning was issued, and to make things worse, there was a flood in the streets. In the end, we had to go back home with the wet clothes on. I’ve never seen such a strong thunderstorm in my life.",
+      "kind": "script"
+    },
+    {
+      "id": "concert-stage",
+      "choice": "textbook",
+      "section": "scripts/experience",
+      "practice": [
+        31
+      ],
+      "mocks": [
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "reason": "공연 감상과 무대에서 노래한 사건은 다릅니다. 교재의 무대 경험으로 교체합니다.",
+      "page": 6,
+      "title": "라이브 음악 경험",
+      "number": 3002,
+      "questions": [
+        "Tell me about a time when you went to listen to some live music, such as a concert or a live café. What was the mood like and how did you like the music you listened to there?"
+      ],
+      "text": "Let me see... the time I went somewhere to listen to live music...... well...As far as I remember, it was a concert held by ABC, one of the most popular singers in Korea nowadays. My family and I headed to the stadium and enjoyed the concert. However, all of a sudden, I was called up on stage by the singer/the singer called me up on stage, which made me sing in front of the audience. Of course, my voice was shaking and cracked in the middle of the song/I messed it up/it didn’t go well/I totally blew it because I’m tone-deaf. Anyway, it became an unforgettable experience for my family and me.",
+      "kind": "script"
+    },
+    {
+      "id": "house-repair",
+      "choice": "textbook",
+      "section": "scripts/experience",
+      "mocks": [
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "reason": "에어컨 수리와 벽 재도색은 다른 사건입니다. 교재의 재도색 경험으로 교체합니다.",
+      "page": 6,
+      "title": "집 수리 경험",
+      "number": 3003,
+      "questions": [
+        "When did you repair your home for improvement? Who did you do it with? What did you do? Tell me about it in as much detail as possible."
+      ],
+      "text": "Let me see... the time my house was repaired...... well.... It was almost 7 years ago. My family moved to the new house due to my work, (but it required lots of improvement.) the paint on the wall was peeled and even the color was totally tarnished. So, my wife and I repainted the wall (from garret to kitchen). It was very tough to finish up and took around 8 hours, (which led us to be exhausted). I think with the new atmosphere, my house looks more sophisticated, modern and inviting at present.",
+      "kind": "script"
+    },
+    {
+      "id": "hiking-injury",
+      "choice": "textbook",
+      "section": "scripts/experience",
+      "practice": [
+        9
+      ],
+      "reason": "가벼운 부상과 병원 치료·한 달 깁스는 다른 사건 전개입니다. 교재를 채택합니다.",
+      "page": 6,
+      "title": "하이킹 중 발목 부상",
+      "number": 3004,
+      "questions": [
+        "People occasionally get hurt when exercising. For example, they might twist their ankles or sprain their knees. Have you ever injured yourself while hiking or trekking? What kind of injuries did you get? Do you do anything to avoid injuries?"
+      ],
+      "text": "Um... let me think about it for a second... Well... This happened about two or three months ago. Lately, since I felt like I was gaining weight, I decided to go hiking with my close friends at Dongtan Mountain, a popular hiking spot for us. In the beginning, everything was perfect (the weather was ideal, and we were talking and laughing while hiking). However, I accidentally sprained my ankle. The pain was unbearable, so we rushed to the hospital, (and I ended up wearing a cast for a month.) Since then, I always hike much more cautiously.",
+      "kind": "script"
+    },
+    {
+      "id": "subway-reason",
+      "choice": "textbook",
+      "target": 1045,
+      "section": "scripts/reason",
+      "reason": "버스와 지하철은 선호 대상과 근거가 다릅니다. 교재 지하철 답변을 채택합니다.",
+      "page": 12,
+      "title": "선호하는 교통수단",
+      "number": 1045,
+      "questions": [
+        "What means of transportation do you use to get around? Do you drive or take public transportation?"
+      ],
+      "text": "Well.... As for the means of transportation I’ve used to move around, it’s a subway and there are some reasons why it’s preferred. One of the main reasons is an affordable fare. In fact, the rate of inflation has increased year in and year out. Therefore, transportation expenses can be a burden. Another reason is that it’s apparent there is traffic gridlock. It’s notorious for heavy traffic congestion in the city where I've been living. Regardless of the time, the subway never gets stuck in a traffic jam. These are the reasons why the subway is preferred when I get around.",
+      "kind": "script"
+    },
+    {
+      "id": "travel-new-zealand",
+      "choice": "textbook",
+      "section": "scripts/reason",
+      "mocks": [
+        [
+          4,
+          8
+        ]
+      ],
+      "reason": "선호 해외여행지는 교재 New Zealand로 채택합니다. 동탄 해변의 국내 장소 묘사와 한국·캐나다 국가 비교는 별도 질문이므로 보존합니다.",
+      "page": 12,
+      "title": "선호하는 해외여행지",
+      "number": 3006,
+      "questions": [
+        "You indicated in the survey that you take vacations internationally. Tell me about a place that people in your country like to visit when traveling abroad. Where is it, and why is it popular?"
+      ],
+      "text": "Well... As for the popular country Koreans loves to travel to, it is New Zealand, and there are some reasons why it’s preferred. One of the main reasons is that the weather there is clear without a hint of cloud. In fact, due to global warming, doing outdoor activities such as surfing and snowboarding is getting harder and harder in Korea. Another reason is that it’s apparent that it has breathtaking views of mountains and beaches. I’m sure the sceneries seen there don’t exist in Korea. These are the reasons why people in my country like to spend time in New Zealand.",
+      "kind": "script"
+    },
+    {
+      "id": "industry-employment",
+      "choice": "textbook",
+      "section": "scripts/reason",
+      "mocks": [
+        [
+          5,
+          15
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "practice": [
+        18
+      ],
+      "reason": "AI 대신 교재의 IT·Samsung·LG를 채택합니다. 입사 전후 교육 변화를 묻는 5회 14번과 개인 경력 노력을 묻는 7회 4번은 교재에 해당 내용이 없어 별도 답변을 유지합니다.",
+      "page": 12,
+      "title": "취업하고 싶은 기업·산업",
+      "number": 3007,
+      "questions": [
+        "What is an industry or a company that people in your country are talking about these days? Why are people interested in this field, and what are they saying about it?"
+      ],
+      "text": "Well... As for the companies young job seekers want to work for, they are companies related to the IT industry and there are some reasons why they’re preferred. One of the main reasons is their promising future. In fact, products like semiconductors and display panels have been regarded as essential in modern society. Luckily, two leading companies, Samsung and LG, are from Korea. Another reason is their strong social reputation. it’s obvious that excellent fringe benefits are guaranteed, and employees of these companies are generally respected by others.",
+      "kind": "script"
+    },
+    {
+      "id": "recliner",
+      "choice": "textbook",
+      "target": 1006,
+      "section": "scripts/object",
+      "practice": [
+        26
+      ],
+      "reason": "테이블과 리클라이너는 다른 사물입니다. 가구는 교재 전체 답변, 가전은 교재에 있는 시작 문장만 반영합니다.",
+      "page": 14,
+      "title": "좋아하는 가구·유용한 가전",
+      "number": 1006,
+      "questions": [
+        "What kind of furniture do you have at home? Tell me about each type of furniture. Plus, what is your favorite piece of furniture? Why do you like it? When did you get it?"
+      ],
+      "text": "Well... The furniture I like is a recliner which is height adjustable. There is no doubt that it is a recently-released and the best-selling item nowadays. With regard to the features, it is well known for its high quality and coming in various colours. So, it’s loved by most women who are sensitive to the trend. Most importantly, it has a massage function. It's quite practical.",
+      "kind": "script",
+      "opening": "Well... The modern appliance people consider as useful at home is a recliner..."
+    },
+    {
+      "id": "cancel-movie-experience",
+      "choice": "textbook",
+      "section": "scripts/experience",
+      "mocks": [
+        [
+          4,
+          13
+        ]
+      ],
+      "reason": "일반 계획 취소는 교재의 영화 취소 경험으로 교체합니다. 여행·파티 취소를 명시한 8회 13번과 휴가 계획을 묻는 10회 13번은 별도 여행 질문이므로 여행 답변을 유지합니다.",
+      "page": 16,
+      "title": "계획을 지키지 못한 경험",
+      "number": 3009,
+      "questions": [
+        "That's the end of the situation. Have you ever been in a situation where you had to cancel an important appointment or plan? What happened? When was it, and how did you resolve it?"
+      ],
+      "text": "Of course I have experienced it!!! I am not sure when it happened exactly. I think it was about a month ago. My friend and I had a plan to go to a movie theater to watch the newly released movie, 영화이름. However, because of the severe cold, I had difficulty heading to the cinema. So, we canceled the movie and had a fancy dinner later. It was an experience things didn’t go as planned.",
+      "kind": "script"
+    },
+    {
+      "id": "hotel-booking",
+      "choice": "current",
+      "section": "scripts/roleplay",
+      "practice": [
+        12
+      ],
+      "reason": "예약 문의 구조는 같습니다. 교재는 질문의 1박과 답변의 일주일이 충돌하므로 현재의 완결된 예약 답변을 유지합니다.",
+      "title": "호텔 예약",
+      "number": 3010,
+      "questions": [
+        "Call a hotel abroad and ask three or four questions to make a reservation."
+      ],
+      "text": "Hello. I’d like to reserve a hotel room for a trip abroad, and I have a few questions.\n\nFirst question: Do you have a double room available for two nights next weekend? What is the total price, including taxes?\n\nI’d also like to know whether breakfast and Wi-Fi are included. One more question: What is the cancellation policy?\n\nIf a quiet room is available, please reserve it under the name Daeho and send me a confirmation.\n\nThank you for your help.",
+      "kind": "script"
+    },
+    {
+      "id": "hotel-problem",
+      "choice": "textbook",
+      "section": "scripts/roleplay",
+      "practice": [
+        36
+      ],
+      "reason": "설비 고장과 좁고 더러운 객실은 다른 문제입니다. 교재의 객실 교체·보상·환불 요청을 채택합니다.",
+      "page": 17,
+      "title": "호텔 객실 문제 해결",
+      "number": 3011,
+      "questions": [
+        "I’m sorry, but there is a problem which I need you to resolve. When you get to your hotel room, it is very small and not clean at all. Call the front desk and describe what you have found in detail. Then, make some suggestions as to how you can resolve the situation."
+      ],
+      "text": "I have something to tell you. As you know, I just checked the hotel room I booked, but it’s much smaller and dirtier than I expected, so I don’t think I can stay here. So, I’d like to give you some options to solve this problem. Firstly, how about changing the room right away? The sooner you can change the room, the better. Secondly, could you offer me a room upgrade or a discount? Since this problem was caused by the hotel, I think some compensation would be reasonable. Or, why don’t you offer me a refund instead? Since it looks like it’s going to take a while, we’d rather go somewhere else. What do you think? Please let me know what you want.",
+      "kind": "script"
+    },
+    {
+      "id": "hotel-experience",
+      "choice": "textbook",
+      "section": "scripts/roleplay",
+      "practice": [
+        38
+      ],
+      "mocks": [
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ]
+      ],
+      "reason": "식당 예약 누락과 호텔 소음은 다른 경험입니다. 호텔 질문에는 교재의 발리 소음·객실 변경 경험을 채택합니다.",
+      "page": 17,
+      "title": "호텔에서 겪은 문제 경험",
+      "number": 3012,
+      "questions": [
+        "That’s the end of the situation. Sometimes, a surprising or unexpected things can happen when you stay at a hotel. Tell me about a memorable experience you had while staying at a hotel. Maybe there was a problem with your room. Maybe you met some other guests. Tell me the whole story of an interesting hotel visit."
+      ],
+      "text": "Of course, I have experienced it!!! I am not sure when it happened exactly. I think it was about a year ago. My wife and I went to Bali to celebrate our 20th wedding anniversary. However, because of the noisy guests staying next door, we had trouble relaxing in our room. So, I immediately contacted the front desk and explained the situation, and they quickly changed our room to one with an ocean view. It was a memorable experience related to staying at a hotel.",
+      "kind": "script"
+    }
   ]
 };

@@ -438,7 +438,10 @@ const prompts=[
  {year:'추가연습',type:'random',tag:'돌발 · 대중교통 · 과거현재비교2',en:'Now, tell me how transportation has changed over the years. How is the way people get around different now compared to the past?',kr:'사람들의 이동 방식과 대중교통이 과거와 현재 어떻게 달라졌는지 말하세요.',tips:['공통 필러','과거 자가용','현재 대중교통','개인 사례']}
 ];
 
-Object.entries(window.OPIC_COURSE_PRACTICE_LINKS).forEach(([index,number])=>{prompts[index].lessonId='lesson-'+String(number).padStart(3,'0')});
+Object.entries(window.OPIC_COURSE_PRACTICE_LINKS).forEach(([index,number])=>{
+  prompts[index].lessonId='lesson-'+String(number).padStart(3,'0');
+  if(window.OPIC_SCAN.selections.some(entry=>entry.number===number))prompts[index].tips=window.OPIC_STUDY_LAYOUT.hints[number];
+});
 prompts.push(...window.OPIC_COURSE_PRACTICE);
 window.OPIC_COURSE_PRACTICE.forEach((item,index)=>{window.OPIC_PRACTICE_ANSWERS[prompts.length-window.OPIC_COURSE_PRACTICE.length+index]=item.answer});
 

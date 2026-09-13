@@ -74,7 +74,11 @@ function renderExpressions(route){
 }
 function scriptCard(n,stage){
   const part=sourcePart(n),index=prompts.findLastIndex(item=>item.lessonId===part.id),prompt=index>=0?prompts[index]:null;
-  const matching=prompts.flatMap((item,i)=>item.lessonId===part.id&&part.questions.includes(item.en)?[i]:[]);
+  const seenQuestions=new Set();
+  const matching=prompts.flatMap((item,i)=>{
+    if(item.lessonId!==part.id||!part.questions.includes(item.en)||seenQuestions.has(item.en))return [];
+    seenQuestions.add(item.en);return [i];
+  });
   const practiceIndices=matching.length?matching:(index>=0?[index]:[]);
   const actions=(part.english?'<button class="study-button" data-listen="'+part.id+'">답변 듣기</button>':'')+(studyLayout.hints[n]?'<button class="study-button" data-cues aria-pressed="false">가리고 말하기</button>':'')+practiceIndices.map((i,j)=>'<button class="study-text-button" data-practice="'+i+'">'+(practiceIndices.length>1?'질문 '+(j+1)+' 연습':'타이머·녹음')+' →</button>').join('');
   return '<article class="study-paper script-card'+(!part.english?' question-only':'')+'">'+(stage?'<span class="script-stage">'+stage+'</span>':'')+'<h3>'+studyEscape(part.title)+'</h3>'+(prompt&&!part.questions.length?'<p class="script-question" lang="en">'+studyEscape(prompt.en)+'</p>':'')+'<div class="script-copy">'+readPart(n)+'</div>'+(studyLayout.hints[n]?'<ol class="script-hints" hidden>'+studyLayout.hints[n].map(hint=>'<li>'+studyEscape(hint)+'</li>').join('')+'</ol>':'')+(actions?'<div class="script-actions">'+actions+'</div>':'')+'</article>';

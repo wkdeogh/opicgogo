@@ -19,7 +19,7 @@ node scripts/build-course.mjs
 node scripts/verify-course.cjs
 ```
 
-교재 스캔의 추가 자료는 `scan-source.mjs`에 PDF 쪽수와 함께 수동 판독한 내용으로 관리합니다. `node scripts/build-scan.mjs`로 앱용 `scan-data.js`와 `docs/교재스캔-차이점-검토.md`, `docs/교재스캔-반영내역.md`를 갱신하고 `node scripts/verify-scan.mjs`로 검증합니다. `scan-sync.js`는 비어 있던 답변만 보완하고 새 자료를 기존 학습 분류에 연결합니다. 선택 대기 답변은 앱 데이터에 포함하지 않습니다. 문서 선택 결과를 반영하기 전까지 기존 답변을 교체하지 않습니다.
+교재 스캔 원문은 `scan-source.mjs`, 18개 차이점의 선택과 적용 범위는 `scan-decisions.mjs`에서 관리합니다. `node scripts/build-scan.mjs`로 `scan-data.js`와 `docs/교재스캔-차이점-검토.md`, `docs/교재스캔-반영내역.md`를 갱신하고 `node scripts/verify-scan.mjs`로 검증합니다. 현재 버전 7개를 유지하고 교재 버전 11개를 채택했습니다. `scan-sync.js`가 선택 결과를 학습·모의고사·연습에 우선 적용하며 두 버전의 문장을 혼합하지 않습니다. 호텔 예약·문제 해결·관련 경험은 한 화면에서 학습합니다.
 
 Windows에서 Node의 경로 해석이 제한되는 환경은 두 명령에 `--preserve-symlinks-main --preserve-symlinks`를 추가합니다.
 
