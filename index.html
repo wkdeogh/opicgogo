@@ -89,8 +89,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 <button class="nav-backdrop" id="navBackdrop" aria-label="메뉴 닫기"></button>
 <main>
 <section class="hero searchable" id="home">
-  <div class="eyebrow">LAST-MINUTE OPIc TRAINING</div>
-  <h1>시험 직전,<br>입으로 끝내는 OPIc</h1>
+  <h1>OPIc 학습</h1>
   <p>유형별 답변 흐름을 익히고, 내 문장으로 바꿔 쓰고, 소리 내어 말해 보세요.</p>
   <div class="chips"><span class="chip">문장력 · 영작</span><span class="chip">표현 복습</span><span class="chip">유형별 스크립트</span><span class="chip">타이머 · 녹음</span></div>
 </section>
@@ -117,7 +116,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 </section>
 
 <div class="today" id="today" aria-label="학습 현황">
-  <div class="today-intro"><b>오늘은 이것만</b><div class="mini">랜덤 답변 3개 → 퀴즈 10개 → 답안 음성 1개 쉐도잉</div></div>
+  <div class="today-intro"><b>오늘 학습 기록</b><div class="mini">랜덤 답변 3개 → 퀴즈 10개 → 답안 음성 1개 쉐도잉</div></div>
   <div class="today-stat"><strong id="practiceCount">0</strong><span>말하기 완료</span></div>
   <div class="today-stat"><strong id="quizCount">0</strong><span>퀴즈 풀이</span></div>
   <div class="today-stat"><strong id="correctRate">0%</strong><span>오늘 정답률</span></div>
@@ -287,6 +286,7 @@ table{width:100%;border-collapse:collapse} th,td{padding:12px 10px;border-bottom
 <script src="practice-answers.js"></script>
 <script src="shared-scripts.js"></script>
 <script src="course-data.js"></script>
+<script src="course-layout.js"></script>
 <script src="course-sync.js"></script>
 <script>
 const q=document.getElementById('search');
@@ -321,7 +321,8 @@ function renderMockExam(){
  document.getElementById('mockSubtitle').textContent=exam.subtitle;
  document.getElementById('mockType').textContent=`${item.number} / ${exam.questions.length} · ${item.type}`;
  document.getElementById('mockQuestion').textContent=item.question;
- document.getElementById('mockAnswer').textContent=item.answer;
+ document.getElementById('mockAnswer').textContent=item.answer||'이름·용도 → 외형 → 특징 → 활용 순서로 답변하세요.';
+ document.getElementById('mockSpeakAnswer').disabled=!item.answer;
  document.getElementById('mockAnswer').classList.toggle('fixed',!!item.fixed);
  document.getElementById('mockCues').innerHTML=item.cues.map(cue=>`<span class="mock-cue">${cue}</span>`).join('');
  document.getElementById('mockFocus').textContent=item.focus;
@@ -340,7 +341,7 @@ function switchMockView(view){
  document.getElementById('mockAnswer').hidden=view!=='script';
  document.getElementById('mockCues').hidden=view!=='cues';
  document.querySelectorAll('[data-mock-view]').forEach(button=>button.classList.toggle('active',button.dataset.mockView===view));
- document.getElementById('mockAnswerLabel').textContent=view==='script'?'답변 스크립트':'핵심어 회상 모드';
+ document.getElementById('mockAnswerLabel').textContent=currentMockQuestion().questionOnly?'답변 구성':view==='script'?'답변 스크립트':'핵심어 회상 모드';
 }
 function moveMockQuestion(direction){
  const next=mockState.questionIndex+direction;
@@ -567,12 +568,16 @@ function renderTypeBrowser(){
  const filtered=typeItems.filter(item=>(source==='all'||item.source===source)&&(!term||(item.question+' '+item.kr+' '+item.answer+' '+item.topic+' '+item.sourceLabel+' '+item.scriptId+' '+item.searchAliases).toLowerCase().includes(term)));
  document.getElementById('typeQuestionCount').textContent=typeItems.length;
  document.getElementById('typeCategoryCount').textContent=typeDefinitions.length;
- document.getElementById('typeScriptCount').textContent=typeScriptIds.size;
+ document.getElementById('typeScriptCount').textContent=typeScriptIds.size-(typeScriptIds.has('')?1:0);
  const activeTypes=typeDefinitions.filter(def=>filtered.some(item=>item.category===def.key));
  document.getElementById('typeNav').innerHTML=activeTypes.map(def=>`<button type="button" data-type-jump="${def.key}">${def.number} ${def.label}</button>`).join('');
  document.getElementById('typeGroups').innerHTML=activeTypes.length?activeTypes.map((def,index)=>{
-  const items=filtered.filter(item=>item.category===def.key),scripts=new Set(items.map(item=>item.scriptId)).size;
-  const cards=items.map(item=>{const uses=typeScriptUses.get(item.scriptKey),sharedLabel=item.templateName?`${item.scriptId} · 공통 틀`:`${item.scriptId}${uses>1?` · ${uses}문항 공유`:''}`;return `<article class="type-question"><div class="type-question-meta"><span class="type-source${item.source==='practice'?' practice':''}">${escapeTypeHtml(item.sourceLabel)}</span><span class="type-topic">${escapeTypeHtml(item.topic)}</span><span class="type-shared">${escapeTypeHtml(sharedLabel)}</span></div><p>${escapeTypeHtml(item.question)}</p>${item.kr?`<p class="kr">${escapeTypeHtml(item.kr)}</p>`:''}<details class="type-script"><summary>${item.templateName?escapeTypeHtml(item.templateName)+' · ':''}답변스크립트 보기</summary><div class="type-script-body">${escapeTypeHtml(item.answer)}</div>${item.lessonId?`<a class="lesson-link" href="#/course/${item.lessonId}">학습 자료 보기 →</a>`:''}</details></article>`}).join('');
+  const items=filtered.filter(item=>item.category===def.key),scripts=new Set(items.filter(item=>item.answer).map(item=>item.scriptId)).size;
+  const cards=items.map(item=>{
+    const uses=typeScriptUses.get(item.scriptKey);
+    const sharedLabel=item.answer?(item.templateName?`${item.scriptId} · 공통 틀`:`${item.scriptId}${uses>1?` · ${uses}문항 공유`:''}`):'직접 답변 연습';
+    return `<article class="type-question"><div class="type-question-meta"><span class="type-source${item.source==='practice'?' practice':''}">${escapeTypeHtml(item.sourceLabel)}</span><span class="type-topic">${escapeTypeHtml(item.topic)}</span><span class="type-shared">${escapeTypeHtml(sharedLabel)}</span></div><p>${escapeTypeHtml(item.question)}</p>${item.kr?`<p class="kr">${escapeTypeHtml(item.kr)}</p>`:''}<details class="type-script"><summary>${item.templateName?escapeTypeHtml(item.templateName)+' · ':''}${item.answer?'답변스크립트 보기':'답변 구성 보기'}</summary><div class="type-script-body">${escapeTypeHtml(item.answer||'이름·용도 → 외형 → 특징 → 활용 순서로 답변하세요.')}</div>${item.lessonId?`<a class="lesson-link" href="#/course/${item.lessonId}">학습 자료 보기 →</a>`:''}</details></article>`;
+  }).join('');
   const shouldOpen=term||openGroups.has(def.key);
   return `<details class="type-group" data-type-group="${def.key}"${shouldOpen?' open':''}><summary><span class="type-group-icon">${def.number}</span><span class="type-group-title"><b>${def.label}</b><span>${def.flow}</span><span class="type-frequency">${def.frequency}</span></span><span class="type-group-count">${items.length}문항 · ${scripts}스크립트</span></summary><div class="type-question-list">${cards}</div></details>`;
  }).join(''):'<div class="type-empty">조건에 맞는 문제가 없습니다. 검색어나 출처를 바꿔 보세요.</div>';
@@ -610,11 +615,12 @@ function renderPrompt(){
  const lessonLink=document.getElementById('practiceLesson');lessonLink.hidden=!choice.lessonId;if(choice.lessonId)lessonLink.href='#/course/'+choice.lessonId;
  document.getElementById('coachPoints').innerHTML=choice.tips.map(t=>'<span>'+t+'</span>').join('');
  document.getElementById('practiceExample').textContent=resolvePracticeAnswer(state.prompt);
+ document.getElementById('togglePracticeAnswer').hidden=!resolvePracticeAnswer(state.prompt);
  document.getElementById('practiceExample').hidden=true;
  document.getElementById('togglePracticeAnswer').textContent='답변스크립트 보기';
  document.getElementById('togglePracticeAnswer').setAttribute('aria-expanded','false');
  document.getElementById('speakPracticeAnswer').hidden=true;
- document.getElementById('practiceMessage').textContent='';renderPromptNumbers();
+ document.getElementById('practiceMessage').textContent=resolvePracticeAnswer(state.prompt)?'':'질문을 듣고 직접 답변하세요.';renderPromptNumbers();
 }
 function showPrompt(forceNext=false){
  if(forceNext)stopSpeech();
@@ -727,6 +733,6 @@ window.addEventListener('hashchange',applyRoute);
 if(!location.hash)history.replaceState(null,'','#/home');
 applyRoute();
 </script>
-<script src="course-layout.js"></script>
+
 <script src="course-app.js"></script>
 </body></html>

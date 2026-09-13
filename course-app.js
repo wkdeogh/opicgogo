@@ -5,7 +5,7 @@ const studyEscape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'
 const studyUnescape = value => String(value).replace(/\\([\\`*_{}\[\]()#+.!~>&-])/g,'$1');
 const studyPlain = value => studyUnescape(value).replace(/\*\*/g,'').replace(/^\* /,'');
 const studyInline = value => studyEscape(studyUnescape(value)).replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/^\* /,'');
-const sourcePart = value => courseData.lessons.find(item => item.id === (typeof value === 'number' ? 'lesson-'+String(value).padStart(3,'0') : value));
+const sourcePart = value => {const n=typeof value==='number'?value:Number(String(value).split('-')[1]);const id='lesson-'+String(studyLayout.legacyLinks[n]||n).padStart(3,'0');return courseData.lessons.find(item=>item.id===id);};
 const partNumber = item => Number(item.id.split('-')[1]);
 let studySaved = {};
 try { studySaved = JSON.parse(localStorage.getItem('opicStudyDesk') || '{}') || {}; } catch {}
@@ -14,7 +14,6 @@ function saveStudy(){try {localStorage.setItem('opicStudyDesk',JSON.stringify({d
 function partLocation(number){
   if(number===36)return {view:'grammar',tab:'relatives'};
   if(number===6)return {view:'answers'};
-  if(number===46)return {view:'scripts',tab:'object'};
   if(studyLayout.prep.includes(number))return {view:'prep'};
   for(const view of ['answers','grammar','expressions','scripts']){
     const group=studyLayout[view].find(item=>item.parts.includes(number));
@@ -27,6 +26,8 @@ function resolveStudyRoute(){
   const bits=location.hash.replace(/^#\/?/,'').split('/');
   const aliases={strategy:['prep'],'al-core':['prep'],survey:['prep','lesson-001'],answer:['answers'],patterns:['grammar'],examples:['grammar'],vocab:['expressions','vocab'],idioms:['expressions','idioms'],misc:['expressions','konglish'],connectives:['expressions','connectives'],fillers:['expressions','fillers']};
   let path=bits[0]==='course'?bits.slice(1):(aliases[bits[0]]||['answers']);
+  const outdated=path.find(item=>/^lesson-\d+$/.test(item)&&studyLayout.legacyLinks[Number(item.split('-')[1])]);
+  if(outdated)path=studyHref(outdated).split('/').slice(2);
   if(path[0]?.startsWith('lesson-'))path=studyHref(path[0]).split('/').slice(2);
   const old={strategy:['prep'],flow:['answers'],patterns:['grammar'],unexpected:['scripts','weather'],roleplay:['scripts','roleplay']};
   if(old[path[0]])path=old[path[0]];
@@ -37,6 +38,8 @@ function resolveStudyRoute(){
 }
 function studyLabel(part){const loc=partLocation(partNumber(part));const view=studyLayout.views.find(item=>item.id===loc.view);const group=loc.tab?studyLayout[loc.view].find(item=>item.id===loc.tab):null;return view.title+(group?' · '+group.title:'');}
 function sourceLine(block){
+  if(block.role==='question')return '<p class="script-question" lang="en">'+studyEscape(studyPlain(block.text).replace(/^\d+\.\s*/,''))+'</p>';
+  if(block.role==='answer')return studyPlain(block.text).split(/(?<=[.!?])\s+(?=[A-Z])/).map(line=>'<p class="english-line">'+studyEscape(line)+'</p>').join('');
   if(block.kind==='table')return '<div class="study-table-wrap"><table class="study-table"><thead><tr>'+block.rows[0].map(cell=>'<th scope="col">'+studyInline(cell)+'</th>').join('')+'</tr></thead><tbody>'+block.rows.slice(1).map(row=>'<tr>'+row.map((cell,i)=>'<td data-label="'+studyEscape(studyPlain(block.rows[0][i]))+'">'+studyInline(cell)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
   if(block.kind==='recall')return '<div class="study-pair"><div class="study-prompt">'+studyInline(block.prompt)+'</div><div class="study-answer">'+block.answers.map(answer=>'<p>'+studyInline(answer)+'</p>').join('')+'</div></div>';
   if(/^[💡👉]$/.test(block.text.trim()))return '';
@@ -48,7 +51,7 @@ function reference(title,body,open=false){return '<details class="study-referenc
 function renderPrep(){return '<div class="prep-grid"><article class="study-paper">'+readPart(3,true)+'</article><article class="study-paper">'+readPart(4,true)+readPart(2,true)+'</article></div>'+reference('Survey 선택안 · 시험 전 참고',readPart(1)+readPart(5,true));}
 function renderAnswerGuide(route){
   const focused=route.anchor?studyLayout.answers.find(item=>item.parts.includes(partNumber(sourcePart(route.anchor)||{id:'lesson-0'}))):null;
-  return '<div class="type-jumps">'+studyLayout.answers.map(item=>'<button class="study-button" data-jump="'+item.id+'">'+item.title+'</button>').join('')+'</div><div class="study-tools"><button class="study-text-button" id="expandAnswerTypes">모든 유형 펼치기</button></div>'+studyLayout.answers.map((item,index)=>'<details class="answer-family" id="type-'+item.id+'"'+((focused?focused.id===item.id:index===0)?' open':'')+'><summary><b>'+item.title+'</b><span>'+item.flow+'</span></summary><div class="answer-family-body">'+item.parts.map(n=>readPart(n,n<18?'출제 특징':sourcePart(n).blocks[0].kind!=='recall')).join('')+(item.example?'<a class="lesson-link" href="'+studyHref(item.example)+'">'+(item.example===50?'인물 표현 보기':'예문에 적용하기')+' →</a>':'')+'</div></details>').join('')+reference('전체 출제 유형',readPart(6));
+  return '<div class="type-jumps">'+studyLayout.answers.map(item=>'<button class="study-button" data-jump="'+item.id+'">'+item.title+'</button>').join('')+'</div><div class="study-tools"><button class="study-text-button" id="expandAnswerTypes">모든 유형 펼치기</button></div>'+studyLayout.answers.map((item,index)=>'<details class="answer-family" id="type-'+item.id+'"'+((focused?focused.id===item.id:index===0)?' open':'')+'><summary><b>'+item.title+'</b><span>'+item.flow+'</span></summary><div class="answer-family-body">'+item.parts.map(n=>readPart(n,n<18?'출제 특징':sourcePart(n).blocks[0].kind!=='recall')).join('')+(item.example?'<a class="lesson-link" href="'+studyHref(item.example)+'">'+(item.id==='person'?'인물 표현 보기':item.id==='object'?'예시 문제 보기':'예문에 적용하기')+' →</a>':'')+'</div></details>').join('')+reference('전체 출제 유형',readPart(6));
 }
 function renderGrammar(route){
   const group=studyLayout.grammar.find(item=>item.id===route.tab),part=sourcePart(group.parts[0]);
@@ -71,21 +74,28 @@ function renderExpressions(route){
 }
 function scriptCard(n,stage){
   const part=sourcePart(n),index=prompts.findLastIndex(item=>item.lessonId===part.id),prompt=index>=0?prompts[index]:null;
-  return '<article class="study-paper script-card">'+(stage?'<span class="script-stage">'+stage+'</span>':'')+'<h3>'+studyEscape(stage?part.title.replace(/^\d+번:\s*/, ''):part.title)+'</h3>'+(prompt?'<p class="script-question" lang="en">'+studyEscape(prompt.en)+'</p>':'')+'<div class="script-copy">'+readPart(n)+'</div>'+(studyLayout.hints[n]?'<ol class="script-hints" hidden>'+studyLayout.hints[n].map(hint=>'<li>'+studyEscape(hint)+'</li>').join('')+'</ol>':'')+(part.english.length>100?'<div class="script-actions"><button class="study-button" data-listen="'+part.id+'">듣기</button>'+(studyLayout.hints[n]?'<button class="study-button" data-cues aria-pressed="false">가리고 말하기</button>':'')+(prompt?'<button class="study-text-button" data-practice="'+index+'">타이머·녹음 →</button>':'')+'</div>':'')+'</article>';
+  const actions=(part.english?'<button class="study-button" data-listen="'+part.id+'">답변 듣기</button>':'')+(studyLayout.hints[n]?'<button class="study-button" data-cues aria-pressed="false">가리고 말하기</button>':'')+(prompt?'<button class="study-text-button" data-practice="'+index+'">타이머·녹음 →</button>':'');
+  return '<article class="study-paper script-card'+(!part.english?' question-only':'')+'">'+(stage?'<span class="script-stage">'+stage+'</span>':'')+'<h3>'+studyEscape(part.title)+'</h3>'+(prompt&&!part.questions.length?'<p class="script-question" lang="en">'+studyEscape(prompt.en)+'</p>':'')+'<div class="script-copy">'+readPart(n)+'</div>'+(studyLayout.hints[n]?'<ol class="script-hints" hidden>'+studyLayout.hints[n].map(hint=>'<li>'+studyEscape(hint)+'</li>').join('')+'</ol>':'')+(actions?'<div class="script-actions">'+actions+'</div>':'')+'</article>';
 }
 function renderRoleplay(route){
   const n=partNumber(sourcePart(route.anchor)||{id:'lesson-0'}),scene=studyLayout.scenarios.find(item=>item.parts.includes(n)||item.id===route.scenario)||studyLayout.scenarios[0];
-  return reference('롤플레이 공통 답변 틀 · 질문 → 문제 해결 → 경험','<div class="roleplay-framework">'+[81,82,83].map(num=>readPart(num,true)).join('')+'</div>',[81,82,83].includes(n))+'<nav class="scenario-tabs" aria-label="롤플레이 상황">'+studyLayout.scenarios.map(item=>'<a href="#/course/scripts/roleplay/'+item.id+'" '+(item.id===scene.id?'aria-current="page"':'')+'>'+item.title+'</a>').join('')+'</nav><div class="roleplay-trio">'+scene.parts.map((num,index)=>scriptCard(num,['01 · 질문하기','02 · 문제 해결하기','03 · 관련 경험'][index])).join('')+'</div>';
+  return '<nav class="scenario-tabs" aria-label="롤플레이 상황">'+studyLayout.scenarios.map(item=>'<a href="#/course/scripts/roleplay/'+item.id+'" '+(item.id===scene.id?'aria-current="page"':'')+'>'+item.title+'</a>').join('')+'</nav><div class="roleplay-trio">'+scene.parts.map((num,index)=>scriptCard(num,['01 · 질문하기','02 · 문제 해결하기','03 · 관련 경험'][index])).join('')+'</div>';
 }
+function scriptTopic(title,parts,open){return '<details class="study-topic"'+(open?' open':'')+'><summary>'+studyEscape(title)+'</summary><div class="scripts-document">'+parts.map(n=>scriptCard(n)).join('')+'</div></details>';}
 function renderScripts(route){
   const group=studyLayout.scripts.find(item=>item.id===route.tab);
-  return subTabs('scripts',route.tab)+(route.tab==='roleplay'?renderRoleplay(route):'<div class="scripts-document">'+group.parts.map(n=>[47,63,72,77].includes(n)?reference(sourcePart(n).title,readPart(n),[72,77].includes(n)):[54,62,65,68].includes(n)?'<article class="study-paper script-materials">'+readPart(n,true)+'</article>':scriptCard(n)).join('')+'</div>')+reference('스크립트 활용 · 60~90초로 말하기',readPart(46));
+  let body;
+  if(route.tab==='roleplay')body=renderRoleplay(route);
+  else if(route.tab==='place')body=studyLayout.placePairs.map((pair,i)=>scriptTopic(pair.title,pair.parts,i===0)).join('');
+  else if(['change','compare','issue'].includes(route.tab))body=group.parts.map((n,i)=>sourcePart(n).english?scriptTopic(sourcePart(n).title,[n],i===0||i===1&&route.tab==='compare'):reference(sourcePart(n).title,readPart(n),true)).join('');
+  else body='<div class="scripts-document">'+group.parts.map(n=>sourcePart(n).title==='예시 문제'?reference('예시 문제',readPart(n)):scriptCard(n)).join('')+'</div>';
+  return subTabs('scripts',route.tab)+body;
 }
 function renderCourseResume(){const el=document.getElementById('courseResume');if(!el)return;const bits=studyState.last.split('/'),view=studyLayout.views.find(item=>item.id===bits[2]);el.hidden=!view;if(!view)return;const group=bits[3]&&studyLayout[view.id]?.find?.(item=>item.id===bits[3]);el.innerHTML='<span>최근 학습 <b>'+studyEscape(view.title+(group?' · '+group.title:''))+'</b></span><a href="'+studyEscape(studyState.last)+'">이어서 보기 →</a>';}
 function renderCourse(){
   renderCourseResume();document.querySelectorAll('[data-study-link]').forEach(link=>link.classList.remove('active'));if(courseRoot.classList.contains('route-hidden'))return;
   const route=resolveStudyRoute(),view=studyLayout.views.find(item=>item.id===route.view);
-  courseRoot.innerHTML='<header class="study-heading"><div><span class="study-eyebrow">STUDY NOTE</span><h2>'+view.title+'</h2><p>'+view.description+'</p></div></header><nav class="study-main-tabs" aria-label="학습 메뉴">'+studyLayout.views.map(item=>'<a href="#/course/'+item.id+'" '+(route.view===item.id?'aria-current="page"':'')+'>'+item.title+'</a>').join('')+'</nav><div class="study-content">'+({prep:renderPrep,answers:renderAnswerGuide,grammar:renderGrammar,expressions:renderExpressions,scripts:renderScripts}[route.view])(route)+'</div>';
+  courseRoot.innerHTML='<header class="study-heading"><div><h2>'+view.title+'</h2><p>'+view.description+'</p></div></header><nav class="study-main-tabs" aria-label="학습 메뉴">'+studyLayout.views.map(item=>'<a href="#/course/'+item.id+'" '+(route.view===item.id?'aria-current="page"':'')+'>'+item.title+'</a>').join('')+'</nav><div class="study-content">'+({prep:renderPrep,answers:renderAnswerGuide,grammar:renderGrammar,expressions:renderExpressions,scripts:renderScripts}[route.view])(route)+'</div>';
   document.getElementById('topbarPage').textContent=view.title;document.title=view.title+' · DH OPIc';
   document.querySelectorAll('[data-study-link]').forEach(link=>link.classList.toggle('active',link.dataset.studyLink===route.view));
   const scene=route.view==='scripts'&&route.tab==='roleplay'?(studyLayout.scenarios.find(item=>item.parts.includes(partNumber(sourcePart(route.anchor)||{id:'lesson-0'})))?.id||route.scenario):null;

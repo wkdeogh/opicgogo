@@ -19,7 +19,7 @@
 
 → 독신자로서 개인 주택이나 아파트에 거주
 
-\*여가 활동, 취미, 스포츠 휴가 분야에서 총 12개 이상 고르세요.
+*여가 활동, 취미, 스포츠 휴가 분야에서 총 12개 이상 고르세요.
 
 **4. 귀하는 여가활동으로 주로 무엇을 하십니까? (두개 이상 선택)**
 
@@ -66,7 +66,7 @@
 (제부도 in Japan) :
 백사장, 파라솔, 접이식 의자들
 
-제발 하지 마세요\~\~\~\~:
+제발 하지 마세요~~~~:
 주식투자/차로 드라이브하기/구기종목들
 Etc.
 
@@ -74,10 +74,10 @@ Etc.
 
 ### 오픽 시험 유형
 
-* 자기소개하기 - 1번질문
-* 3단콤보 - “핵심 문제 유형” 중 한 주제의 질문 3가지가 연달아 나오는 질문 (2set)
-* Role play (상황극) - “질문 만들기” 여러 가지 상황에서 답 대신 질문을 만든다 (1set)
-* 돌발질문 - 예상치 못한 주제에 답을 한다 (2\~3 sets : 롤플레이 주제에 따라)
+- 자기소개하기 - 1번질문
+- 3단콤보 - “핵심 문제 유형” 중 한 주제의 질문 3가지가 연달아 나오는 질문 (2set)
+- Role play (상황극) - “질문 만들기” 여러 가지 상황에서 답 대신 질문을 만든다 (1set)
+- 돌발질문 - 예상치 못한 주제에 답을 한다 (2~3 sets : 롤플레이 주제에 따라)
 
 ### For higher level
 
@@ -95,13 +95,13 @@ Etc.
 라이브 카페 또는 콘서트 갔던 경험 :
 I went to the concert with my family last month.
 
-→
+→ 
 Um… let me see… the time I went to the concert with my family… Well… as far as I remember, it was about a year ago. It was held by ABC, one of the most popular singers in Korea.
 
 자연스러운 filler / 세부적 정보를 넣은 문장 / 복잡한 구조 사용(수동태)
 
 1. 기초 어휘 변경/숙어사용 e.g.) like =
-\~ is highly preferred by/be interested in/be the apple of one’s eyes..
+~ is highly preferred by/be interested in/be the apple of one’s eyes..
 2. 반복어휘 회피(동의어 사용) e.g.) go =
 visit/stop by/drop by/be in/be headed to…
 3. 자연스러운 연결어 삽입
@@ -114,8 +114,8 @@ I went to America. = I have been to America.
 The weather today is much warmer than yesterday.
 7. 수동태 사용
 He gave it(the tablet) to me. = it(the tablet) was given by my husband.
-8. 시간 조절 (절대 장황한 응답 금지!! 핵심만 간단히, 겹치지 않는 구조와 어휘 사용!! –평생 IH 취득\~\~\~\~)
-60\~90초 e.g.) 경험 말하기 = 서론 1문장 –기본정보 1문장 –핵심 사건 1\~2문장 –그 결과 1\~2문장 –마무리 1문장
+8. 시간 조절 (절대 장황한 응답 금지!! 핵심만 간단히, 겹치지 않는 구조와 어휘 사용!! –평생 IH 취득~~~~)
+60~90초 e.g.) 경험 말하기 = 서론 1문장 –기본정보 1문장 –핵심 사건 1~2문장 –그 결과 1~2문장 –마무리 1문장
 
 #### AL 전략
 
@@ -137,19 +137,20 @@ He gave it(the tablet) to me. = it(the tablet) was given by my husband.
 <aside>
 👉
 
-* 영화 관람
-* 공연 관람
-* 콘서트 가기
-* 음악 감상
-* 공원 가기
-* 걷기
-* 조깅
-* 하이킹/트래킹
-* 해변가기
-* 국내여행
-* 해외여행
-* 운동을 전혀 하지 않음
+- 영화 관람
+- 공연 관람
+- 콘서트 가기
+- 음악 감상
 
+- 공원 가기
+- 걷기
+- 조깅
+- 하이킹/트래킹
+
+- 해변가기
+- 국내여행
+- 해외여행
+- 운동을 전혀 하지 않음
 </aside>
 
 ### 문제 유형과 아이디어 정리
@@ -158,24 +159,38 @@ He gave it(the tablet) to me. = it(the tablet) was given by my husband.
 👉
 
 1. 사물 묘사
+
 2. 인물 묘사
+
 3. 계기 말하기
 
 4/5/6. 경험 말하기(3개)
 
 7. 과거현재비교1
+
 8. 과거현재비교2
+
 9. 장소묘사1
+
 10. 장소묘사2
+
 11. 비교대조
+
 12. 사회이슈
+
 13. 활동묘사
+
 14. 세부사항
+
 15. 이유말하기
+
 16. 롤플레이 (에바질문하기/예약/제3자 질의)
+
 17. 롤플레이 (문제해결하기)
+
 18. 롤플레이 (경험)
-19. 유형잡는게 불가한 1\~3문항
+
+19. 유형잡는게 불가한 1~3문항
 
 </aside>
 
@@ -183,9 +198,9 @@ He gave it(the tablet) to me. = it(the tablet) was given by my husband.
 
 1문항 출제/하이킹, 집 출제되면 항상 출제되는편, 그 외의 주제엔 빈출 아님
 
-1. 12관심사 할 때 꼭 가져가는것 묘사
-2. 12관심사 할 때 가져가는 것들 묘사
-3. 특정 사물 지정
+1) 12관심사 할 때 꼭 가져가는것 묘사
+2) 12관심사 할 때 가져가는 것들 묘사
+3) 특정 사물 지정
 
 a.  음악 좋아하는 사람들이 관심있어 하는 기기, 너가 매일 쓰는 기기, 너희 나라 사람들이 전형적으로 쓰는 기기
 b. 좋아하는 가구, 사람들이 유용, 편리하다고 여기는 현대식 가전제품 묘사
@@ -195,9 +210,9 @@ c. 하이킹 갈때 입는옷, 신발, 그리고 가져가는것 묘사
 
 1문항 출제/음악감상 출제되면 항상 출제되는편, 그 외의 주제엔 빈출 아님
 
-1. 12관심사 할때 주로 같이 가는 사람
-2. 근래 12관심사 했을때 같이 갔던 사람
-3. 특정 인물 지정
+1) 12관심사 할때 주로 같이 가는 사람
+2) 근래 12관심사 했을때 같이 갔던 사람
+3) 특정 인물 지정
 
 a. 경찰관, 농부, 은행원, 자주 만나는 친구 또는 가족, 친한 이웃
 b. 좋아하는 가수/배우
@@ -212,31 +227,31 @@ b. 좋아하는 가수/배우
 
 #### 4/5/6 경험말하기:
 
-출제 확률 100% / 3\~5문항 출제, 인당 평균 3문항 / 콤보의 맨 마지막 자리 /
+출제 확률 100% / 3~5문항 출제, 인당 평균 3문항 / 콤보의 맨 마지막 자리 /
 관심사, 돌발, 집
 
 1 마지막 경험 / 최신 경험 / 첫 경험 / 기억남는 경험 / 잊을 수 없는 경험
 2 당황한 경험 / 안좋은 경험
 3 특정 사례가 주어진 경험
 
-만능답변 가능 1\~2문항
-특정 사례 1\~2문항
+만능답변 가능 1~2문항
+특정 사례 1~2문항
 
 e.g.) 마지막으로 공원 갔던/해변 갔던/극장 갔던/여행 갔던/은행 갔던/음식점 갔던 경험
 
-만능답변 1 : \~에 가다가 갑자기 홍수 나서 집에 되돌아옴
-만능답변 2 : \~에 가다가 갑자기 차가 꼼짝 안해 보니 교통 사고 크게 나서 꼼짝 못하다 결국 집에 되돌아옴
+만능답변 1 : ~에 가다가 갑자기 홍수 나서 집에 되돌아옴
+만능답변 2 : ~에 가다가 갑자기 차가 꼼짝 안해 보니 교통 사고 크게 나서 꼼짝 못하다 결국 집에 되돌아옴
 만능 답변 절대 불가 : 하이킹 다친 경험 / 라이브 카페 간 경험 / 집 수리한 경험
 
 #### 7과거현재비교1:
 
-출제 확률 100% / 1\~3문항 출제, 인당 평균 2문항 /
-콤보의 두번째 또는 세번째 자리/ 관심사, 집 / 2\~13번
+출제 확률 100% / 1~3문항 출제, 인당 평균 2문항 /
+콤보의 두번째 또는 세번째 자리/ 관심사, 집 / 2~13번
 
 #### 8 과거현재비교2 :
 
-출제 확률 100% / 1\~3문항 출제, 인당 평균 2문항 /
-콤보의 두번째 또는 세번째 자리/ 돌발 / 14\~15번
+출제 확률 100% / 1~3문항 출제, 인당 평균 2문항 /
+콤보의 두번째 또는 세번째 자리/ 돌발 / 14~15번
 
 1번 스크립트
 a. 너희 나라 사람들이 12관심사 하는 패턴은 과거와 현재 어떻게 바뀌었는가 (11)
@@ -245,7 +260,7 @@ b. 너가 듣는 음악, 영화 취향은 과거와 현재 어떻게 바뀌었�
 과거 : 한 장르만 들었다/봤다 –현재 : 다양한 장르들을 듣는다/본다
 (classical music, opera, rap, pop, jazz / SF, horror, drama, comedy)
 c. 너가 12관심사 해온/하길 좋아하는 곳은 과거와 현재 어떻게 바뀌었는가 + 집 (12)
-과거 : \~ 몇 개 뿐이 없었다 –현재 : 다양한 시설들이 있다(공간들)
+과거 : ~ 몇 개 뿐이 없었다 –현재 : 다양한 시설들이 있다(공간들)
 
 극장/콘서트장/공연장 : 상영관, 무대 몇개뿐 –다양한 시설들(최신 음향설비/편안한 좌석들/많은 상영관들)
 공원/걷는곳/조깅하는곳/하이킹 하는곳 : 트랙 몇개뿐 –많은 트랙들, 벤치들, 음수대들
@@ -278,7 +293,7 @@ B의 특징 :
 한국의 이웃국가와의 관계에 영향을 미친 역사적 사건
 산업 관련하여 최근 보거나 들은 뉴스
 
-\~에 의해 야기된 \~사건 –경위 (1문장) –결과 –정부의 대처
+~에 의해 야기된 ~사건 –경위 (1문장) –결과 –정부의 대처
 
 해커들에 의해 야기된 정보유출사건 –해커들이 …와 같은 개인 정보를 훔침–몇몇 사람들이 돈을 잃음 –정부가 대중들에게 보안어플 깔라고 함/비번 주기적 교체하라함
 
@@ -287,13 +302,13 @@ B의 특징 :
 1문항 출제/거의 매달마다 하나씩 꼭 출제되는편/관심사,집,돌발
 
 1 전후 활동 (영화보기 전후)
-2 \~에 가서 하는 활동 처음부터 끝까지 다 (관심사, 돌발)
+2 ~에 가서 하는 활동 처음부터 끝까지 다 (관심사, 돌발)
 3 특정 활동 질의 (건강 유지 위해 하는활동, 집을 깨끗, 편안하게 하기 위해 하는 집안일, 계절별 너희 나라 사람들이 하는 인기있는 활동들, 여행 전 준비하는 것들, 조깅시 부상을 방지하기 위해 하는 활동etc.)
 
 1 전후 활동
 Before –after
 
-2 \~에 가서 하는 활동 처음부터 끝까지 다
+2 ~에 가서 하는 활동 처음부터 끝까지 다
 As soon as I get to N, -After that,
 
 3 특정 활동 질의
@@ -326,14 +341,14 @@ To be specific, -turning to N, -lastly,
 
 1. **과거·현재 비교 1**
 → 엄청 많이 바뀌었다
-→ 과거에는 \~밖에 없었다 / \~하지 않았다
-→ 현재는 많은 \~들이 있다 / 사람들이 \~한다
+→ 과거에는 ~밖에 없었다 / ~하지 않았다
+→ 현재는 많은 ~들이 있다 / 사람들이 ~한다
 → 관련 경험
 → 마무리
 2. **과거·현재 비교 2**
 → 엄청 많이 바뀌었다
-→ 과거에는 \~하는 것이 흔했다
-→ 현재는 \~가 발달해서 사람들이 \~하게 되었다
+→ 과거에는 ~하는 것이 흔했다
+→ 현재는 ~가 발달해서 사람들이 ~하게 되었다
 → 반복적으로 보이는 특징 설명
 → 마무리
 3. **경험 1 — 만능답변**
@@ -350,7 +365,7 @@ To be specific, -turning to N, -lastly,
 → 결국 목적지에 못 가고 집으로 돌아옴
 → 마무리
 5. **경험 3**
-→ “음… \~했던 때라…”
+→ “음… ~했던 때라…”
 → 언제 / 누구와 / 왜 / 어디서
 → 핵심 사건
 → 결과
@@ -358,16 +373,16 @@ To be specific, -turning to N, -lastly,
 6. **장소 묘사 1**
 → 장소 이름
 → 위치: **be located**
-→ 눈에 띄는 특징: 다른 곳보다 더 \~하다고 비교
-→ 그곳에서 보이는 것들: \*\*There are \~\*\*
+→ 눈에 띄는 특징: 다른 곳보다 더 ~하다고 비교
+→ 그곳에서 보이는 것들: **There are ~**
 → 관련 경험
 → 마무리
 7. **장소 묘사 2**
 → 장소 이름
 → 위치: **be situated**
 → 눈에 띄는 특징
-→ “나처럼 \~한 사람에게는 중요하다” 식의 개인적 의미
-→ 그곳에서 보이는 것들: \*\*I can see \~\*\*
+→ “나처럼 ~한 사람에게는 중요하다” 식의 개인적 의미
+→ 그곳에서 보이는 것들: **I can see ~**
 → 그 장소를 더 선호하는 이유
 → 마무리
 8. **활동 묘사**
@@ -390,11 +405,11 @@ To be specific, -turning to N, -lastly,
 
 → 이것저것 한다
 
-→ \~에 도착하자마자 \~한다
+→ ~에 도착하자마자 ~한다
 
 → 부연 설명
 
-→ 그리고 나서 \~한다
+→ 그리고 나서 ~한다
 
 → 부연 설명
 
@@ -404,36 +419,36 @@ To be specific, -turning to N, -lastly,
 
 → 이것저것 한다
 
-→ \*\*Above all, \~\*\*
+→ **Above all, ~**
 
-→ \*\*In addition, \~\*\*
+→ **In addition, ~**
 
-→ \*\*Last but not least, \~\*\*
+→ **Last but not least, ~**
 
 → 부연 설명
 
 → 마무리
 
 1. **세부사항 말하기**
-→ “\~을 한 지도 벌써 10년째다”
-→ \*\*To be specific, \~\*\*
-→ \*\*Moreover, \~\*\*
-→ \*\*Lastly, \~\*\*
+→ “~을 한 지도 벌써 10년째다”
+→ **To be specific, ~**
+→ **Moreover, ~**
+→ **Lastly, ~**
 → 마무리
 2. **이유 말하기**
-→ “\~에 대해 말해보자면, 그건 \~이고 왜 그런지 몇 가지 이유가 있다”
+→ “~에 대해 말해보자면, 그건 ~이고 왜 그런지 몇 가지 이유가 있다”
 → 첫 번째 이유
 → 부연 설명
 → 두 번째 이유
 → 부연 설명
 → 마무리
 3. **사물 묘사 — mobile / recliner / sweatsuit**
-→ “그건 \~인 \*\*which is / has \~\*\* 한 mobile / recliner / sweatsuit이다”
+→ “그건 ~인 **which is / has ~** 한 mobile / recliner / sweatsuit이다”
 → 근래 출시된 제품
 → 가장 잘 팔리는 제품
 → 품질이 좋음
 → 다양한 색상으로 나와 유행에 민감한 여성들에게 사랑받음
-→ 또한 \~한 기능도 있음
+→ 또한 ~한 기능도 있음
 → 마무리
 4. **인물 묘사 — best friend / favorite singer**
 
@@ -470,46 +485,46 @@ To be specific, -turning to N, -lastly,
 → 마무리
 
 1. **계기 말하기**
-→ \~은 어릴 때부터 해온 취미
+→ ~은 어릴 때부터 해온 취미
 → 중학교 때 부모님이 바빠서 항상 혼자였음
-→ 생일이라며 부모님이 \~하자고 제안
+→ 생일이라며 부모님이 ~하자고 제안
 → 그때 좋은 시간을 보냄
-→ 그 이후로 \~에 관심이 생김
+→ 그 이후로 ~에 관심이 생김
 → 마무리
 2. **비교·대조**
 → “말할 것이 많긴 한데 A와 B를 비교해보겠다”
-→ 유사점: 둘 다 많은 사람들에게 사랑받는 \~
+→ 유사점: 둘 다 많은 사람들에게 사랑받는 ~
 → A의 특징
 → B의 특징
-→ 차이점: 서로 다른 \~를 추구함
+→ 차이점: 서로 다른 ~를 추구함
 → 마무리
 3. **사회 이슈**
-→ “내가 \~에 관심이 별로 없어서 / \~산업과 관련된 사람이 아니라 잘 모르겠다”
+→ “내가 ~에 관심이 별로 없어서 / ~산업과 관련된 사람이 아니라 잘 모르겠다”
 → “음…” 같은 필러
 → 최근 본 기사 중 기억에 남는 사건 소개
-→ \*\*caused by \~\*\* 형태로 원인 설명
+→ **caused by ~** 형태로 원인 설명
 → 사건의 경위
 → 결과 1
 → 결과 1로 인해 이어진 2차 결과
 → 정부의 대처
 4. **롤플레이 — 제3자에게 질문하기**
-→ “\~하려고 전화했다”
-→ **First of all, could you tell me \~?**
+→ “~하려고 전화했다”
+→ **First of all, could you tell me ~?**
 → 부연 설명
-→ **Second of all, I was wondering \~.**
+→ **Second of all, I was wondering ~.**
 → 부연 설명
-→ **Lastly, I’d like to know \~.**
+→ **Lastly, I’d like to know ~.**
 → 부연 설명
 → 마무리
 5. **롤플레이 — 문제 해결하기**
 → 할 말이 있다고 시작
 → 상황 설명
 → “그래서 몇 가지 대안을 제시해보겠다”
-→ **Firstly, how about \~?**
+→ **Firstly, how about ~?**
 → 부연 설명
-→ **Secondly, do you want me to \~?**
+→ **Secondly, do you want me to ~?**
 → 부연 설명
-→ **Or, why don’t we \~?**
+→ **Or, why don’t we ~?**
 → 부연 설명
 → 마무리
 6. **롤플레이 경험**
@@ -521,11 +536,10 @@ To be specific, -turning to N, -lastly,
 
 ## 문장력 올리기
 
-### \[\[\[ STRUCTURES ]]]
-
+### [[[ STRUCTURES ]]]
 (영작 연습 필요)
 
-#### 1\. RELATIVES — 관계사
+#### 1. RELATIVES — 관계사
 
 **Relative Pronouns: who / which / that**
 
@@ -633,9 +647,9 @@ G. 내가 가장 행복했던 순간은 가족과 함께 여행했을 때였다.
 
 → The happiest moment in my life was when I traveled with my family.
 
-\---
+---
 
-#### 2\. PRESENT PERFECT TENSE — 현재완료
+#### 2. PRESENT PERFECT TENSE — 현재완료
 
 A. 우리 가족은 날씨가 좋을 때마다 근처 공원에서 산책을 해 왔다.
 
@@ -673,9 +687,9 @@ I. 나는 해외여행을 하면서 다양한 문화를 경험해 왔고, 그 �
 
 → I have experienced various cultures while traveling abroad, and those experiences have broadened my perspective on new things.
 
-\---
+---
 
-#### 3\. PASSIVE — 수동태
+#### 3. PASSIVE — 수동태
 
 A. 이 공원은 집에서 가깝기 때문에 많은 사람들에게 산책 장소로 이용된다.
 
@@ -715,7 +729,7 @@ I. 나는 집에 있을 때 주로 라디오를 듣는데, 내가 좋아하는 �
 
 J. 이 노래는 가사가 좋기 때문에 많은 사람들에게 사랑받고 있다.
 
-→ This song is loved by \_\_\_\_\_\_ because it has good lyrics.
+→ This song is loved by ______ because it has good lyrics.
 
 자료에는 이 빈칸에 쓸 수 있는 표현으로 다음이 적혀 있어:
 
@@ -725,9 +739,9 @@ K. 여행을 가면 사진을 많이 찍는데, 그 사진들은 나중에 가�
 
 → When I travel, I take a lot of pictures, and they are shown to my family later.
 
-\---
+---
 
-#### 4\. COMPARATIVES \& SUPERLATIVES — 비교급·최상급
+#### 4. COMPARATIVES & SUPERLATIVES — 비교급·최상급
 
 A. 내 가장 친한 친구는 나보다 훨씬 활발하고 사교적이다.
 
@@ -797,8 +811,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 
 → The happiest moment I had while traveling was watching the sunset on a beach.
 
-### \[\[\[ IDIOMS ]]]
-
+### [[[ IDIOMS ]]]
 (스크립트에 만들때 적절히 써먹기)
 
 1. 스트레스를 풀다
@@ -815,7 +828,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **take my mind off things**
 7. 일상에서 벗어나다
 → **get away from it all**
-8. \~을 최대한 활용하다
+8. ~을 최대한 활용하다
 → **make the most of**
 9. 분위기를 만끽하다
 → **soak up the atmosphere**
@@ -829,9 +842,9 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **have a blast / have a ball**
 14. 정말 최고의 시간을 보내다
 → **have the time of my life**
-15. \~에 깊은 감명을 받다
+15. ~에 깊은 감명을 받다
 → **be blown away by**
-16. \~에 감탄하다 / 경외감을 느끼다
+16. ~에 감탄하다 / 경외감을 느끼다
 → **be in awe of**
 17. 기대에 부응하다
 → **live up to my expectations**
@@ -841,7 +854,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **steal the show**
 20. 너무 신나서 몰입하다 / 흥분해서 자제력을 잃다
 → **get carried away**
-21. \~을 하고 싶은 기분이다
+21. ~을 하고 싶은 기분이다
 → **be in the mood for**
 22. 내 취향이 아니다
 → **not be my cup of tea**
@@ -851,7 +864,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **go the extra mile**
 25. 평생 한 번 있을까 말까 한
 → **once in a lifetime**
-26. \~에 대해 복잡한 감정이 들다
+26. ~에 대해 복잡한 감정이 들다
 → **have mixed feelings about**
 27. 꼭 봐야 할 것
 → **a must-see**
@@ -860,18 +873,17 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 29. 오래도록 깊은 인상을 남기다
 → **leave a lasting impression**
 
-### \[\[\[ CONNECTIVE WORDS ]]]
-
+### [[[ CONNECTIVE WORDS ]]]
 (문장 사이사이 적절히 써먹기)
 
-1. 내 관점으로는 \~이다
+1. 내 관점으로는 ~이다
 → **from my point of view,**
-2. 개인적으로, 나는 \~라고 생각한다
+2. 개인적으로, 나는 ~라고 생각한다
 → **personally, I think that**
-3. \~은 명백하다 / 틀림없이 \~하다
+3. ~은 명백하다 / 틀림없이 ~하다
 → **it is evident that / evidently,**
 → **there is no doubt that**
-4. 그 결과로 / \~의 결과로 / 결과적으로
+4. 그 결과로 / ~의 결과로 / 결과적으로
 → **as a result,**
 → **as a result of N,**
 → **consequently,**
@@ -881,24 +893,24 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **in this sense,**
 7. 예상했던 대로
 → **as might be expected,**
-8. \~와 비교할 때 / 비교해보면
+8. ~와 비교할 때 / 비교해보면
 → **compared with N,**
 → **in comparison,**
 9. 그와 비슷하게 / 마찬가지로 / 이처럼
 → **similarly,**
 → **in the same way,**
 → **like this,**
-10. \~와는 달리 \~이다 / 그렇지 않다면
+10. ~와는 달리 ~이다 / 그렇지 않다면
 → **unlike N, S + V**
 → **otherwise,**
-11. \~하는 반면, \~이다 / 대조적으로 / 반대로
+11. ~하는 반면, ~이다 / 대조적으로 / 반대로
 → **S + V, while S + V**
 → **in contrast,**
 → **conversely,**
-12. 그럼에도 불구하고 / \~에도 불구하고
+12. 그럼에도 불구하고 / ~에도 불구하고
 → **nevertheless,**
 → **in spite of N,**
-13. 아마도, \~인 것 같다
+13. 아마도, ~인 것 같다
 → **presumably,**
 14. 내 경험에 따르면 / 이해를 돕자면
 → **from my experience,**
@@ -912,11 +924,10 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **in other words,**
 17. 마지막으로 중요한 것은
 → **last but not least,**
-18. \~와 무관하게
+18. ~와 무관하게
 → **regardless of N,**
 
-### \[\[\[ FILLERS ]]]
-
+### [[[ FILLERS ]]]
 (중복되지 않게 적절히 자연스럽게 쓸수있도록 숙지)
 
 1. 글쎄요… 어디 보자…
@@ -952,7 +963,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 14. 이전 답변에서 이것에 대해 이미 이야기했어요. 그래도 다시 해볼게요
 → **I already discussed this earlier, but let me try again, though.**
 
-### \[\[\[ BUILDING UP VOCABULARY ]]]
+### [[[ BUILDING UP VOCABULARY ]]]
 
 1. **every day** → 매일
 → **on a daily basis**
@@ -1010,7 +1021,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **budget-friendly**
 → **low-cost**
 → **cost-effective**
-12. **because of** → \~때문에
+12. **because of** → ~때문에
 → **due to**
 → **owing to**
 → **as a result of**
@@ -1024,13 +1035,13 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **limited**
 → **short of**
 → **run out of**
-14. **can** → \~할 수 있다
+14. **can** → ~할 수 있다
 → **be able to**
 → **be capable of + -ing**
 → **be in a position to**
 → **have the ability to**
 → **be allowed to**
-15. **make** → 만들다 / 이루다 / \~하게 하다
+15. **make** → 만들다 / 이루다 / ~하게 하다
 → **prepare**
 → **achieve**
 → **allow**
@@ -1149,7 +1160,7 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **dizzy**
 → **feverish**
 
-#### \[콩글리쉬 고치기]
+#### [콩글리쉬 고치기]
 
 **아르바이트** → **part-time**
 
@@ -1173,748 +1184,554 @@ Q. 내가 여행하면서 느낀 가장 행복한 순간은 해변에서 일몰�
 → **follow-up service**
 → **warranty service**
 
-# 유형별 실전 문제와 답변 스크립트
+# 유형별 예시 문제와 답변 스크립트
 
-> 아래 스크립트는 통째로 외우기보다 \*\*굵게 표시한 뼈대와 소재\*\*를 바꾸어 돌려 쓰는 용도.
-> 
-> 
-> 답변은 보통 \*\*60\~90초\*\*, 핵심 문장 6\~8개 정도로 말한다.
-> 
+## 사물 묘사 문제
 
-## 1\. 사물 묘사
+### Work
 
-### 예시 문제
+**Choose one of the best products that your company has produced. What is it? What does it look like? What is it used for? What other features does it have?**
 
-1. **회사 제품**
+### Domestic trip
 
-   Choose one of the best products that your company has produced. What does it look like? What is it used for? What other features does it have?
+**What kind of items do you have to bring when traveling domestically? Why do you bring them with you? Please list all of them with a lot of detail.**
 
-2. **국내여행 준비물 전체**
+**What kind of item do you always take with you when traveling domestically?**
 
-   What kinds of items do you bring when traveling domestically? Why do you bring them?
+### Watching movies
 
-3. **국내여행 필수품 하나**
+**Tell me about the latest electronic equipment you use when you watch movies. What kinds of devices do you use? Why do you use these gadgets?**
 
-   What is one item you always take with you when traveling domestically?
+### Music
 
-4. **영화 감상 기기**
+**What new electronic gadgets or equipment are people who like music interested these days? What are they talking about? What new products excite them and why?**
 
-   What electronic equipment do you use when you watch movies? Why do you use it?
+### Technology
 
-5. **음악 관련 최신 기기**
+**What kind of technology do people typically use in your country? Do people use computers, cell phones, or hand-held devices? What are some common forms of technology that people have?**
 
-   What new gadgets are music lovers interested in these days? Why are they excited about them?
+**Tell me about a piece of technology that you use every day. What kind of things do you use it for?**
 
-6. **한국 사람들이 흔히 쓰는 기술**
+### Furniture
 
-   What kind of technology do people typically use in your country?
+**What kind of furniture do you have at home? Tell me about each type of furniture. Plus, what is your favorite piece of furniture? Why do you like it? When did you get it?**
 
-7. **매일 사용하는 기기**
+### Hiking
 
-   Tell me about a piece of technology that you use every day. What do you use it for?
+**What types of clothing or footwear do you wear for hiking or trekking? Discuss the supplies or food that you typically take with you.**
 
-8. **가구와 가장 좋아하는 가구**
+### Housing
 
-   What kind of furniture do you have at home? What is your favorite piece and why?
+**Think about a specific modern appliance or device that people consider as useful or convenient at home. What do people say about this home appliance or device?**
 
-9. **하이킹 복장과 준비물**
+Rice cooker / robotic vacuum cleaner / garbage disposal / water purifier / trash compactor / dishwasher
 
-   What clothing, footwear, supplies, or food do you take when hiking?
+---
 
-10. **편리한 현대식 가전제품**
+## 특정 사람을 가리키는 표현
 
-    Describe a modern appliance people find useful at home.
-
-
-
-    ### 만능 구조
-
-    → 사물의 이름과 용도
-
-    → 외형·크기·색상
-
-    → 눈에 띄는 특징 1
-
-    → 눈에 띄는 특징 2
-
-    → 언제·왜 사용하는지
-
-    → 개인적인 평가
-
-    **When it comes to the item I use most often, it is my smartphone, which is slim and lightweight.**
-
-    **The most striking feature is that it has a large, high-resolution screen.**
-
-    It is also equipped with a powerful camera and a long-lasting battery.
-
-    I use it for listening to music, watching movies, checking maps, and keeping in touch with people.
-
-    Since I use it every day, it has become an essential part of my life.
-
-    **That is why it is one of the most useful devices I own.**
-
-    ### 하이킹 복장·준비물 예시
-
-    When I go hiking, I usually wear a gray sweatsuit and a pair of comfortable hiking shoes.
-
-    The shoes have thick soles, **which keep me from slipping on rough trails**.
-
-    I also carry a small backpack with water, snacks, sunscreen, and a portable charger.
-
-    Among them, water is the most important because hiking makes me work up a sweat.
-
-    These items are light, practical, and enough for a short hike.
-
-    \---
-
-    ## 2\. 특정 사람을 가리키는 표현
-
-    ### 관심사별 사람 표현
-
-1. 영화팬 → **moviegoer / film lover / film buff**
-2. 음악을 좋아하는 사람 → **music lover / music fan**
+1. 영화팬 → **movie goer / film lover / film buff**
+2. 음악 좋아하는 사람 → **music lover / music fan**
 3. 콘서트에 자주 가는 사람 → **concertgoer**
 4. 조깅하는 사람 → **jogger / runner**
-5. 걷기를 좋아하는 사람 → **walker / walking enthusiast**
-6. 하이킹하는 사람 → **hiker**
+5. 걷는 사람 → **walker / walking enthusiast**
+6. 하이킹 하는 사람 → **hiker**
 7. 공원에 자주 가는 사람 → **park-goer / nature lover**
 8. 국내 여행자 → **domestic traveler / local traveler**
 9. 해외 여행자 → **international traveler / overseas traveler / globetrotter**
-10. 일광욕하는 사람 → **sunbather**
-11. 해변을 즐기는 사람 → **swimmer / surfer / beachgoer**
+10. 해수욕하는 사람 → **sunbather**
+11. 해변 관련 → **swimmer / surfer / beachgoer**
+- 아침형 인간 → **early bird**
+- 저녁형 인간 → **night owl**
+- 사람들과 어울리길 좋아하는 사람 → **people person**
+- 집순이 / 집돌이 → **homebody**
+- 완벽주의자 → **perfectionist**
+- 헬스장 자주 가는 사람 → **gym-goer**
+- 커피 애호가 → **coffee lover / coffee addict**
+- 건강 염려증 있는 사람 → **health-conscious person**
+- 편식 심한 사람 → **picky eater**
+- 과식/소식하는 사람 → **big/light eater**
+- 단 거 좋아하는 사람 → **sweet tooth**
+- 책벌레 → **bookworm**
+- 프로그램들을 몰아보는 사람 → **binge-watcher**
+- 여행을 자주 다니는 사람 → **frequent traveler**
+- 여행 시 미리 계획 짜는 사람 vs. 상황에 따라 흘러가는 사람 → **planner vs. go-with-the-flow type**
+- 배낭여행객 → **backpacker**
+- 도시형 인간 vs. 자연형 인간 → **city person vs. nature person**
+- 문제를 잘 해결하는 사람 → **problem-solver**
+- 결정을 내리는 사람 → **decision-maker**
+- 지나치게 많이 생각하는 사람 → **overthinker**
+- 모험을 감수하는 사람 → **risk-taker**
 
-    ### 성격·생활방식별 사람 표현
+---
 
-* 아침형 인간 → **early bird**
-* 저녁형 인간 → **night owl**
-* 사람들과 어울리기 좋아하는 사람 → **people person**
-* 집순이·집돌이 → **homebody**
-* 완벽주의자 → **perfectionist**
-* 헬스장에 자주 가는 사람 → **gym-goer**
-* 커피 애호가 → **coffee lover / coffee addict**
-* 건강을 신경 쓰는 사람 → **health-conscious person**
-* 편식하는 사람 → **picky eater**
-* 많이·적게 먹는 사람 → **big eater / light eater**
-* 단것을 좋아하는 사람 → **someone with a sweet tooth**
-* 책벌레 → **bookworm**
-* 프로그램을 몰아보는 사람 → **binge-watcher**
-* 여행을 자주 다니는 사람 → **frequent traveler**
-* 계획형·즉흥형 여행자 → **planner / go-with-the-flow type**
-* 배낭여행객 → **backpacker**
-* 도시형·자연형 인간 → **city person / nature person**
-* 문제를 잘 해결하는 사람 → **problem-solver**
-* 결정을 내리는 사람 → **decision-maker**
-* 지나치게 많이 생각하는 사람 → **overthinker**
-* 모험을 감수하는 사람 → **risk-taker**
+## 장소 묘사 1 & 2
 
-  **사용 예시)**
+### 자주 가는 극장 — 장소 1
 
-  I am a bit of a **homebody**, but my wife is more of a **nature person**.
+When it comes to the theatre I go to on a regular basis, it’s called CGV which is located in (the center of) Dongtan. As for the striking feature (of CGV), it has more and bigger screens compared to others. And, there are 4D screens, the finest sound facilities, an arcade, a snack bar with a variety of pop-corns as well. For these reasons it swarms with cinema audiences all through the year. A few weeks ago, I went there and watched ABC with 4D and it was much more dynamic than I (had) thought! This is the place that I often watch a movie.
 
-  As a **film buff**, I pay close attention to sound quality and comfortable seats.
+### 자주 가는 극장 — 장소 2
 
-  My best friend is a **people person**, while I tend to be an **overthinker**.
+Regarding the place I watch a movie frequently, it is CGV situated in Dongtan, and has the finest sound facilities (for audiences). This is vital for someone who is a huge fan of movies like me. Plus, I can see 4D screens, an arcade, comfortable seats, and a snack bar with a variety of pop-corns. Last but not least, the main reason I prefer Dongtan CGV is the walking distance, which takes just 10 minutes to get there on foot. (Oh, besides, not only a cafe but also a number of famous restaurants are lining the street, so it enables me to enjoy a meal, something savory, on the way back home.)
 
-  \---
+### 자주 가는 공원/조깅하는 곳/걷는 곳/하이킹하는 곳 — 장소 1
 
-  ## 3\. 장소 묘사 1·2
+When it comes to the park I usually exercise at, it’s called Dongtan Park which is located in (the center of) Gyeonggi. As for the striking feature (of the park), it has more and bigger tracks compared to others. And, there are several walking and jogging tracks, water fountains, plenty of benches where people can relax, a ball field, and a tennis court as well. For these reasons it swarms with walkers and joggers all day long. Yesterday, I went there and played tennis with my son and it was much more exciting than I (had) thought! This is the park that I often go to.
 
-  ### 장소 묘사 1 — 시설과 관련 경험 중심
+### 자주 가는 공원/조깅하는 곳/걷는 곳/하이킹하는 곳 — 장소 2
 
-  **When it comes to the \[place] I go to on a regular basis, it is called \[name], which is located in \[location].**
+Regarding the park I exercise at frequently, it is Dongtan park situated in Dongtan and has longer and more tracks (for joggers and walkers). This is vital for someone who works out on a daily basis like me. Plus, I can see several walking and jogging tracks, water fountains, plenty of benches where people can relax, a ball field, and a tennis court. Last but not least, the main reason I prefer Dongtan Park is the walking distance, which takes just 10 minutes to get there on foot. (Oh, besides, not only a cafe but also a number of famous restaurants are lining the street, so it enables me to enjoy a meal, something savory, on the way back home.)
 
-  **Its most striking feature is that it has \[comparative feature] compared to other places.**
+### 자주 가는 해변/국내여행지/해외여행지 — 장소 1
 
-  There are \[facility 1], \[facility 2], and \[facility 3] as well.
+When it comes to the beach I usually swim at, it’s called Dongtan beach which is located in (the western part of) Korea. As for the striking feature (of the beach), it has a bigger white sand beach compared to others. And, there are a number of famous restaurants and cafes, plenty of beach umbrellas and chairs where people can relax, and leisure centres providing swimming, surfing, or water-skiing classes as well. For these reasons it swarms with people who expect to enjoy water sports all through the year except in winter. A few weeks ago/last summer, I went there and got a surfing lesson and it was much more exciting than I (had) thought! This is the beach that I often go to.
 
-  For these reasons, it is always crowded with \[people].
+### 자주 가는 해변/국내여행지/해외여행지 — 장소 2
 
-  A few weeks ago, I went there and \[experience], and it was much more \[adjective] than I had expected.
+Regarding the beach I swim at frequently, it is Dongtan Beach situated in Dongtan and has bigger and wider beach umbrellas (for swimmers and surfers). This is vital for someone who suffers from a heat like me. Plus, I can see a stunning white sand beach, a number of famous restaurants and cafes, plenty of beach umbrellas and chairs where people can relax, and leisure centres providing swimming, surfing, or water-skiing classes. Last but not least, the main reason I prefer Dong tan Beach is the distance, which takes just 10 minutes to get there by car. (Oh, besides, not only a cafe but also a number of famous restaurants are lining the street, so it enables me to enjoy a meal, something savory, on the way back home.)
 
-  **This is the place that I often go to.**
+### 돌발: 자주 가는 음식점 — 장소 1
 
-  ### 장소 묘사 2 — 개인적 의미와 선호 이유 중심
+When it comes to the restaurant I eat out at on a weekly basis, it’s called Dongtan which is located in (the center of) Dongtan. As for the striking feature of the restaurant, it has a bigger dining area and more tables compared to others. And, there are professional chefs, hostesses and hosts, high chairs and booster seats for little babies, and a salad bar providing plenty of vegetables as well. For these reasons it swarms with regulars all through the year. A few weeks ago, I went there and enjoyed the signature dish, 요리이름, and it was much more savory and lighter than I (had) thought! It wasn’t greasy at all! This is the restaurant that I often go to dine out.
 
-  **Regarding the \[place] I visit frequently, it is \[name], situated in \[location].**
+### 돌발: 자주 가는 음식점 — 장소 2
 
-  It has \[important feature], **which is vital for someone who \[personal trait] like me**.
+Regarding the restaurant I’ve been to for long, it is Dongtan restaurant situated in Dongtan and has a bigger dining area and more tables for a large number of customers. This is vital for someone who doesn’t like waiting in line like me. Plus, I can see professional chefs, waitresses and waiters, high chairs and booster seats for little babies, and a salad bar providing plenty of vegetables. Last but not least, the main reason I prefer Dongtan restaurant is the walking distance, which takes just 10 minutes to get there on foot. (Oh, besides, famous cafés are lining the street, so it enables me to enjoy a dessert, something sweet, on the way back home.)
 
-  Plus, I can see \[facility 1], \[facility 2], and \[facility 3].
+### 돌발: 자주 가는 미용실 — 장소 1
 
-  Last but not least, the main reason I prefer this place is that it is within walking distance.
+When it comes to the hair salon/beauty salon I usually get my haircut, it’s called Dongtan salon which is located in (the center of) Dongtan. As for the striking feature of the hair salon, it has more space and chairs for people to get hair styling compared to others. And, there are professional hair dressers, bright lights, several posters showing various hair styles on the wall, some floor-to-ceiling mirrors, and a shampoo station for customers to have their hair washed as well. For these reasons it swarms with regulars all day long. Last week, I went there and got my hair trimmed, and it was much more exceptional than I (had) thought! The stylist definitely knew the latest fashion/trend! This is the hair salon that I go to on a monthly basis.
 
-  It takes only about \[time] to get there \[on foot/by car].
+**미용실 관련 표현**
 
-  ### 장소별 소재 바꾸기
+- 머리를 자르다 → **get one’s haircut**
+- 뿌리염색하다 → **get one’s roots touched up**
+- 숯치다 → **get one’s hair a bit thinned**
+- 갈라진 끝을 다듬다 → **get one’s split ends trimmed**
+- 파마하다 → **get a perm**
 
-|장소|눈에 띄는 특징|보이는 것·시설|관련 경험|
-|-|-|-|-|
-|극장·공연장|more and bigger screens/stages|4D screens, high-quality sound systems, comfortable seats, snack bar|4D 영화가 예상보다 역동적이었음|
-|공원·조깅 장소|longer and wider tracks|walking trails, water fountains, benches, ball field, tennis court|아내와 산책하며 스트레스를 품|
-|해변·여행지|a wider white-sand beach|umbrellas, folding chairs, cafes, water-sports centers|서핑 수업을 받아 봄|
-|음식점|a larger dining area and more tables|professional chefs, high chairs, salad bar|대표 메뉴가 담백하고 맛있었음|
-|미용실|more space and styling chairs|hairdressers, mirrors, hairstyle posters, shampoo station|머리를 다듬었는데 기대보다 만족스러웠음|
-|집|efficient use of a small space|bedroom area, kitchen, bathroom, desk, storage space|집에서 편안하게 영화 감상|
+### 돌발: 자주 가는 미용실 — 장소 2
 
-### 광교호수공원 예시
+Regarding the hair salon I get my hair done frequently, it is Dongtan salon situated in Dongtan and has a bigger space and more chairs for people to get hair styling. This is vital for someone who doesn’t like waiting in line like me. Plus, I can see professional hair dressers, bright lights, several posters showing various hair styles on the wall, some floor-to-ceiling mirrors, and a shampoo station for customers to have their hair washed. Last but not least, the main reason I prefer Dongtan salon is the walking distance, which takes just 10 minutes to get there on foot. (Oh, besides, not only a cafe but also a number of famous restaurants are lining the street, so it enables me to enjoy a meal, something savory, on the way back home.)
 
-When it comes to the park I visit on a regular basis, it is Gwanggyo Lake Park, which is located near my home in Suwon.
+### 집 — 문제
 
-Its most striking feature is that it has longer and more scenic walking trails than most neighborhood parks.
+**I would like to now talk about where you live. Can you describe your home? What does it look like? How many rooms does it have? Give me a description with lots of details.**
 
-There are two large lakes, wide jogging paths, water fountains, and plenty of benches where people can relax.
+### 집 — 장소 1
 
-For these reasons, it is always crowded with walkers and joggers, especially in the evening.
+When it comes to the home I’ve been living in, it’s a (single-family) house which is located in (the center of) Dongtan. As for the striking feature of my home, it has bigger and more rooms compared to others. And there are 5 bedrooms, a master bedroom, a kitchen, 2 bath rooms, a terrace, and a (rooftop) swimming pool as well. For these reasons, I’ve never considered moving since I first moved into this house. Well… last summer, my family and I swam in the pool almost every day, which helped us beat the heat! This is my house I’ve lived in.
 
-Recently, I went there with my wife and took a walk around the lake, which really helped me clear my head.
+### 집 — 장소 2
 
-This is the park that I go to most often.
+Regarding the home I’ve been living in, it is a (sing-family) house which has a huge parking garage (built for the residents). This is vital for someone who leaves work late like me. Plus, I can see 5 bedrooms, a master bedroom, a kitchen, 2 bath rooms, a terrace, and a (rooftop) swimming pool. Last but not least, I like my house because of the walking distance, which takes just 10 minutes to get to work on foot. (Oh, besides, not only a cafe but also a number of famous restaurants are lining the street, so it enables me to enjoy a meal, something savory, after leaving work.)
 
-### 원룸 묘사 예시
+---
 
-When it comes to my home, I live in a small studio apartment in Suwon.
+## 과거·현재 비교 2
 
-Although it is not very spacious, the space is used efficiently.
+### Bank
 
-There is a bedroom area, a small kitchen, a bathroom, a desk, and enough storage space for two people.
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the bank in the past and now has changed noticeably. In the past, dealing in money and finances at a bank was the most common. I mean, it was useful, but some limits existed. However, unlike the past, technology has been developed considerably nowadays. This has led people to store, lend and borrow money online and even remitting money by a wire transfer is allowed anywhere and at any time. Well… as I've done shift work, I used to struggle to get to the bank on time. But, thanks to online banking provided by the bank, the method of controlling my money has been very convenient.
 
-The best part is its convenient location because it is close to stores, restaurants, and public transportation.
+### Technology — mobile
 
-I also like spending quiet evenings there watching movies with my wife.
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the mobiles I used previously and use now have changed noticeably. In the past, texting and talking on the phone were the most common. I mean, it was useful, but some limits existed. However, unlike the past, technology has been developed considerably nowadays. This has led people to enjoy entertainment such as watching TV and movies, listening to music, playing games, and even all functions can be used while commuting. In fact, commuting for 4 hours on a daily basis was the burden before, but, the use of mobile phones with advanced features made me forget all my troubles.
 
-Overall, it is small but cozy and practical.
+### Recycling
 
-### 미용실 표현
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the way we recycle has changed noticeably. In the past, putting the whole thing in a plastic bag was the most common. I mean, it was convenient, but detrimental to the environment. However, unlike the past, it has been systematized considerably nowadays. This has led people to sort the garbage out by materials, and even the label on water bottles should be removed. In fact, I almost got a ticket yesterday since the labels on some bottles weren’t got rid of when they were recycled.
 
-* 머리를 자르다 → **get my hair cut / get a haircut**
-* 뿌리 염색을 하다 → **get my roots touched up**
-* 숱을 치다 → **get my hair thinned out a little**
-* 갈라진 끝을 다듬다 → **get my split ends trimmed**
-* 파마하다 → **get a perm**
+### Health
 
-\---
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the ways people did for their health previously and do now have changed noticeably. In the past, regular workout was the most common. I mean, it was effective, but time-consuming, and some limit existed. However, unlike the past, healthcare industry has been systematized considerably nowadays. This has led people to control eating, and even a well-balanced diet is delivered every morning. In fact, I’m a regular of a delivery shop serving healthy diets, as I tend to be somewhat lazy to cook. The delivery man always comes the time I want to have it, and it is hot enough because it is kept in a warmer not to get cold.
 
-## 4\. 과거·현재 비교 2
+### Weather
 
-### 만능 구조
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the weather in my country has changed noticeably. In the past, we had clear four seasons. I mean, each season had its apparent features, like mild and windy in spring and fall, hot in summer, and cold in winter moderately. However, unlike the past, the circumstances have been varied harshly nowadays. This has led people to struggle, especially in summer, and even thunderstorms come frequently. In fact, a few days ago the flood warning was issued in Korea, and it caused some villages to flood.
 
-**Personally, I believe that the way people \[topic] has changed noticeably.**
+### Transportation — 문제와 답변
 
-In the past, \[old behavior] was the most common.
+**Now, tell me how transportation has changed over the years. How is the way people get around different now compared to the past?**
 
-It was \[advantage], but it also had some limitations.
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the way people get around in the past and now has changed noticeably. In the past, driving one’s own car was the most common. I mean, it was convenient, but people felt financially burdened. However, unlike the past, the public transportation system has been developed considerably nowadays. This has led people to take buses or subways, and even commuting by subway has become the most preferred way, (especially for people who are settled in the capital area.)
 
-However, unlike in the past, \[system/technology/industry] has developed considerably.
+### Fashion — 문제와 답변
 
-**This has led people to \[new behavior], and even \[advanced example] has become common.**
+**Fashion is always changing. Tell me about the kinds of clothes that were popular when you were younger. What did the styles look like? How are they different from what is popular now?**
 
-In fact, \[personal experience].
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the kinds of clothes Koreans wore in the past and prefer to wear now have changed noticeably. In the past, wearing simple and practical clothes was the most common. I mean, people didn’t really care about trends or their personal preferences. However, unlike the past, the fashion industry has (been) developed considerably nowadays. This has led people to try different styles/change their outfits more often, and now we often wear styles like athleisure, streetwear, Y2K fashion, and office-core.
 
-Overall, \[topic] has become much more \[convenient/diverse/systematic] than before.
+---
 
-### 대중교통
+## 비교·대조
 
-Um... let me see. Personally, I believe that the way people get around has changed noticeably.
+### 기본 구성
 
-In the past, driving one's own car was the most common. It was convenient, but owning a car was financially burdensome.
+1. A / B
+2. A와 B의 유사점
+3. A의 특징
+4. B의 특징
+5. A와 B의 차이점
 
-However, unlike in the past, the public transportation system has developed considerably.
+### International travel
 
-This has led more people to take buses and subways, and commuting by subway has become especially common in the capital area.
+**Can you tell me the differences and similarities between your country and the country you recently travelled? How are they different? Give me the details.**
 
-Overall, people now have more affordable and convenient transportation options than before.
+1. A: 한국 / B: 캐나다·호주·뉴질랜드
+2. 유사점: 전 세계의 관광객들에게 인기 있는 여행명소
+3. A 특징: 상당히 발달된 생활방식
+4. B 특징: 맑은 강물의 강가, 아름다운 전경을 가진 산들, 이국적 길가와 건물들
+5. 차이점: 다른 방문의 목적
 
-### 패션
+Well... There are dozens of countries I could talk about, but now I compare Korea, (my country) and Canada, (the nation I lately travelled to). Both of them have been loved by a large number of travelers around the world, but they are somewhat different in many ways. As for Korea, it is well-known for its highly advanced lifestyle. In terms of Canada I visited last month, it had crystal-clear water as well as mountains with a breathtaking view. I believe even though their characteristics are slightly similar, tourists pursue a distinct purpose to visit. These are the similarities and differences between Korea and Canada.
 
-Um... let me see. Personally, I believe that the clothes Koreans wear have changed noticeably.
+### Family and friends
 
-In the past, simple and practical clothing was the most common, and people did not pay as much attention to trends or personal preferences.
+**Pick two of your family members or friends and tell me about their similarities and differences. Give me the details.**
 
-However, the fashion industry and social media have developed considerably.
+1. A: Mike / B: John
+2. 유사점: 초등학교 때부터 우정을 쌓아온 평생지기들
+3. A 특징: 내성적, 말을 잘 들어줌
+4. B 특징: 야심, 자유분방, 사회적
+5. 차이점: 다른 미래의 꿈과 인생의 방식을 추구
 
-This has led people to try different styles and change their outfits more often.
+Well... There are dozens of friends I could talk about, but now I compare Mike and John (who I’ve known for a long time). Both of them have built a strong friendship since elementary school, but they are somewhat different in many ways. As for Mike, he is kind of introverted, but it’s obvious he has the biggest heart among my friends. In terms of John, he is regarded as ambitious, carefree, and sociable. I believe even though their characteristics are slightly similar, both of them pursue a distinct style of life and the dream for the future. These are the similarities and differences between Mike and John.
 
-Nowadays, styles such as athleisure, streetwear, Y2K fashion, and office-core are popular.
+### Going to the beaches
 
-Overall, fashion has become much more diverse and individualistic.
+**Pick two popular beaches that you know of and tell me about their similarities and differences. Which one do you prefer and why?**
 
-### 휴대전화
+1. A: 동탄 해변 / B: 수원 해변
+2. 유사점: 많은 관광객들에게 사랑받음
+3. A 특징: 아름다운 전경
+4. B 특징: 수상활동 할 것들이 많음
+5. 차이점: 방문의 목적이 다름
 
-Personally, I believe that mobile phones have changed dramatically.
+Well... There are dozens of beaches I could talk about, but now I compare Dongtan beach, (one of my favorite beaches,) and Suwon beach. Both of them been loved by a large number of tourists, but they are somewhat different in many ways. As for Dongtan beach, it is well-known for its breathtaking scenery/picturesque surroundings. In terms of Suwon beach, it’s obvious it has many things worth doing, like snorkelling, canoeing, scuba diving, and so on. I believe even though their characteristics are somewhat similar, visitors have distinct purposes for coming. These are the similarities and differences between two beaches.
 
-In the past, texting and making phone calls were their main functions. They were useful, but quite limited.
+### Going to the parks
 
-Nowadays, smartphones allow people to watch movies, listen to music, play games, use maps, and even handle banking while commuting.
+**Pick two popular parks that you know of and tell me about their similarities and differences. Which one do you prefer and why?**
 
-In my case, entertainment apps make a long commute much more bearable.
+1. A: 동탄 공원 / B: 수원 공원
+2. 유사점: 야외활동에 관심 있는 사람들에게 사랑받음
+3. A 특징: 아름다운 전경
+4. B 특징: 야외활동 할 것들이 많음
+5. 차이점: 방문의 목적이 다름
 
-Mobile phones have become all-in-one devices rather than simple communication tools.
+Well... There are dozens of parks I could talk about, but now I compare Dongtan park, (one of my favorite parks,) and Suwon park. Both of them have been loved by a large number of people who are interested in outdoor activities, but they are somewhat different in many ways. As for Dongtan park, it is well-known for its breathtaking scenery/picturesque surroundings. In terms of Suwon park, it’s obvious it has many things worth doing, like playing badminton or basketball, taking a walk, jogging, and so on. I believe even though their characteristics are somewhat similar, visitors have distinct purposes for coming. These are the similarities and differences between two parks.
 
-### 은행·재활용·건강·날씨 소재
+### Holidays
 
-|주제|과거|현재|개인 경험·마무리 소재|
-|-|-|-|-|
-|은행|지점에서 직접 업무|온라인 송금·대출·계좌 관리|교대근무 중에도 모바일뱅킹 사용 가능|
-|재활용|한 봉투에 함께 버림|재질별 분리, 라벨 제거|규칙을 놓칠 뻔한 경험|
-|건강관리|운동에만 집중|식단·앱·건강식 배달 병행|요리하기 귀찮을 때 건강식 주문|
-|날씨|사계절의 특징이 뚜렷함|폭염·집중호우가 잦아짐|호우경보와 침수 뉴스|
+**Please tell me about the two biggest holidays in your country. How do people celebrate those holidays? How are the holidays different? Please compare those two holidays.**
 
-\---
+1. A: 설날 New Year’s Day / B: 식목일 Arbor Day / Independence Movement Day / Memorial Day / National Liberation Day / the National Foundation Day of Korea / Constitution Day
+2. 유사점: 모든 연령의 사람들에게 사랑받는 인기 있는 휴일
+3. A 특징: 모든 가족이 모여 3일간 다양한 활동들을 함
+4. B 특징: 산림자원 보호·관리를 위해 나무를 심음
+5. 차이점: 기념하는 방식, 장소, 날짜가 다름
 
-## 5\. 비교·대조
+Well... There are dozens of holidays I could talk about, but now I compare New Year’s Day, and Arbor Day. Both of them have been loved a lot by people of all ages, but they are somewhat different in many ways. As for New Year's Day (which lasts for 3 days), all family members and relatives gather and do plenty of activities such as eating traditional food, playing traditional games, and so on. In terms of Arbor Day, trees are planted in order to manage and preserve forest recourses. I believe even though their characteristics are slightly similar, both of them have a distinct way to celebrate. These are the similarities and differences between New Year’s Day and Arbor Day.
+
+### Jogging
+
+**How is jogging different with other sports? Tell me about similarities and differences.**
+
+1. A: 조깅 / B: 축구
+2. 유사점: 전 세계의 사람들에게 사랑받는 스포츠, 체중 감량에 효과적
+3. A 특징: 시간, 장소, 복장의 제약이 없음 / 최고의 유산소 운동
+4. B 특징: 사회성 / 체력 향상
+5. 차이점: 운동에서 다른 타겟을 추구
+
+Well... There are dozens of sports I could talk about, but now I compare jogging, (one of my favorite hobbies,) and soccer. Both of them have been loved by a large number of people who care about their health, but they are somewhat different in many ways. As for jogging, it is well-known as one of the best forms of cardio exercise (that helps avoid obesity). (Moreover, there is no constraint on time, location, or clothing.) In terms of soccer, it’s obvious physical strength and sociability can be formed and enhanced. I believe even though their characteristics are somewhat similar, both of them pursue a distinct goal in exercise. These are the similarities and differences between jogging and soccer.
+
+---
+
+## 돌발 — 날씨
 
 ### 예시 문제
 
-* 최근 여행한 나라와 한국의 공통점·차이점
-* 가족이나 친구 두 명의 공통점·차이점
-* 유명한 해변 두 곳 비교 및 선호
-* 유명한 공원 두 곳 비교 및 선호
-* 한국의 큰 명절 두 개 비교
-* 조깅과 다른 운동 비교
-
-### 만능 구조
-
-**There are many \[countries/people/places] I could talk about, but I would like to compare A and B.**
-
-Both of them \[similarity], but they are different in several ways.
-
-**As for A,** \[feature of A].
-
-**In terms of B,** \[feature of B].
-
-Although they share some similarities, \[people/visitors] choose them for different reasons.
-
-Personally, I prefer A because \[reason].
-
-**Those are the main similarities and differences between A and B.**
-
-### 주제별 아이디어
-
-|비교 대상|공통점|A의 특징|B의 특징|핵심 차이|
-|-|-|-|-|-|
-|한국 vs. 캐나다|세계적으로 인기 있는 여행지|advanced and convenient lifestyle|crystal-clear lakes and breathtaking mountains|방문 목적이 다름|
-|친구 Mike vs. John|오랫동안 알고 지낸 친구|introverted and a good listener|ambitious, carefree, sociable|성격과 미래의 꿈이 다름|
-|해변 A vs. 해변 B|관광객에게 사랑받음|picturesque surroundings|many water activities|휴식 vs. 액티비티|
-|공원 A vs. 공원 B|야외활동에 적합|beautiful scenery|courts and exercise facilities|산책·휴식 vs. 운동|
-|설날 vs. 다른 공휴일|모든 연령층이 기념|가족 모임과 전통음식|특정 역사·사회적 의미|날짜와 기념 방식이 다름|
-|조깅 vs. 축구|건강과 체중 관리에 도움|시간·장소 제약이 적은 유산소 운동|체력과 사회성 향상|개인 운동 vs. 팀 운동|
-
-### 한국과 캐나다 비교 예시
-
-There are many countries I could talk about, but I would like to compare Korea and Canada, which I visited recently.
-
-Both are popular destinations for travelers from around the world, but they are different in several ways.
-
-As for Korea, it is well known for its advanced and convenient lifestyle.
-
-In terms of Canada, I was blown away by its crystal-clear lakes and mountains with breathtaking views.
-
-Although both countries are attractive, people often visit Korea for its cities, food, and culture, while they visit Canada for nature and outdoor activities.
-
-Those are the main similarities and differences between the two countries.
-
-\---
-
-## 6\. 사회 이슈
-
-### 만능 구조
-
-**Actually, it is not easy to talk about an issue regarding \[topic] because I am not closely related to that field.**
-
-Let me think... One issue I remember reading about was \[incident] caused by \[cause].
-
-\[Background or what happened].
-
-**This led people to \[result 1], and some of them ended up \[result 2].**
-
-To deal with the problem, the government/company \[response].
-
-I think \[short opinion or lesson].
-
-### 주제별 사건 아이디어
-
-|주제|핵심 사건|경위·결과|대처|
-|-|-|-|-|
-|식품 오염|raw seafood로 인한 bacterial infection|덜 익힌 해산물을 먹고 감염|충분히 익혀 먹으라고 경고|
-|휴대전화·인터넷|personal information leak caused by hackers|계좌·전화번호 등 유출, 금전 피해|보안 앱·강한 비밀번호·2단계 인증 권고|
-|가족·친구와 대화|최근 개인정보 유출 뉴스|피해 규모와 예방 방법을 이야기함|비밀번호 변경|
-|건강|obesity caused by fast food|바쁜 생활로 간편식 의존|균형 잡힌 식사 권고|
-|재활용|illegal garbage dumping|복잡한 분리배출 규칙을 무시|벌금 강화·안내 개선|
-|공원·해변|littering in public spaces|방문객이 쓰레기를 남김|쓰레기통 확대·벌금 부과|
-|이웃 국가|export restrictions|외교 갈등이 기업 공급망에 영향|국내 생산 지원|
-|산업·경제|raw-material supply issue|수입 차질과 생산 지연|공급처 다변화·보조금|
-|주택|housing price hike caused by centralization|무리한 대출과 주거 부담|공급·대출 관련 정책 시행|
-|영화 산업|actor's misconduct scandal|촬영 중단과 개봉 지연|제작사의 계약·관리 강화|
-|여행|safety concerns and robbery|현금을 많이 든 관광객이 표적이 됨|현금 최소화·여행 경보 제공|
-
-### 개인정보 유출 예시
-
-Actually, it is not easy to talk about an issue regarding cell phones, but one article I remember was about a personal information leak caused by hackers.
-
-They stole private information such as phone numbers, home addresses, and banking details.
-
-This led some victims to suffer financial losses and a great deal of stress.
-
-In response, companies strengthened their security systems, and the government advised people to use strong passwords and two-factor authentication.
-
-It reminded me that convenience and security should always go together.
-
-### 재활용 문제 예시
-
-One issue people often mention is illegal garbage dumping.
-
-In Korea, rubbish has to be sorted by material, but the rules can sometimes seem complicated.
-
-This has led some people to ignore the rules and throw everything into the same bin.
-
-To deal with the problem, local governments have improved the instructions and imposed higher fines for illegal dumping.
-
-I think clearer rules and more convenient recycling facilities would help.
-
-### 주택 문제 예시
-
-One housing issue that often comes up is the sharp rise in housing and rent prices in the capital area.
-
-Jobs and major facilities are concentrated there, so demand has continued to grow.
-
-This has placed a heavy financial burden on young people and has led some buyers to take out very large mortgages.
-
-The government has tried to address the issue through new housing supply and loan policies.
-
-It is a complicated problem because both affordability and stable prices matter.
-
-\---
-
-## 7\. 돌발 — 날씨
-
-### 출제 유형
-
-1. 오늘 날씨를 자세히 묘사
-2. 한국의 사계절과 가장 좋아하는 계절
-3. 계절별 인기 여가 활동
-4. 과거와 현재의 날씨 비교
-5. 기억에 남는 날씨 관련 경험
+1. **How was the weather today at where you were? Was it cold, was it warm? Talk about today’s weather in detail.**
+2. **Tell me about the weather where you live. How are the seasons? What is the weather like in each season? Which season do you personally like the most? Tell me everything about the weather.**
+3. **What are the popular free-time activities in your country? Are the activities seasonally different?**
+4. **How has the weather in your country changed over the years? Is the weather different from what it used to be? How has it changed? Give me some details.**
+5. **Tell me about a memorable incident related to the weather. What was the problem and how did you deal with the situation? What made that incident unforgettable?**
 
 ### 오늘 날씨
 
-Well, the weather is clear and pleasant today.
+구조: 오늘 날씨 설명 → 지난주/다른 나라 날씨와 비교 → 요즘 날씨에 한국 사람들이 주로 하는 활동 → 내 경험 추가
 
-It was overcast and somewhat gloomy last week, but it has cleared up since then.
-
-Because the weather is so nice, many young people are viewing flowers, while others are hiking or taking walks.
-
-I also went for a walk recently, and the gentle breeze made me feel relaxed.
-
-Overall, it is perfect weather for outdoor activities.
+Well… I reckon that the weather is serene and bright since it’s spring in Korea now. However, it wasn’t like this last week. It was overcast, and somewhat gloomy as the sky was covered by clouds. Anyway, it cleared up and we’ve had nice weather this week. Young adults seem to enjoy viewing flowers while mid-aged people go hiking nowadays. 경험: 지난주에 꽃구경 갔는데 좋았다.
 
 ### 한국의 사계절
 
-Korea has four distinct seasons: spring, summer, fall, and winter.
+구조: INTRO → 봄·가을 날씨 → 여름 날씨 → 겨울 날씨 → 선호하는 계절 → 마무리
 
-In spring and fall, the sky is usually clear and a gentle breeze blows.
+In Korea, there are four distinct seasons: spring, summer, fall, and winter. To be specific, in spring and fall, it’s clear without a hint of cloud, and a gentle breeze blows. In summer, although the weather is scorching hot, it’s loved since Koreans can enjoy swimming and go to a resort for beating the heat. When winter comes, the days get shorter and the weather becomes frigid. Personally, the season I’ve loved is winter due to winter sports such as snowboarding, skiing, and sledding. These are the seasonal characteristics in Korea.
 
-Summer is scorching hot and humid, but people can enjoy swimming and water sports.
+### 계절별 인기 활동
 
-In winter, the days get shorter and the weather becomes freezing cold.
+Well… I reckon several activities are done seasonally in Korea. In spring, people in Korea tend to go on a picnic and attend the spring flower festival. Even my friends and I went to ABC to see the cherry blossoms last month and the full-blown cherry blossoms were so beautiful. Moreover, going to a beach or water park for water sports is loved in summer. When fall comes, Koreans usually go hiking and take a trip to a farm. Lastly, having year-end parties and going to a ski resort for skiing and snowboarding are popular in winter. Well… as everybody knows, Korea’s intense cold makes winter sports more exciting. These are the activities that Koreans do in each season.
 
-Personally, I like winter because I can enjoy skiing and snowboarding.
+### 과거와 현재의 날씨
 
-Those are the main seasonal characteristics in Korea.
+Um... let me see... I’m not familiar with the subject, but... personally, I believe that the weather in my country has changed noticeably. In the past, we had clear four seasons. I mean, each season had its apparent features, like mild and windy in spring and fall, hot in summer, and cold in winter moderately. However, unlike the past, the circumstances have been varied harshly nowadays. This has led people to struggle, especially in summer, and even thunderstorms come frequently. In fact, a few days ago the flood warning was issued in Korea, and it caused some villages to flood.
 
-### 계절별 활동
+### 기억에 남는 날씨 관련 경험
 
-Several leisure activities are enjoyed seasonally in Korea.
+Let me see… the time related to weather…… well…. As far as I remember, it happened at Dongtan beach which has become popular thanks to the movie recorded there. My wife and I went there in order to beat the heat/recharge our batteries/enjoy vacation/relax. We got there and were having a ball hitting the water. However, the weather was completely unexpected. The flood warning was issued, and to make things worse, there was a flood in the streets. In the end, we had to go back home with the wet clothes on. I’ve never seen such a strong thunderstorm in my life.
 
-In spring, people go on picnics and visit flower festivals.
+---
 
-In summer, going to beaches and water parks is popular.
+## 돌발 — 대중교통
 
-When fall comes, many Koreans go hiking or visit farms.
+### 예시 문제
 
-Last but not least, people have year-end parties and visit ski resorts in winter.
+1. **Tell me about how people typically get around in your country. Do people drive their own cars or do they use trains or buses? What are some typical means of transportation?**
+2. **What means of transportation do you use to get around? Do you drive or take public transportation?**
+3. **How did you travel when you were a child? Were the types of transportation different back then? Describe for me how people used to get around in your city or town.**
+4. **Problems often arise related to transportation. Cars break down, trains run late, or there are traffic jams. Tell me about a transportation problem that you once faced. Tell me everything that happened and what you did to deal with the situation.**
 
-The clear seasonal changes allow people to enjoy a wide range of activities.
+### 한국 사람들이 이용하는 교통수단
 
-### 날씨 관련 경험 — 홍수 만능답변
+구조: 다양한 수단 이용 → 상황에 따라 다름: 가까운 곳은 버스나 지하철, 여행이나 장보기는 택시나 자가용
 
-Let me see... As far as I remember, it happened last summer when my wife and I went to the beach to beat the heat.
-
-We were having a blast in the water, but the weather suddenly changed.
-
-A flood warning was issued, and to make matters worse, some nearby streets were flooded.
-
-We stopped everything immediately and headed home in our wet clothes.
-
-I had never seen such a powerful thunderstorm before, so the experience has stayed in my memory.
-
-\---
-
-## 8\. 돌발 — 대중교통
-
-### 출제 유형
-
-1. 한국 사람들이 주로 이용하는 교통수단
-2. 내가 주로 이용하는 교통수단과 이유
-3. 과거와 현재의 교통수단 비교
-4. 교통수단과 관련해 겪은 문제
-
-### 한국의 교통수단
-
-There are several ways to get around Korea, such as buses, subways, taxis, trains, and planes.
-
-I think people's choices vary depending on the situation.
-
-When they travel near home or commute to work, buses and subways are usually preferred because they run frequently at reasonable fares.
-
-However, people often take a taxi or drive their own car when they travel far away or go grocery shopping with many heavy bags.
-
-In short, Koreans choose transportation based mainly on distance, cost, and convenience.
+Well… there are several ways to get around the country, like by bus, subway, taxi, train, or plane, and so on. I reckon it varies depending on the circumstances. I mean, when people go somewhere near their house, or commute to school or work, presumably a subway or a bus is preferred, since they operate frequently at a reasonable fare. However, I believe taking a taxi or driving one’s own car can be chosen when Koreans travel somewhere far or go grocery shopping, which can result in carrying a bunch of heavy bags back home.
 
 ### 내가 이용하는 교통수단
 
-As for the means of transportation I use most often, it is the bus.
+Well…. As for the means of transportation I’ve used to move around, it’s the bus. One of the main reasons is that the transportation cost is the lowest compared to other public transportation options. In fact, In Korea, a city bus fare is about 1 dollar, and an intercity bus fare is just 2 dollars these days. Another reason is the number of bus stops. I guess there’s a bus stop almost every 100 meters, and buses come pretty frequently — usually within 10 minutes. These are the reasons why the bus is preferred when I get around.
 
-One of the main reasons is that the fare is affordable compared with other options.
+### 어린 시절과 현재 비교
 
-Another reason is that there are many bus stops near residential areas, and buses usually come within ten minutes.
+Um... let me see... I’m not familiar with the subject, but... Personally, I believe that the types of transportation in the past and now have changed noticeably. In the past, driving one’s own car was the most common. I mean, it was convenient, but people felt financially burdened. However, unlike the past, the public transportation system has been developed considerably nowadays. This has led people to take buses or subways, and even commuting by subway has become the most preferred way, especially for people who are settled in the capital area.
 
-I can also listen to music or check my phone while traveling.
+### 교통 문제 경험
 
-These are the reasons I often prefer the bus when I get around.
+Well… The time related to the transportation… it is unforgettable since all the plans were cancelled. What I mean is that… my family and I were heading to Dongtan Beach in order to enjoy summer vacation. However, right before getting to the beach, we got caught up in a traffic gridlock being backed up for miles. We waited until the traffic eased off, but it didn’t get better, and when we checked what happened on the road ahead, there was a six-car rear-end collision. Eventually, we ended up going back home and spent the whole day on the road.
 
-### 교통 문제 경험 — 교통체증 만능답변
+---
 
-The most memorable transportation problem I experienced happened when my family and I were heading to the beach for summer vacation.
+## 사회 이슈
 
-Right before we arrived, we got caught in a traffic jam that stretched for miles.
+### 1. 식품 오염
 
-We waited for the traffic to ease, but it did not get any better.
+**Food can go bad and cause bacterial infections. Tell me about an incident you heard or read about on this issue. What was the problem? How was it dealt with?**
 
-Later, we found out that there had been a six-car rear-end collision ahead of us.
+1. 핵심사건: 대하에 의해 야기된 사망 사건
+2. 경위: 사람들이 날새우를 먹었다
+3. 결과 1/2: 사람들이 바이러스에 걸렸다 / 몇몇이 죽었다
+4. 대처: 정부가 조리 전 익혀 먹으라고 했다
 
-Eventually, we gave up and went back home after spending most of the day on the road.
+Well... Actually, it’s not easy to remember an issue regarding contaminated food because I’m a person who is not interested in eating or food industry. Let me think… well… One of the memorable articles I read was a fatal incident caused by tiger prawns. Some people enjoyed the raw prawns and this led people to have vibrio. Unfortunately, several people ended up dying, so the government gave the public a warning to cook enough before eating.
 
-It was frustrating because all our plans had to be canceled.
+### 2. 휴대전화 이슈
 
-\---
+**Tell me about some issues people talk about related to cell phones. Why do people talk about that topic? Why is it a problem? Tell me everything you know about that topic.**
 
-## 9\. 롤플레이 공통 구조
+1. 핵심사건: 해커들에 의해 야기된 개인정보유출 사건
+2. 경위: 해커들이 사람들의 개인정보를 훔쳤다
+3. 결과 1/2: 사람들이 돈을 잃었다 / 몇몇 사람들은 자살시도를 했다
+4. 대처: 정부가 보안 어플을 깔라고 권고·경고했다
 
-### 1번 — 질문하기
+Well... Actually, it’s not easy to remember an issue regarding cell phones because I’m a person who is not interested in technology. Let me think… well… One of the memorable articles I read was a personal information leakage caused by hackers. The hackers took private information such as bank accounts, phone numbers, and home addresses, and this led people to lose their money. Unfortunately, several people ended up committing suicide, so the government gave the public a warning to install security applications.
 
-Hello, I am calling to get some information about \[purpose], and I have a few questions.
+### 3. 인터넷 이슈
 
-**First of all, could you tell me \[question 1]?** + 질문하는 이유
+**Tell me about some issues people talk about related to the Internet. Why do people talk about that topic? Why is it a problem? Tell me everything you know about that topic.**
 
-**Second, I was wondering \[question 2].** + 질문하는 이유
+Well... Actually, it’s not easy to remember an issue regarding the Internet because I’m a person who is not interested in technology. Let me think… well… One of the memorable articles I read was a personal information leakage caused by hackers. The hackers took private information such as bank accounts, phone numbers, and home addresses, and this led people to lose their money. Unfortunately, several people ended up committing suicide, so the government gave the public a warning to install security applications.
 
-**Lastly, I would like to know \[question 3].** + 질문하는 이유
+### 4. 가족·친구와 이야기하는 이슈
 
-Thank you so much for your help. Bye.
+**Now, tell me about what you usually talk about with your family members or friends commonly. What was the most recent thing that you talked about? Give me the details.**
 
-### 2번 — 문제 해결하기
+Hmm… something I talked about with my family or friends recently… what could it be… Let me think… well… One of the memorable issues I discussed was a personal information leakage caused by hackers. The hackers took private information such as bank accounts, phone numbers, and home addresses, and this led people to lose their money. Unfortunately, several people ended up committing suicide, so the government gave the public a warning to install security applications.
 
-I have something to tell you.
+### 5. 건강 관련 사회이슈
 
-As you know, \[background], but unfortunately \[problem].
+**What are some issues related to our health these days? Why do people talk about this topic a lot? Take a minute and describe common health-related concerns people have.**
 
-I am terribly sorry, and I would like to give you some options.
+1. 핵심사건: 패스트푸드에 의해 야기된 비만 사건
+2. 경위: 한국의 사람들은 치열한 경쟁사회를 산다
+3. 결과 1/2: 다른 사람들보다 더 많이 일하고 공부하게 되었다 / 시간 절약을 위해 과자나 패스트푸드를 주로 먹는다
+4. 대처: 정부가 균형 잡힌 식사를 하라고 권고했다
 
-**First, how about \[option 1]?** + 부연 설명
+Well... Actually, it’s not easy to remember an issue regarding health because I’m a person who is not interested in a healthy lifestyle. Let me think… well… One of the concerns people discuss nowadays is obesity caused by instant-food. Everyone in Korea has been living in a highly competitive society, and this led people to work or study harder than others. Unfortunately, several people ended up snacking and eating fast-food to save time, so the government gave the public a recommendation to eat a well-balanced diet.
 
-**Second, would you like me to \[option 2]?** + 부연 설명
+### 6. 재활용 관련 이슈
 
-**Or, why don't we \[option 3]?** + 부연 설명
+**Talk about some recycling issues that are mentioned in the news. What’s the main issue that people talk about? Why is that? Tell me in detail.**
 
-What do you think? Please let me know what works best for you.
+1. 핵심사건: 우리나라 사람들에 의해 야기된 쓰레기 무단투기 사건
+2. 경위: 쓰레기는 종류별로 나눠 분리수거해야 한다
+3. 결과 1/2: 복잡한 단계가 사람들이 규칙을 무시하게 만들었다 / 쓰레기통에 모든 쓰레기를 다 넣었다
+4. 대처: 정부가 쓰레기 투기에 더 높은 벌금을 부과한다고 경고했다
 
-### 3번 — 관련 경험
+Well... Actually, it’s not easy to remember an issue regarding recycling because I’m a person who is not interested in the environment. Let me think… well… One of the memorable articles I read was/one of the issues people are mentioning nowadays is illegal garbage dumping caused by people in my country. Rubbish should be sorted out carefully depending on the material, but this /these complicated steps led people to ignore the rules. Unfortunately, several people ended up throwing the trash away in the same bins, so the government gave the public a warning to impose a much higher fine for littering.
 
-Of course, I have had a similar experience.
+### 7. 해변·공원과 같은 열린 공간이 직면한 문제
 
-I am not sure exactly when it happened, but I think it was about \[time] ago.
+Well... Actually, it’s not easy to remember an issue regarding park/beaches because I’m a person who is not closely related to the leisure industry. Let me think… well… One of the memorable articles I read was/one of the issues parks/beaches face nowadays is illegal garbage dumping caused by people in my country. Rubbish should be sorted out carefully depending on the material, but this /these complicated steps led people to ignore the rules. Unfortunately, several people ended up throwing the trash away in the same bins, so the government gave the public a warning to impose a much higher fine for littering.
 
-\[When / who / where / why].
+### 8. 이웃 국가와 관련된 뉴스
 
-However, \[problem].
+**I’d like you to think about a specific historic event that has affected the relationship between your country and one of its neighbouring nations. It could be a treaty signed between two countries, a cultural event or the visit of another country’s minister or president. Tell me in detail about everything that happened.**
 
-So, I \[solution used in the previous role-play].
+1. 핵심사건: 일본 정부에 의해 야기된 수출제한 사건
+2. 경위: 위안부는 한국과 일본에 오랜 기간 이어져온 쟁점이었다
+3. 결과 1/2: 일본 정부가 한국에 원자재 수출을 못하게 했다 / 한국 회사들이 자가 생산했다
+4. 대처: 정부가 제조회사들에 보조금을 지급했다
 
-In the end, \[result].
+Well... Actually, it’s not easy to remember an issue regarding an event between my country and a neighbouring nation because I’m a person who is not interested in history. Let me think… well… One of the memorable issues was the export control caused by the Japanese government. Comfort women have been an issue for a long time between Korea and Japan, and this led Japanese companies not to export some of their raw materials to Korea. Unfortunately, Korean companies ended up producing materials directly, so the government subsidized the makers to manufacture them in a short time.
 
-It was a memorable experience related to \[topic].
+### 9. 최신 이슈가 되는 경제 산업
 
-\---
+**Talk about an industry that has had an issue in your country. Why did that industry have an issue? What are some of the topics people talk about?**
 
-## 10\. 롤플레이 — MP3 플레이어
+Well... Actually, it’s not easy to remember an issue regarding industry because I’m a person who is not closely related to the economy. Let me think… well… One of the memorable issues was an export control caused by the Japanese government. Comfort women have been an issue for a long time between Korea and Japan, and this led Japanese companies not to export some of their raw materials to Korea. Unfortunately, Korean companies ended up producing materials directly, so the government subsidized the makers to manufacture them in a short time.
 
-### 1번: 친구에게 구매 정보 질문
+### 10. 하우징 이슈
 
-Hello, I am calling because I am thinking of buying an MP3 player, and I have a few questions.
+**Tell me about the issues that come up in your community related to housing matters. Why is it an issue? What do people talk about related to the issue?**
 
-First of all, could you recommend a specific model? I am not very tech-savvy, so I have no idea which one to choose.
+**What are some major problems people have when they rent a home or an apartment? How do people deal with these issues? How do these things affect how or where people live?**
 
-Second, I was wondering where I could buy it at a reasonable price. I have been a little short on money lately.
+**Sometimes the issues of too many new homes or not enough new homes can create controversy in a community. Think of a time the issue regarding housing was in the news your area. What was the issue and why were people talking about it?**
 
-Lastly, I would like to know the usual price range because I do not want to get ripped off.
+**Vocab**
 
-Thank you so much for your help. Bye.
+- Housing market → 주택시장
+- Housing prices → 주택가격
+- Skyrocket → 치솟다, 급등하다
+- Price hike → 가격폭등
+- Rent prices → 전세가격
+- Housing policies → 주택정책
+1. 핵심사건: 수도권의 집중화에 의해 야기된 가격폭등 사건
+2. 경위: 집값이 지속적으로 오르고 있다
+3. 결과 1/2: 사람들이 신중한 고려 없이 집을 사게 만들었다 / 주택담보대출금을 못 갚아 집을 잃었다
+4. 대처: 정부가 새로운 주택 정책을 만들고 시행했다
 
-### 2번: 빌린 기기를 망가뜨림
+Well... Actually, it’s not easy to remember an issue regarding housing because I’m a person who is not interested in a housing market. Let me think… well… One of the memorable articles I read was/one of the housing issues that came up in my community is /one of the major problems people have while renting a home is a price hike caused by centralization. Housing and rent prices have been skyrocketing and this led people to buy an apartment without careful consideration. Unfortunately, several people ended up losing their houses because they couldn’t pay off the mortgage, so the government established and implemented/made new housing policies.
 
-I have something to tell you. I borrowed your MP3 player a few days ago, but unfortunately, I dropped it and broke it.
+### 11. 친구들과 이야기하는 영화 이슈
 
-I am terribly sorry, and I would like to give you some options.
+**When you talk to your friends or family about movies, what topics or issues regarding movies do you discuss?**
 
-First, how about letting me buy you the exact same model? I can order it online immediately.
+1. 핵심사건: 가장 유명한 배우 ABC에 의해 야기된 마약 사건
+2. 경위: 그가 촬영장에 나타나지 않음
+3. 결과 1/2: 영화 촬영이 중단됨 / 그는 경찰에 체포됨
+4. 대처: 정부가 대중들에게 마약하지 말라고 경고함
 
-Second, would you like me to buy you the tablet you have always wanted instead? This happened because of my carelessness.
+Well... Actually, it’s not easy to remember an issue regarding movies, because I’m a person who is not closely related to the movie industry. Let me think... Well…. One of the most current issues is a drug scandal caused by the most famous actor, ABC. He didn’t show up for the movie shoot, and this led film company to halt the production. Unfortunately, he ended up being arrested by the police, so the government gave the public a warning not to do drugs.
 
-Or, why don't I have the MP3 player repaired? I know a repair shop that specializes in small electronic devices.
+### 12. 여행의 이슈
 
-Please tell me which option you prefer. I will make it right.
+**When people talk about traveling, what are the main issues or concerns they typically raise or discuss? What has caused these concerns? What is being done to address these concerns for the future?**
 
-### 3번: 빌린 물건을 망가뜨린 경험
+1. 핵심사건: 강도에 의해 야기된 안전 사건
+2. 경위: 관광객들은 일반적으로 많은 돈을 가지고 간다
+3. 결과 1/2: 범죄나 강도의 대상이 된다 / 몇몇은 방어하다 죽기도 한다
+4. 대처: 정부가 너무 많은 현금을 가지고 다니지 말라고 권고했다
 
-Of course, I have had a similar experience. I think it happened about a year ago.
+Well... Actually, it’s not easy to remember an issue regarding travel because I’m a person who is not closely related to the travel industry. Let me think… well… One of the main concerns is/could be safety caused by robbers. Tourists usually prepare a great deal of money, and this leads travellers to become targets of crime or robbery. Unfortunately, several visitors have been killed in defence, so the government gave the public a warning not to carry too much cash.
 
-I was taking an online class at a cafe and borrowed my friend's tablet because mine had run out of battery.
+---
 
-When the class was over, I tried to hand it back, but I accidentally dropped it under the table.
+## 롤플레이 — MP3 Player
 
-The screen was badly damaged, so I apologized and bought my friend the exact same model.
+### 1. 구매 전 친구에게 질문하기
 
-It was embarrassing, but I learned to be much more careful with other people's belongings.
+**You would like to buy an MP3 Player. Call your friend and ask about the MP3 Player. Ask three questions that will help you decide whether you want to buy.**
 
-\---
+1. 추천 기종 — 첨단기기 사용에 거부감이 있는 사람이다 보니 아무것도 모름
+2. 저렴하게 살 수 있는 곳 — 근래 돈이 없음
+3. 평균 가격대 — 바가지 쓰고 싶지 않음
 
-## 11\. 롤플레이 — 렌터카
+Hello, I am calling to get some information about buying an MP3 player, and I have some questions I’d like to ask. First of all, could you tell me the specific models of MP3 player you would recommend? Since I’m a technophobe, I have no idea at all. Second of all, I was wondering where I could purchase it at a reasonable price. As you know, I’ve been kind of broke recently. Lastly, I’d like to know the price range buyers usually pay for it. I just don’t want to be ripped off. Thank you so much for your help. Bye.
 
-### 1번: 렌터카 업체에 질문
+### 2. 빌린 MP3 Player를 망가뜨린 상황
 
-Hello, I am calling to get some information about renting a car for a week.
+**You have borrowed your friend’s MP3 Player but broke it by accident. Call your friend, tell him or her about the situation and give two to three alternatives that will help solve the situation.**
 
-First of all, could you tell me what kinds of affordable cars are available? It would be great if the car could seat four people.
+1. 같은 기종 구매 — 온라인으로 바로 찾아서 구매
+2. 원해오던 태블릿 구매 — 내 부주의로 발생
+3. 수리 — 전문 수리점 위치를 알고 있음
 
-Second, I was wondering what requirements I need to meet. I have been driving for years and have a clean driving record.
+I have something to tell you. As you know, I borrowed an MP3 player from you a few days ago, but unfortunately, it was broken. I dropped it accidentally. I’m terribly sorry, and I’d like to give you some options. Firstly, how about buying the same model you’ve been using? Perhaps I can find and order it online immediately if you are okay with it. Secondly, do you want me to buy a tablet you’ve always wanted? I can buy you a tablet since this happened due to my negligence. Or, why don’t I get it fixed? I know the specific location of the repair shop that specializes in fixing MP3 players. What do you think? I feel so bad, and I’ll do anything for you. Don’t hesitate to tell me what you want. Bye.
 
-Lastly, I would like to know what kind of insurance I need to purchase. I am willing to buy it if it is required.
+### 3. 빌린 물건을 망가뜨린 경험
 
-Thank you so much for your time.
+**That’s the end of the situation. Have you ever broken a new item that you borrowed from someone? What kind of item was it? Why did you break it? How did you resolve this matter? Tell me about this experience in as much detail as possible.**
 
-### 2번: 렌터카 상태 불량
+- 제품: MP3 player → tablet
+- 문제점: 떨어뜨림
+- 해결책: 같은 기종 구매
 
-I have just received the rental car, but the engine is making a strange noise and a warning light is on.
+Of course, I have experienced it!!! I am not sure when it happened exactly. I think it was about a year ago. I went to the café with my friend and borrowed his tablet to take an online class since my tablet was dead. Once the class was over, I tried to give the tablet to him, and it was dropped under the table. So, I apologized to him and bought the exact same model in the end. It was an experience I borrowed something and broke it.
 
-I would like to suggest a few options.
+---
 
-First, how about replacing it with another car right away? I can wait if it can be done within an hour.
+## 롤플레이 — 차 렌트
 
-Second, could you give me a full refund? That may be the simplest solution.
+### 1. 렌터카 업체에 질문하기
 
-Or, could you offer me a reasonable discount after checking that the car is safe to drive?
+**I’d like to give you a situation and ask you to act it out. You need to rent a car for about a week. Call the rental agency and ask three or four questions to get all the information you need.**
 
-Please let me know how you can resolve this problem.
+1. 합리적인 가격의 차종들 — 4좌석이 있으면 좋을 것 같음
+2. 자격요건 — 나는 무사고 운전자, 15년차 운전자
+3. 자동차보험 — 사고가 날 것 같진 않지만 필수라면 들겠음
 
-### 3번: 렌터카 경험
+Hello, I am calling to get some information about renting a car, and I have some questions I’d like to ask. First of all, could you tell me the kinds of cars you rent at an affordable price? It would be great if it could seat four people. Second of all, I was wondering what requirements I need to meet. In fact, I’ve been driving for 15 years and have never had an accident. Lastly, I’d like to know what kind of car insurance I should purchase. Personally, I don’t expect to get into an accident; however, I’m willing to buy it if it’s compulsory. Thank you so much for your time.
 
-I had a memorable rental-car experience during an overseas trip with my wife.
+### 2. 렌터카에 문제가 있는 상황
 
-We rented a convertible because we wanted to travel around freely.
+**I’m sorry, but there is a problem which I need you to resolve. You have received the rental car, but there are many problems with it. Call the rental agency and explain the situation. Give two or three alternatives.**
 
-However, when we picked up the car, it was not the model we had reserved.
+1. 교환
+2. 환불
+3. 할인
 
-I called the rental agent immediately and explained the situation.
+I have something to tell you. As you know, I’ve just rented a car, however, the engine is making a strange noise, and the warning light is on. So, I’d like to give you some options to solve this problem. Firstly, how about exchanging it right now? I might be able to wait if everything is done within an hour. Secondly, do you want me to get a refund? I think it could be the simplest way out. Or, why don’t you offer me a discount? In fact, this complicated situation was caused by your negligence. If the discount is given, I will let it slide. What do you think? Please let me know what you want.
 
-In the end, they provided the correct car and gave us a free fuel voucher as an apology.
+### 3. 차를 렌트했던 경험
 
-Although it was inconvenient at first, the problem was handled professionally.
+**That’s the end of the situation. Have you ever rented a car? When and where was it? Why did you need to rent a car? Where did you go? Tell me everything about that experience.**
 
-\---
+Of course, I have experienced it!!! I’m not sure when it happened exactly. I think it was about 5 years ago. My wife and I flew to the UK and we rented a convertible to travel around without any difficulty. However, once we checked the car, the model wasn’t the one we had originally reserved. So, I immediately called the rental agent, explained the situation, and eventually they provided us with the correct car along with a free petrol coupon. It was a memorable experience related to renting a car.
 
-## 12\. 롤플레이 — 친척 집 돌보기
+---
 
-### 1번: 해야 할 일 질문
+## 롤플레이 — 친척 집
 
-Hello, I am calling to ask about the responsibilities I need to take care of while you are on vacation.
+### 1. 친척에게 해야 할 일 질문하기
 
-First of all, could you tell me the exact dates when I should look after your house? As far as I remember, it is about a week.
+**I’d like to give you a situation and ask you to act it out. Someone in your family is going on a vacation, and you have agreed to take care of his or her responsibilities at home. Call your relative and ask three or four questions to get all the information you need.**
 
-Second, I was wondering what household chores you expect me to do. I can vacuum, mop the floor, and sort the recycling every day.
+1. 집을 보아야 하는 정확한 날짜 — 기억하는 바로는 한 주임
+2. 해야 하는 집안일 — 매일 청소기 돌리기, 바닥 닦기, 분리수거 할 수 있음
+3. 강아지 밥 주기, 산책과 같은 추가 사항 — 강아지를 키워본 적이 없어서 모름
 
-Lastly, I would like to know whether there are any extra duties, such as feeding or walking your dog. I have never raised a puppy before, so I need detailed instructions.
+Hello, I am calling to get some information about your responsibilities I need to take on while you are on vacation, and I have some questions I’d like to ask. First of all, could you tell me the exact dates I should be looking after your house? As far as I remember, it was about a week, right? Second of all, I was wondering about the house chores you expect me to do. I’m not sure I am doing everything correctly, but I believe I can vacuum, mop, and sort the garbage out on a daily basis. Lastly, I’d like to know about any extra duties, like feeding and walking the dog. As I’ve never raised a puppy before, I honestly have no idea what to do. Thank you so much for your time.
 
-Thank you so much for your help.
+### 2. 열쇠가 없어 집에 들어갈 수 없는 상황
 
-### 2번: 열쇠가 없어 집에 들어가지 못함
+**I’m sorry, but there is a problem which I need you to resolve. When you arrive at your relative’s house, the door is locked and the key is not where it is supposed to be. Call your relative’s hotel and leave a message explaining the situation. Give two or three options to resolve the problem.**
 
-I promised to take care of your house and have just arrived, but the key is not where it is supposed to be.
+1. 열쇠공 부르기
+2. 창문을 통해 들어가기
+3. 집을 안 돌본다
 
-First, how about calling a locksmith to open the door? There may be one available nearby.
+I have something to tell you. As you know, I promised to take care of your house and I’ve just arrived, but it seems the key is not where it’s supposed to be. So, I’d like to give you some options in order to solve this problem. Firstly, how about calling a locksmith to open the door? There might be a few available right now. Secondly, do you want me to try getting into the house through a window? If permission is granted, I will try. I think it could be the simplest way out. Or, why don’t we forget what we’ve talked? Of course I want to help and take on some of your responsibilities; however, I don’t think there are many options left. What do you think? Please let me know what you want.
 
-Second, could you contact a neighbor who has a spare key? That would probably be the easiest solution.
+### 3. 약속한 일을 하지 못했던 경험
 
-Or, if neither option works, I can come back later after you tell me where another key is.
+**That’s the end of the situation. Have you ever been in a situation where you agree to do something for friends or family members and then couldn’t do it? Give me all the details about what you agreed to do, what happened, and how the situation was resolved.**
 
-Please call me as soon as you get this message.
+- 지인: 친척 — 삼촌
+- 문제점: 문 안 열림
+- 해결책: 열쇠공 불러 문 열었음
 
-### 3번: 약속한 일을 하지 못했던 경험
-
-I had a similar experience about a month ago.
-
-My uncle had to attend a conference overseas and asked me to take care of his two dogs.
-
-However, I could not enter his house because the code for the keypad lock was incorrect.
-
-I called him, but he could not answer, so I contacted a locksmith.
-
-The door was opened within a few minutes, and I was able to take care of the dogs as promised.
-
-It was stressful, but the problem was resolved quickly.
-
-\---
-
-## 13\. 실전에서 바로 바꿔 끼우는 표현
-
-### 장소·사물 시작
-
-* **When it comes to the place I visit on a regular basis, ...**
-* **Regarding the item I use most often, ...**
-* **Its most striking feature is that ...**
-* **It is equipped with ...**
-* **This is vital for someone who ... like me.**
-
-### 비교·변화
-
-* **It has changed noticeably over the years.**
-* **In the past, ... was the most common.**
-* **Unlike in the past, ... has developed considerably.**
-* **This has led people to ...**
-* **Both of them ..., but they are different in several ways.**
-* **As for A, ... / In terms of B, ...**
-
-### 사건·문제·결과
-
-* **One issue I remember reading about was ... caused by ...**
-* **This led people to ...**
-* **Some people ended up -ing ...**
-* **To make matters worse, ...**
-* **Eventually, we had no choice but to ...**
-
-### 롤플레이
-
-* **I am calling to get some information about ...**
-* **Could you tell me ...?**
-* **I was wondering if/whether ...**
-* **How about -ing ...?**
-* **Would you like me to ...?**
-* **Please let me know what works best for you.**
-
-### 안전한 마무리
-
-* **That is why I prefer it.**
-* **Those are the main reasons I like it.**
-* **Overall, it has become much more convenient than before.**
-* **Those are the main similarities and differences between the two.**
-* **It was an experience I will never forget.**
-
+Of course I have experienced it!!! I am not sure when it happened exactly. I think it was about a month ago. My uncle, the closest relative to me, had to fly to the UK to attend a conference. He asked me to take care of his two puppies. However, I had difficulty getting into his house since the door code for the keypad lock was incorrect. So, I called a locksmith right away, and the door could be open within just a few minutes. It was an experience I didn’t do as planned

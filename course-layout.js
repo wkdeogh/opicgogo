@@ -1,4 +1,15 @@
-// Source fragments are assembled into study workspaces, never individual pages.
+// Resolve source headings before assembling related material into study pages.
+(function () {
+const material = window.OPIC_COURSE.lessons;
+const number = part => Number(part.id.split('-')[1]);
+const select = (section, title) => material.filter(part => part.path[1] === section && (!title || part.title === title));
+const ids = section => select(section).map(number);
+const pick = (section, title) => {
+  const matches = select(section, title);
+  if(matches.length !== 1) throw new Error('Source heading must be unique: '+section+' / '+title);
+  return number(matches[0]);
+};
+const places = ids('장소 묘사 1 & 2');
 window.OPIC_STUDY_LAYOUT = {
   views: [
     {id:'answers', title:'유형별 답변', description:'출제 특징과 답변 순서를 함께 보기'},
@@ -29,56 +40,55 @@ window.OPIC_STUDY_LAYOUT = {
     {id:'comparatives', title:'비교급·최상급', parts:[40]}
   ],
   expressions: [
-    {id:'vocab', title:'어휘 업그레이드', parts:[44]},
-    {id:'idioms', title:'숙어', parts:[41]},
-    {id:'connectives', title:'연결어', parts:[42]},
-    {id:'fillers', title:'필러', parts:[43]},
-    {id:'people', title:'사람을 나타내는 표현', parts:[50,51]},
-    {id:'konglish', title:'콩글리쉬', parts:[45]},
-    {id:'phrases', title:'바꿔 쓰는 문장', parts:[93,94,95,96,97]}
+    {id:'vocab',title:'어휘 업그레이드',parts:[44]},
+    {id:'idioms',title:'숙어',parts:[41]},
+    {id:'connectives',title:'연결어',parts:[42]},
+    {id:'fillers',title:'필러',parts:[43]},
+    {id:'people',title:'사람 표현',parts:ids('특정 사람을 가리키는 표현')},
+    {id:'konglish',title:'콩글리쉬',parts:[45]}
   ],
   scripts: [
-    {id:'object', title:'사물', parts:[47,48,49]},
-    {id:'place', title:'장소', parts:[52,53,54,55,56,57]},
-    {id:'change', title:'과거·현재', parts:[58,59,60,61,62]},
-    {id:'compare', title:'비교·대조', parts:[63,64,65,66]},
-    {id:'issue', title:'사회 이슈', parts:[67,68,69,70,71]},
-    {id:'weather', title:'날씨', parts:[72,73,74,75,76]},
-    {id:'transport', title:'대중교통', parts:[77,78,79,80]},
-    {id:'roleplay', title:'롤플레이', parts:[81,82,83,84,85,86,87,88,89,90,91,92]}
+    {id:'object',title:'사물 문제',parts:ids('사물 묘사 문제')},
+    {id:'place',title:'장소',parts:places},
+    {id:'change',title:'과거·현재',parts:ids('과거·현재 비교 2')},
+    {id:'compare',title:'비교·대조',parts:ids('비교·대조')},
+    {id:'issue',title:'사회 이슈',parts:ids('사회 이슈')},
+    {id:'weather',title:'날씨',parts:ids('돌발 — 날씨')},
+    {id:'transport',title:'대중교통',parts:ids('돌발 — 대중교통')},
+    {id:'roleplay',title:'롤플레이',parts:material.filter(part=>part.group==='roleplay').map(number)}
   ],
+  placePairs: [
+    {id:'theater',title:'극장',match:'자주 가는 극장'},
+    {id:'park',title:'공원 · 조깅 · 걷기 · 하이킹',match:'자주 가는 공원'},
+    {id:'beach',title:'해변 · 국내여행 · 해외여행',match:'자주 가는 해변'},
+    {id:'restaurant',title:'음식점',match:'돌발: 자주 가는 음식점'},
+    {id:'salon',title:'미용실',match:'돌발: 자주 가는 미용실'},
+    {id:'home',title:'집',match:'집 —'}
+  ].map(group=>({...group,parts:select('장소 묘사 1 & 2').filter(part=>part.title.startsWith(group.match)).map(number)})),
   scenarios: [
-    {id:'mp3', title:'MP3 플레이어', parts:[84,85,86]},
-    {id:'rental', title:'렌터카', parts:[87,88,89]},
-    {id:'house', title:'친척 집 돌보기', parts:[90,91,92]}
+    {id:'mp3',title:'MP3 플레이어',parts:ids('롤플레이 — MP3 Player')},
+    {id:'rental',title:'렌터카',parts:ids('롤플레이 — 차 렌트')},
+    {id:'house',title:'친척 집 돌보기',parts:ids('롤플레이 — 친척 집')}
   ],
-  hints: {
-    48:['얇고 가벼운 스마트폰','고해상도 화면·카메라·배터리','음악·영화·지도·연락','매일 사용하는 필수품'],
-    49:['회색 츄리닝·등산화','미끄럼을 막는 두꺼운 밑창','물·간식·선크림·충전기','가볍고 실용적인 준비물'],
-    55:['수원 집 근처 광교호수공원','넓은 산책로·두 개의 호수','음수대·벤치·조깅','아내와 산책하며 머리를 식힘'],
-    56:['수원의 작은 원룸','효율적인 공간 사용','침실·주방·욕실·책상·수납','편리한 위치·아내와 영화'],
-    59:['과거에는 자가용','유지 비용의 부담','대중교통 발전','버스·지하철 이용 증가'],
-    60:['단순하고 실용적이던 옷','패션 산업·소셜 미디어 발달','다양한 스타일','개성 있는 패션'],
-    61:['문자와 전화','예전에는 제한적인 기능','음악·영화·게임·지도·은행','출퇴근 시간을 즐겁게'],
-    66:['한국과 캐나다','인기 있는 여행지라는 공통점','한국의 편리한 생활','캐나다의 호수와 산','방문 목적의 차이'],
-    69:['해커에 의한 정보 유출','전화번호·주소·은행 정보','금전 피해·스트레스','보안 강화·2단계 인증'],
-    70:['불법 쓰레기 투기','복잡한 분리배출 규칙','규칙 무시','안내 개선·벌금'],
-    71:['수도권 집값·임대료 상승','일자리와 시설 집중','주거비·대출 부담','공급·대출 정책'],
-    73:['맑고 쾌적한 오늘','지난주 흐린 날씨','꽃구경·하이킹·산책','기분 좋은 바람'],
-    74:['한국의 뚜렷한 사계절','봄·가을의 맑은 하늘','덥고 습한 여름','추운 겨울·스키·보드'],
-    75:['봄 소풍·꽃 축제','여름 해변·워터파크','가을 하이킹·농장','겨울 송년회·스키장'],
-    76:['지난여름 아내와 해변','갑자기 변한 날씨','홍수 경보·도로 침수','젖은 옷으로 귀가'],
-    78:['버스·지하철·택시·기차·비행기','가까운 곳·출퇴근','먼 거리·무거운 장보기','거리·비용·편의성'],
-    79:['자주 이용하는 버스','저렴한 요금','주거지 근처 정류장·짧은 배차','이동 중 음악과 휴대전화'],
-    80:['가족과 여름휴가','도착 직전 교통체증','6중 추돌사고','결국 계획을 취소하고 귀가'],
-    84:['구입 목적','추천 모델','저렴하게 사는 곳','평균 가격'],
-    85:['빌린 MP3 파손·사과','같은 모델 구입','원하던 태블릿으로 보상','전문점 수리'],
-    86:['카페에서 온라인 수업','빌린 태블릿','돌려주다 떨어뜨림','같은 모델로 보상'],
-    87:['일주일 렌트','네 명이 타는 저렴한 차','렌트 자격·운전 경력','필요한 보험'],
-    88:['엔진 소음·경고등','다른 차로 교체','전액 환불','안전 확인 후 할인'],
-    89:['아내와 해외여행','컨버터블 예약','예약과 다른 차','정확한 차량·연료 쿠폰'],
-    90:['집을 봐주는 기간','청소·재활용','강아지 등 추가 할 일','상세한 지침'],
-    91:['도착했지만 열쇠가 없음','열쇠 수리공','이웃의 여분 열쇠','위치 확인 후 다시 방문'],
-    92:['삼촌의 해외 학회','강아지 두 마리 돌보기','잘못된 도어락 비밀번호','열쇠 수리공으로 해결']
-  }
+  hints: {},
+  pick
 };
+const layout = window.OPIC_STUDY_LAYOUT;
+// Old fragment links redirect to related current material; old content is not retained.
+layout.legacyLinks = {
+  46:1001,47:1001,48:1005,49:1007,50:1009,51:1009,
+  52:1010,53:1011,54:1014,55:1012,56:1021,57:1018,
+  58:1023,59:1028,60:1029,61:1024,62:1023,
+  63:1030,64:1031,65:1031,66:1031,67:1048,68:1048,
+  69:1049,70:1053,71:1057,72:1037,73:1038,74:1039,75:1040,76:1042,
+  77:1043,78:1044,79:1045,80:1047,81:33,82:34,83:35,
+  84:1060,85:1061,86:1062,87:1063,88:1064,89:1065,90:1066,91:1067,92:1068,
+  93:23,94:19,95:31,96:32,97:33
+};
+const examples = {object:1005,person:1009,experience:1042,change:1023,place:1010,compare:1031,issue:1048,reason:1045,roleplay:1060};
+layout.answers.forEach(group=>{delete group.example;if(examples[group.id])group.example=examples[group.id];});
+for(const part of material.filter(part=>number(part)>1000 && part.english)){
+  const notes = part.blocks.flatMap(block=>block.kind==='recall' && /[가-힣]/.test(block.prompt) ? [block.prompt+' '+block.answers.join(' ')] : block.kind==='line' && block.role==='note' && /[가-힣]/.test(block.text) && !/^[*]*Vocab/.test(block.text) ? [block.text] : []).map(text=>text.replace(/^[-*]\s+|^\d+\.\s*/g,'').replace(/\*\*/g,''));
+  layout.hints[number(part)] = notes.length ? notes : part.group==='roleplay' ? ['목적과 상황','질문 또는 해결책','부연 설명','마무리'] : part.path[1]==='과거·현재 비교 2' ? ['과거의 모습','한계','현재의 변화','개인 경험'] : part.path[1]==='사회 이슈' ? ['핵심 사건','경위','결과','대처'] : part.path[1]==='장소 묘사 1 & 2' ? ['이름과 위치','특징과 시설','경험 또는 선호 이유','마무리'] : [part.title,'구체적인 설명','경험과 결과','마무리'];
+}
+})();

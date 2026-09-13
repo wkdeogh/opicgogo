@@ -35,7 +35,7 @@ function category(section) {
   const p = section.path.join(' / ');
   if (/유형별 답변 구조/.test(p)) return 'flow';
   if (/문장력 올리기/.test(p)) return /STRUCTURES/.test(p) ? 'patterns' : 'expressions';
-  if (section.path[0] !== '유형별 실전 문제와 답변 스크립트') return 'strategy';
+  if (section.path[0] !== '유형별 예시 문제와 답변 스크립트') return 'strategy';
   if (/롤플레이/.test(section.path[1] || '')) return 'roleplay';
   if (/돌발/.test(section.path[1] || '')) return 'unexpected';
   if (/특정 사람|바로 바꿔/.test(p)) return 'expressions';
@@ -98,6 +98,7 @@ function htmlFor(block) {
 }
 
 const lessons = [];
+let scriptSequence = 1000;
 for (const section of sections) {
   const chunks = [];
   if (section.title === '유형별 답변 구조') {
@@ -113,9 +114,18 @@ for (const section of sections) {
   for (const chunk of chunks) {
     if (!chunk.lines.some(meaningful)) continue;
     const blocks = blocksFor(chunk.lines, section.start + 1 + chunk.offset);
-    const id = 'lesson-' + String(lessons.length+1).padStart(3, '0');
-    const english = blocks.filter(b=>b.kind==='line').map(b=>plain(b.text).replace(/\s*\+\s*[가-힣].*$/, '').replace(/^\* /, '')).filter(t=>!/[가-힣]/.test(t) && /[a-z]{2}/i.test(t)).join('\n\n');
-    lessons.push({id, title:displayTitle(chunk.title), group:category(section), path:section.path.map(displayTitle), sourceStart:section.start+chunk.offset, blocks, html:blocks.map(htmlFor).join('\n'), english, text:chunk.lines.filter(meaningful).map(l=>plain(contentLine(l))).join('\n')});
+    const isScript = section.path[0] === '유형별 예시 문제와 답변 스크립트';
+    const id = 'lesson-' + String(isScript ? ++scriptSequence : lessons.length+1).padStart(3, '0');
+    const questions = [];
+    for (const block of blocks) if (isScript && block.kind === 'line') {
+      const text = plain(block.text).replace(/^\d+\.\s*/, '');
+      if (/\*\*/.test(block.text) && /^[A-Za-z]/.test(text) && text.length > 65) {
+        block.role = 'question'; questions.push(text);
+      } else if (section.path[1] !== '사물 묘사 문제' && /^[A-Za-z]/.test(text) && text.length > 100) block.role = 'answer';
+      else block.role = 'note';
+    }
+    const english = isScript ? blocks.filter(b=>b.role==='answer').map(b=>plain(b.text)).join('\n\n') : blocks.filter(b=>b.kind==='line').map(b=>plain(b.text).replace(/\s*\+\s*[가-힣].*$/, '').replace(/^\* /, '')).filter(t=>!/[가-힣]/.test(t) && /[a-z]{2}/i.test(t)).join('\n\n');
+    lessons.push({id, title:displayTitle(chunk.title), group:category(section), path:section.path.map(displayTitle), sourceStart:section.start+chunk.offset, blocks, questions, html:blocks.map(htmlFor).join('\n'), english, text:chunk.lines.filter(meaningful).map(l=>plain(contentLine(l))).join('\n')});
   }
 }
 const quizzes = [];
